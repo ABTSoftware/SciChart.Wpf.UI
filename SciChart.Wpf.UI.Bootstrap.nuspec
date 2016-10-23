@@ -18,13 +18,13 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="Build\Release\SciChart.Wpf.UI.Transitionz.dll" target="lib\net40" />
-	<file src="Build\Release\SciChart.Wpf.UI.Transitionz.XML" target="lib\net40" />
+    <file src="Build\Release\SciChart.Wpf.UI.Bootstrap.dll" target="lib\net40" />
+	<file src="Build\Release\SciChart.Wpf.UI.Bootstrap.XML" target="lib\net40" />
 	
-	<file src="Build\Release\net45\SciChart.Wpf.UI.Transitionz.dll" target="lib\net45" />
-	<file src="Build\Release\net45\SciChart.Wpf.UI.Transitionz.XML" target="lib\net45" />
+	<file src="Build\Release\net45\SciChart.Wpf.UI.Bootstrap.dll" target="lib\net45" />
+	<file src="Build\Release\net45\SciChart.Wpf.UI.Bootstrap.XML" target="lib\net45" />
 	
-	<file src="Build\Release\net46\SciChart.Wpf.UI.Transitionz.dll" target="lib\net46" />
-	<file src="Build\Release\net46\SciChart.Wpf.UI.Transitionz.XML" target="lib\net46" />
+	<file src="Build\Release\net46\SciChart.Wpf.UI.Bootstrap.dll" target="lib\net46" />
+	<file src="Build\Release\net46\SciChart.Wpf.UI.Bootstrap.XML" target="lib\net46" />
   </files>
 </package>

@@ -24,13 +24,13 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="Build\Release\SciChart.Wpf.UI.Controls.dll" target="lib\net40" />
-	<file src="Build\Release\SciChart.Wpf.UI.Controls.XML" target="lib\net40" />
+    <file src="Build\Release\SciChart.Wpf.UI.dll" target="lib\net40" />
+	<file src="Build\Release\SciChart.Wpf.UI.XML" target="lib\net40" />
 	
-	<file src="Build\Release\net45\SciChart.Wpf.UI.Controls.dll" target="lib\net45" />
-	<file src="Build\Release\net45\SciChart.Wpf.UI.Controls.XML" target="lib\net45" />
+	<file src="Build\Release\net45\SciChart.Wpf.UI.dll" target="lib\net45" />
+	<file src="Build\Release\net45\SciChart.Wpf.UI.XML" target="lib\net45" />
 	
-	<file src="Build\Release\net46\SciChart.Wpf.UI.Controls.dll" target="lib\net46" />
-	<file src="Build\Release\net46\SciChart.Wpf.UI.Controls.XML" target="lib\net46" />
+	<file src="Build\Release\net46\SciChart.Wpf.UI.dll" target="lib\net46" />
+	<file src="Build\Release\net46\SciChart.Wpf.UI.XML" target="lib\net46" />
   </files>
 </package>
