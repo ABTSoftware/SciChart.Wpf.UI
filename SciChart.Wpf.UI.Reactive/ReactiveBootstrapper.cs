@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Concurrency;
-using System.Text;
+﻿using System.Reactive.Concurrency;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
@@ -12,7 +8,7 @@ using SciChart.Wpf.UI.Reactive.Observability;
 
 namespace SciChart.WPF.UI.Reactive
 {
-    class ReactiveBootstrapper : AbtBootstrapper
+    public class ReactiveBootstrapper : AbtBootstrapper
     {
         public ReactiveBootstrapper(IUnityContainer container, IAttributedTypeDiscoveryService attributedTypeDiscovery) 
             : base(container, attributedTypeDiscovery)
@@ -28,6 +24,14 @@ namespace SciChart.WPF.UI.Reactive
             ObservableObjectBase.DispatcherSynchronizationContext = SynchronizationContext.Current;
 
             base.Initialize();
+        }
+
+        public virtual Task InitializeAsync()
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                this.Initialize();
+            });
         }
     }
 }

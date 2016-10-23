@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Reflection;
 using SciChart.Wpf.UI.Reactive.Utility;
 using Microsoft.Practices.Unity;
 
@@ -29,7 +28,7 @@ namespace SciChart.Wpf.UI.Reactive.Bootstrap
         public IUnityContainer Container { get { return _container; }}
 
         public virtual void Initialize()
-        {
+        {            
             var exportTypes = _attributedTypeDiscovery.DiscoverAttributedTypes<ExportTypeAttribute>();
 
             foreach (var tTo in exportTypes)
