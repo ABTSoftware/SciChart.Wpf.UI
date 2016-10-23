@@ -3,7 +3,7 @@
                     xmlns:ui="clr-namespace:SciChart.Wpf.UI">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI.Controls;component/Themes/Controls.TextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI;component/Themes/Controls.TextBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
     <Style TargetType="{x:Type ui:LabelControl}">
