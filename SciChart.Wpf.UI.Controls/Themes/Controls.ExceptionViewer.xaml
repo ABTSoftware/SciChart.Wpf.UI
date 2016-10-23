@@ -1,0 +1,86 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:SciChart.Wpf.UI.Controls.Converters"
+                    xmlns:markup="clr-namespace:SciChart.Wpf.UI.Controls.Markup"
+                    xmlns:transitionz="clr-namespace:SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz"
+                    xmlns:controls="clr-namespace:SciChart.Wpf.UI.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Controls.TextStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <converters:NullToBooleanConverter x:Key="Nbc" NullValue="False" NotNullValue="True"/>
+    <converters:BoolToValueConverter x:Key="Bvc" TrueValue="Visible" FalseValue="Collapsed"/>
+    <converters:VisibleIfNotNullConverter x:Key="Vnn"/>
+    <transitionz:TransitionzVisibilityConverter x:Key="Tvc" FadeInTransition="{transitionz:OpacityParams From=0, To=1, Duration=250}"/>        
+        
+    <Style TargetType="controls:ExceptionViewer">    
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="Crimson"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HasInnerExceptions" Value="{Binding Exception.Exception.InnerException, Converter={StaticResource Nbc}, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="Visibility" Value="{Binding Exception, Converter={StaticResource Vnn}, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="transitionz:Transitionz.Opacity" Value="{Binding Visibility, RelativeSource={RelativeSource Self}, Converter={StaticResource Tvc}}"/>
+        <Setter Property="SupportEmailUri" Value="{Binding Exception.SupportEmailUri}"/>
+        <Setter Property="ShowEmailSupport" Value="{Binding Exception.ShowEmailSupport}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:ExceptionViewer">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <Border DataContext="{TemplateBinding Exception}"
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}">                                                                                
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Margin="5" Grid.Row="0" Text="Message" Style="{StaticResource Heading2}" Foreground="{TemplateBinding Foreground}" TextWrapping="Wrap"/>
+                                
+                                <ItemsControl Margin="5" Grid.Row="1" ItemsSource="{Binding Messages}"                                             >
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Margin="5" Text="{Binding}" Style="{StaticResource NormalTextBlock}" 
+                                                       Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=ItemsControl}}"
+                                                       TextWrapping="Wrap"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <StackPanel Orientation="Vertical" Grid.Row="2" Visibility="{Binding ShowStackTrace, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Bvc}}">
+                                    <TextBlock Margin="5" Text="Stack Trace" Style="{StaticResource Heading2}" Foreground="{TemplateBinding Foreground}" TextWrapping="Wrap"
+                                           Visibility="{Binding Exception, Converter={StaticResource Vnn}}"/>
+                                    <TextBlock Margin="5" Text="{Binding Exception.StackTrace}" TextWrapping="Wrap" Foreground="{TemplateBinding Foreground}" 
+                                           Visibility="{Binding Exception, Converter={StaticResource Vnn}}"
+                                           Style="{StaticResource NormalTextBlock}"/>
+                                </StackPanel>
+
+
+                                <TextBlock Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="2"
+                                           Visibility="{Binding Path=ShowEmailSupport, Converter={StaticResource Bvc}, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <controls:ClickableLink NavigateUri="{Binding Path=SupportEmailUri, RelativeSource={RelativeSource TemplatedParent}}"
+                                                            MailToSubject="{Binding Header}"
+                                                            MailToBody="{Binding Messages}">
+                                        <Run Text="Email Support" Foreground="White" TextDecorations="Underline"/>
+                                    </controls:ClickableLink>
+                                </TextBlock>
+
+                                
+                                <Button Margin="10" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                        Command="{Binding ClearExceptionCommand, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <Button.Content>
+                                        <TextBlock Text="r" FontFamily="Marlett"/>
+                                    </Button.Content>                                    
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

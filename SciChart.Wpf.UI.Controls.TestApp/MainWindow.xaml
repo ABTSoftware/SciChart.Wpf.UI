@@ -1,0 +1,130 @@
+﻿<controls:MetroWindow x:Class="SciChart.Wpf.UI.Controls.Preview.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:preview="clr-namespace:SciChart.Wpf.UI.Controls.Preview"
+        xmlns:abt="http://schemas.abtsoftware.co.uk/presentation"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        Title="Core Framework | Presentation Preview"
+        Width="1025"
+        Height="600">
+    
+    <Window.Resources>
+        <preview:MainViewModel x:Key="vm"/>
+        <BooleanToVisibilityConverter x:Key="b2vConverter"/>
+        <abt:NullToVisibilityConverter x:Key="ifNotNullVisibleConverter" ValueIfNotNull="Visible" ValueIfNull="Collapsed"/>
+
+        <ExponentialEase x:Key="ExpEase" EasingMode="EaseOut" Exponent="5" />
+    </Window.Resources>
+    
+    <Grid DataContext="{StaticResource vm}">
+        <TabControl>
+            <TabControl.Items>
+                <TabItem Header="Labels">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <abt:LabelControl Header="Test" >
+                            <CheckBox Content="This is a checkbox" Margin="2"/>
+                        </abt:LabelControl>
+
+                        <abt:LabelControl Header="Test 2" Grid.Row="1">
+                            <StackPanel>
+                                <CheckBox Content="This is a checkbox" Margin="2"/>
+                                <CheckBox Content="This is another checkbox" Margin="2"/>
+                            </StackPanel>
+                        </abt:LabelControl>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Font Ramp">
+                    <StackPanel>
+                        <TextBlock Text="Heading 1" Style="{DynamicResource Heading1}"></TextBlock>
+                        <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                        <TextBlock Text="Heading 2" Style="{DynamicResource Heading2}"></TextBlock>
+                        <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                        <TextBlock Text="Heading 3" Style="{DynamicResource Heading3}"></TextBlock>
+                        <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                        <TextBlock Text="Heading 4" Style="{DynamicResource Heading4}"></TextBlock>
+                        <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                        <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                        <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Error Handling">
+                    <Grid>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <Button Content="A Button" HorizontalAlignment="Stretch" Margin="10" ></Button>
+                            <Button Content="Another Button" HorizontalAlignment="Stretch" Margin="10"></Button>
+                            <Button Content="Throw an Exception" Command="{Binding ThrowExceptionCommand}" HorizontalAlignment="Stretch" Margin="10" ></Button>
+                        </StackPanel>
+                        
+                        <abt:ExceptionViewer Grid.Column="1" Exception="{Binding Exception}"/>
+                    </Grid>
+                </TabItem>                
+                <TabItem Header="Popups">
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <Button Content="Show Popup" HorizontalAlignment="Stretch" Margin="10" Command="{Binding ShowAPopupCommand}"></Button>
+                            <Button Content="Show Warnings" HorizontalAlignment="Stretch" Margin="10" Command="{Binding ShowWarningsCommand}"></Button>
+                        </StackPanel>
+
+                        <!-- Normal popup -->
+                        <abt:PopupHost Grid.Row="0" Grid.ColumnSpan="2" Visibility="{Binding IsPopupShown, Converter={StaticResource b2vConverter}}" Style="{DynamicResource MetroPopupPresenter}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="32"/>
+                                </Grid.RowDefinitions>
+                                <DockPanel>
+                                    <Label VerticalAlignment="Center" Content="Enter an amount:"/>
+                                    <TextBox Width="200"/>
+                                </DockPanel>
+
+                                <Button Grid.Row="1" HorizontalAlignment="Right" Command="{Binding HidePopupCommand}" Content="Close"/>
+                            </Grid>
+                        </abt:PopupHost>
+
+                        <!-- Warnings popup -->
+                        <abt:PopupHost Grid.Row="0" Grid.ColumnSpan="2" Style="{DynamicResource FullWidthMetroPopup}"
+                                           Visibility="{Binding Path=WarningsDialogViewModel, Converter={StaticResource ifNotNullVisibleConverter}, FallbackValue=Collapsed}">
+                            <abt:PopupHost.Resources>
+                                <DataTemplate DataType="{x:Type abt:WarningsDialogViewModel}">
+                                    <abt:WarningDialogView/>
+                                </DataTemplate>
+                            </abt:PopupHost.Resources>
+                            <ContentControl Content="{Binding WarningsDialogViewModel}"/>
+                        </abt:PopupHost>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Transitionz">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <CheckBox Grid.Row="0" Content="Show content" IsChecked="False" x:Name="CheckBox"/>
+                        <TextBlock Grid.Row="1" FontSize="42" Text="Hello Transitionz World"
+                                    abt:Transitionz.Opacity="{abt:OpacityParams BeginTime=0, To=1, Duration=350, TransitionOn=Visibility}"
+                                    abt:Transitionz.Translate="{abt:TranslateParams BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"
+                                    abt:Transitionz.Visibility="{Binding ElementName=CheckBox, Path=IsChecked, Converter={StaticResource b2vConverter}}"/>
+                    </Grid>
+                </TabItem>
+                
+            </TabControl.Items>
+        </TabControl>
+    </Grid>
+</controls:MetroWindow>

@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Controls.TextStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+<!--    <Style TargetType="{x:Type TextBox}">-->
+<!--        <Setter Property="controls:TextboxHelper.ClearTextButton" Value="True"/>-->
+<!--        <Setter Property="MinHeight" Value="50"/>-->
+<!--    </Style>-->
+
+</ResourceDictionary>
