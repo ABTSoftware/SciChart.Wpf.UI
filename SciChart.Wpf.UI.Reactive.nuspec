@@ -15,6 +15,7 @@
 		<dependency id="SciChart.Wpf.UI.Bootstrap" version="$version$" />  		
 		<dependency id="CommonServiceLocator" version="1.0" />  		
 		<dependency id="Rx-Core" version="2.2.5" />        
+		<dependency id="Rx-Wpf" version="2.2.5" />        
 		<dependency id="Rx-Main" version="2.2.5" />       
 		<dependency id="Rx-Interfaces" version="2.2.5" />    		
 		<dependency id="Rx-Linq" version="2.2.5" />    	

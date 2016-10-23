@@ -194,11 +194,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net40\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-XAML.2.2.5\lib\net40\System.Reactive.Windows.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs">
@@ -220,6 +225,7 @@
     <Compile Include="ICompositeDisposable.cs" />
     <Compile Include="Observability\ExceptionViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ReactiveBootstrapper.cs" />
     <Compile Include="Services\ExampleUsage.cs" />
     <Compile Include="Services\ReportEvents.cs" />
     <Compile Include="UnityExtensions.cs" />
