@@ -5,7 +5,7 @@
     <Application.Resources>
          <ResourceDictionary>
              <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI.Controls;component/Themes/MetroGreen.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI;component/Themes/MetroGreen.xaml"/>
             </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>

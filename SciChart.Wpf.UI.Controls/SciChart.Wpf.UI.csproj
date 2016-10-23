@@ -1,19 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D78F4BCF-C408-422C-A327-FEF8D8E07EE6}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{F0BDBCEC-D3CC-4048-849D-4C2290BC5E81}</ProjectGuid>
+    <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SciChart.WPF.UI.Reactive</RootNamespace>
-    <AssemblyName>SciChart.WPF.UI.Reactive</AssemblyName>
+    <RootNamespace>SciChart.Wpf.UI</RootNamespace>
+    <AssemblyName>SciChart.Wpf.UI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Build\Debug\SciChart.WPF.UI.Reactive.XML</DocumentationFile>
+    <DocumentationFile>..\Build\Debug\SciChart.Wpf.UI.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Build\Release\SciChart.WPF.UI.Reactive.XML</DocumentationFile>
+    <DocumentationFile>..\Build\Release\SciChart.Wpf.UI.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -78,7 +80,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>..\Build\Release\net45\SciChart.WPF.UI.Reactive.XML</DocumentationFile>
+    <DocumentationFile>..\Build\Release\net45\SciChart.Wpf.UI.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release45|x86'">
     <OutputPath>bin\x86\Release45\</OutputPath>
@@ -106,7 +108,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>..\Build\Release\net46\SciChart.WPF.UI.Reactive.XML</DocumentationFile>
+    <DocumentationFile>..\Build\Release\net46\SciChart.Wpf.UI.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release46|x86'">
     <OutputPath>bin\x86\Release46\</OutputPath>
@@ -163,21 +165,12 @@
     <OutputPath>bin\x64\Debug46\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    <Reference Include="MahApps.Metro, Version=1.3.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.3.0\lib\net40\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PresentationCore" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Rx-Core.2.2.5\lib\net40\System.Reactive.Core.dll</HintPath>
@@ -194,49 +187,135 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net40\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.3.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="WarningDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Controls.BusyPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Controls.TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Controls.TextStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\MetroGreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
-    <Compile Include="Async\ExceptionOrResult.cs" />
-    <Compile Include="Async\ObservableEx.cs" />
-    <Compile Include="Async\SchedulerContext.cs" />
-    <Compile Include="Async\SharedScheduler.cs" />
-    <Compile Include="Async\TaskEx.cs" />
-    <Compile Include="Async\TaskImmediateScheduler.cs" />
-    <Compile Include="ActionCommand.cs" />
-    <Compile Include="Behaviours\Behaviour.cs" />
-    <Compile Include="Behaviours\BehaviourCollection.cs" />
-    <Compile Include="Common\StringlyTyped.cs" />
-    <Compile Include="Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Extensions\ObservableExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="ICompositeDisposable.cs" />
-    <Compile Include="Observability\ExceptionViewModel.cs" />
-    <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Services\ExampleUsage.cs" />
-    <Compile Include="Services\ReportEvents.cs" />
-    <Compile Include="UnityExtensions.cs" />
-    <Compile Include="Validate.cs" />
-    <Compile Include="Observability\ObservableObjectBase.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Observability\ObservableObjectExtensions.cs" />
-    <Compile Include="Observability\ViewModelBase.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="AttachedBehaviours\BindablePasswordBox.cs" />
+    <Compile Include="AttachedBehaviours\DataGridMultiSelectBehaviour.cs" />
+    <Compile Include="AttachedBehaviours\DesignMode.cs" />
+    <Compile Include="AttachedBehaviours\ListBoxExtensions.cs" />
+    <Compile Include="AttachedBehaviours\SelectedItemsBehavior.cs" />
+    <Compile Include="AttachedBehaviours\TextElementEx.cs" />
+    <Compile Include="AttachedBehaviours\ToggleButtonExtensions.cs" />
+    <Compile Include="ClickableLink.cs" />
+    <Compile Include="ExceptionViewer.cs" />
+    <Compile Include="HyperlinkButton.cs" />
+    <Compile Include="HyperlinkButtonCompatible.cs" />
+    <Compile Include="LabelControl.cs" />
+    <Compile Include="BusyPanel.cs" />
+    <Compile Include="PopupHost.cs" />
+    <Compile Include="WarningDialogResultConverter.cs" />
+    <Compile Include="WarningDialogView.xaml.cs">
+      <DependentUpon>WarningDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WarningDialogViewModel.cs" />
+    <Compile Include="Converters\AllTrueConverter.cs" />
+    <Compile Include="Converters\BoolToValueConverter.cs" />
+    <Compile Include="Converters\DisplayDateConverter.cs" />
+    <Compile Include="Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Converters\NullToBooleanConverter.cs" />
+    <Compile Include="Converters\ToUpperConverter.cs" />
+    <Compile Include="Converters\VisibilityConverter.cs" />
+    <Compile Include="Converters\YesNoConverter.cs" />
+    <Compile Include="Extensions\VisualTreeExtensions.cs" />
+    <Compile Include="Markup\TypeExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Services\DialogService.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Page Include="Themes\Controls.Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls.PopupHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls.ExceptionViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls.LabelControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SciChart.Wpf.UI.Bootstrap\SciChart.Wpf.UI.Bootstrap.csproj">
       <Project>{47b46a21-285d-4677-a6c3-45e51cfa8562}</Project>
       <Name>SciChart.Wpf.UI.Bootstrap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SciChart.Wpf.UI.Reactive\SciChart.Wpf.UI.Reactive.csproj">
+      <Project>{d78f4bcf-c408-422c-a327-fef8d8e07ee6}</Project>
+      <Name>SciChart.Wpf.UI.Reactive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.csproj">
+      <Project>{f62bdb9c-0304-46d3-b088-62da495b46dd}</Project>
+      <Name>SciChart.Wpf.UI.Transitionz</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

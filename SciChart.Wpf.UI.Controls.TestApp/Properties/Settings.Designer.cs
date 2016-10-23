@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SciChart.Wpf.UI.Controls.TestApp.Properties {
+namespace SciChart.Wpf.UI.TestApp.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

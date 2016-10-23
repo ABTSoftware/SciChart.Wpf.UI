@@ -10,15 +10,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0BA121
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Controls", "SciChart.Wpf.UI.Controls\SciChart.Wpf.UI.Controls.csproj", "{F0BDBCEC-D3CC-4048-849D-4C2290BC5E81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI", "SciChart.Wpf.UI.Controls\SciChart.Wpf.UI.csproj", "{F0BDBCEC-D3CC-4048-849D-4C2290BC5E81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Controls.TestApp", "SciChart.Wpf.UI.Controls.TestApp\SciChart.Wpf.UI.Controls.TestApp.csproj", "{B044C99F-C50A-4AB7-889D-FCF67E5F362F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.TestApp", "SciChart.Wpf.UI.Controls.TestApp\SciChart.Wpf.UI.TestApp.csproj", "{B044C99F-C50A-4AB7-889D-FCF67E5F362F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Reactive", "SciChart.Wpf.UI.Reactive\SciChart.Wpf.UI.Reactive.csproj", "{D78F4BCF-C408-422C-A327-FEF8D8E07EE6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Reactive.Tests", "SciChart.Wpf.UI.Reactive.Tests\SciChart.Wpf.UI.Reactive.Tests.csproj", "{BBF0486A-3B64-485D-8617-E331A631E83A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Transitionz", "SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.csproj", "{F62BDB9C-0304-46D3-B088-62DA495B46DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Bootstrap", "SciChart.Wpf.UI.Bootstrap\SciChart.Wpf.UI.Bootstrap.csproj", "{47B46A21-285D-4677-A6C3-45E51CFA8562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -186,11 +188,35 @@ Global
 		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release46|Any CPU.Build.0 = Release46|Any CPU
 		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release46|x64.ActiveCfg = Release|Any CPU
 		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release46|x86.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug45|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug45|Any CPU.Build.0 = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug45|x64.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug45|x86.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug46|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug46|Any CPU.Build.0 = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug46|x64.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Debug46|x86.ActiveCfg = Debug|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release|x64.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release|x86.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release45|Any CPU.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release45|Any CPU.Build.0 = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release45|x64.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release45|x86.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release46|Any CPU.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release46|Any CPU.Build.0 = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release46|x64.ActiveCfg = Release|Any CPU
+		{47B46A21-285D-4677-A6C3-45E51CFA8562}.Release46|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.2.1.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal

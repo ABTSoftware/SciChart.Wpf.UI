@@ -113,9 +113,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SciChart.Wpf.UI.Bootstrap\SciChart.Wpf.UI.Bootstrap.csproj">
+      <Project>{47b46a21-285d-4677-a6c3-45e51cfa8562}</Project>
+      <Name>SciChart.Wpf.UI.Bootstrap</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SciChart.Wpf.UI.Reactive\SciChart.Wpf.UI.Reactive.csproj">
       <Project>{D78F4BCF-C408-422C-A327-FEF8D8E07EE6}</Project>
-      <Name>Abt.Framework.Core</Name>
+      <Name>SciChart.Wpf.UI.Reactive</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
