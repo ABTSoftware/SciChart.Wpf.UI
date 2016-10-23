@@ -3,19 +3,18 @@
 SET version=1.0.0
 SET build=123
 
-ECHO Parameters = %1.%2
+ECHO Parameters = %1
 
 if [%1] NEQ [] SET version=%1
-if [%2] NEQ [] SET build=%2
 
-ECHO Deploying SciChart DLLs v%version%.%build%
+ECHO Deploying SciChart DLLs v%version%
 
 REM Setup directory structure
 rmdir Build /S /Q
 
 
 REM Prepare for deployment
-call powershell.exe ".\DeploymentFiles\UpdateAssemblyInfoCommon.ps1" "AssemblyInfoCommon.cs" %version% %build%
+call powershell.exe ".\DeploymentFiles\UpdateAssemblyInfoCommon.ps1" "AssemblyInfoCommon.cs" %version%
 if ERRORLEVEL 1 goto :powershellError
 
 REM -------------------------------------------
