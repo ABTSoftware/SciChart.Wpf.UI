@@ -8,11 +8,11 @@ using System.Windows.Markup;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SciChart.Wpf.UI.Controls")]
+[assembly: AssemblyTitle("SciChart.Wpf.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SciChart.Wpf.UI.Controls")]
+[assembly: AssemblyProduct("SciChart.Wpf.UI")]
 [assembly: AssemblyCopyright("Copyright ©  2013 - 2016 SciChart Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -128,7 +128,7 @@
       <Project>{47b46a21-285d-4677-a6c3-45e51cfa8562}</Project>
       <Name>SciChart.Wpf.UI.Bootstrap</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SciChart.Wpf.UI.Controls\SciChart.Wpf.UI.csproj">
+    <ProjectReference Include="..\SciChart.Wpf.UI\SciChart.Wpf.UI.csproj">
       <Project>{f0bdbcec-d3cc-4048-849d-4c2290bc5e81}</Project>
       <Name>SciChart.Wpf.UI</Name>
     </ProjectReference>

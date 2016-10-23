@@ -12,8 +12,8 @@
     <description>Core reactive libraries, bootstrapping and application shell for WPF UI created by SciChart Ltd. Used in the SciChart WPF Examples Application, which demonstrates High Performance WPF Charts, available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (RxMain) to allow for easier testing and integration of Reactive into an MVVM Application.</description>
     <copyright>Copyright © SciChart Ltd 2013-2016</copyright>
 	<dependencies>
+		<dependency id="SciChart.Wpf.UI.Bootstrap" version="$version$" />  		
 		<dependency id="CommonServiceLocator" version="1.0" />  		
-		<dependency id="log4net" version="1.0" />  		      
 		<dependency id="Rx.Core" version="2.2.5" />        
 		<dependency id="Rx.Interfaces" version="2.2.5" />    		
 		<dependency id="Rx.Linq" version="2.2.5" />    

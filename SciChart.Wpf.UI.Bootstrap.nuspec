@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>SciChart Ltd</authors>
+    <owners>SciChart Ltd</owners>
+    <id>SciChart.Wpf.UI.Transitionz</id>
+    <title>SciChart.Wpf.UI.Transitionz</title>
+	<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>	
+	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+	<description>Transitionz is an animation library made by SciChart Ltd which allows for easy animating of Opacity or X,Y Transforms on Visibility change with simple XAML markup extensions</description>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright © SciChart Ltd 2013-2016</copyright>
+	<dependencies>
+		<dependency id="CommonServiceLocator" version="1.0" />  		
+		<dependency id="log4net" version="2.0.3" />        
+		<dependency id="Unity" version="2.1.505.0" />  		
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Build\Release\SciChart.Wpf.UI.Transitionz.dll" target="lib\net40" />
+	<file src="Build\Release\SciChart.Wpf.UI.Transitionz.XML" target="lib\net40" />
+	
+	<file src="Build\Release\net45\SciChart.Wpf.UI.Transitionz.dll" target="lib\net45" />
+	<file src="Build\Release\net45\SciChart.Wpf.UI.Transitionz.XML" target="lib\net45" />
+	
+	<file src="Build\Release\net46\SciChart.Wpf.UI.Transitionz.dll" target="lib\net46" />
+	<file src="Build\Release\net46\SciChart.Wpf.UI.Transitionz.XML" target="lib\net46" />
+  </files>
+</package>

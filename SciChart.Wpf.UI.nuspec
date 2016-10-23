@@ -4,8 +4,8 @@
     <version>$version$</version>
     <authors>SciChart Ltd</authors>
     <owners>SciChart Ltd</owners>
-    <id>SciChart.Wpf.UI.Controls</id>
-    <title>SciChart.Wpf.UI.Controls</title>
+    <id>SciChart.Wpf.UI</id>
+    <title>SciChart.Wpf.UI</title>
 	<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>	
 	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
 	<description>Core reactive libraries, custom controls and styles for WPF UI created by SciChart Ltd. Used in the SciChart WPF Examples Application, which demonstrates High Performance WPF Charts, available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (RxMain) to allow for easier testing and integration of Reactive into an MVVM Application.</description>
@@ -13,7 +13,8 @@
     <copyright>Copyright © SciChart Ltd 2013-2016</copyright>
 	<dependencies>
 		<dependency id="SciChart.WPF.UI.Transitionz" version="$version$" />    
-		<dependency id="SciChart.WPF.UI.Reactive" version="$version$" />         
+		<dependency id="SciChart.WPF.UI.Reactive" version="$version$" />    
+		<dependency id="SciChart.WPF.UI.Bootstrap" version="$version$" />    		
 		<dependency id="MahAppls.Metro" version="1.3.0" />        
 		<dependency id="Rx.Core" version="2.2.5" />        
 		<dependency id="Rx.Main" version="2.2.5" />        
