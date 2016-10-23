@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>SciChart Ltd</authors>
+    <owners>SciChart Ltd</owners>
+    <id>SciChart</id>
+    <title>SciChart</title>
+	<projectUrl>http://www.scichart.com</projectUrl>	
+	<licenseUrl>http://www.scichart.com/scichart-eula</licenseUrl>
+	<releaseNotes>Release Notes found at www.scichart.com/Downloads/Releasenotes.txt</releaseNotes>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>SciChart - High Performance WPF Charts for Scientific and Trading applications. Includes the 2D Charting libraries (excluding DirectX Rendering Plugin)</description>
+    <copyright>Copyright © SciChart Ltd 2011-2016</copyright>
+  </metadata>
+  <files>
+    <file src="Lib\net40\SciChart.Core.dll" target="lib\net40" />
+	<file src="Lib\net40\SciChart.Data.dll" target="lib\net40" />
+	<file src="Lib\net40\SciChart.Drawing.dll" target="lib\net40" />
+	<file src="Lib\net40\SciChart.Charting.dll" target="lib\net40" />
+	<file src="Lib\net40\SciChart.Core.xml" target="lib\net40" />
+	<file src="Lib\net40\SciChart.Data.xml" target="lib\net40" />
+	<file src="Lib\net40\SciChart.Drawing.xml" target="lib\net40" />
+	<file src="Lib\net40\SciChart.Charting.xml" target="lib\net40" />
+	
+	<file src="Lib\net45\SciChart.Core.dll" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Data.dll" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Drawing.dll" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Charting.dll" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Core.xml" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Data.xml" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Drawing.xml" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Charting.xml" target="lib\net45" />
+	
+	<file src="Lib\net46\SciChart.Core.dll" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Data.dll" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Drawing.dll" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Charting.dll" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Core.xml" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Data.xml" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Drawing.xml" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Charting.xml" target="lib\net46" />
+  </files>
+</package>

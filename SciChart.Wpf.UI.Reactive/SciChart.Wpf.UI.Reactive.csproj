@@ -203,6 +203,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyInfoCommon.cs">
+      <Link>Properties\AssemblyInfoCommon.cs</Link>
+    </Compile>
     <Compile Include="Async\SchedulerContext.cs" />
     <Compile Include="Async\SharedScheduler.cs" />
     <Compile Include="Async\TaskEx.cs" />
