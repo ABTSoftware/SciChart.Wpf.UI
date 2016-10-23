@@ -1,7 +1,6 @@
 @echo off
 
 SET version=1.0.0
-SET build=123
 
 ECHO Parameters = %1
 
