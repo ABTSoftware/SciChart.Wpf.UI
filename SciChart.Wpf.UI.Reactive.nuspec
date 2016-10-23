@@ -13,8 +13,7 @@
     <copyright>Copyright © SciChart Ltd 2013-2016</copyright>
 	<dependencies>
 		<dependency id="CommonServiceLocator" version="1.0" />  		
-		<dependency id="log4net" version="1.0" />  		
-		<dependency id="MahAppls.Metro" version="0.11.0.0" />        
+		<dependency id="log4net" version="1.0" />  		      
 		<dependency id="Rx.Core" version="2.2.5" />        
 		<dependency id="Rx.Interfaces" version="2.2.5" />    		
 		<dependency id="Rx.Linq" version="2.2.5" />    

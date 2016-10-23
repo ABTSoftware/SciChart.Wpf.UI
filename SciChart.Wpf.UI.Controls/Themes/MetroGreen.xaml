@@ -9,7 +9,7 @@
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
 
         <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI.Controls;component/Themes/Controls.TextStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI.Controls;component/Themes/Controls.BlinkControl.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI.Transitionz;component/Themes/Controls.BlinkControl.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI.Controls;component/Themes/Controls.BusyPanel.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI.Controls;component/Themes/Controls.Buttons.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI.Controls;component/Themes/Controls.ExceptionViewer.xaml"/>
