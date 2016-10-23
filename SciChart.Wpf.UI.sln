@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Reactive", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Reactive.Tests", "SciChart.Wpf.UI.Reactive.Tests\SciChart.Wpf.UI.Reactive.Tests.csproj", "{BBF0486A-3B64-485D-8617-E331A631E83A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SciChart.Wpf.UI.Transitionz", "SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.csproj", "{F62BDB9C-0304-46D3-B088-62DA495B46DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -160,6 +162,30 @@ Global
 		{BBF0486A-3B64-485D-8617-E331A631E83A}.Release46|Any CPU.Build.0 = Release|Any CPU
 		{BBF0486A-3B64-485D-8617-E331A631E83A}.Release46|x64.ActiveCfg = Release|Any CPU
 		{BBF0486A-3B64-485D-8617-E331A631E83A}.Release46|x86.ActiveCfg = Release|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug45|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug45|Any CPU.Build.0 = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug45|x64.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug45|x86.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug46|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug46|Any CPU.Build.0 = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug46|x64.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Debug46|x86.ActiveCfg = Debug|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release|x64.ActiveCfg = Release|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release45|Any CPU.ActiveCfg = Release45|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release45|Any CPU.Build.0 = Release45|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release45|x64.ActiveCfg = Release|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release45|x86.ActiveCfg = Release|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release46|Any CPU.ActiveCfg = Release46|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release46|Any CPU.Build.0 = Release46|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release46|x64.ActiveCfg = Release|Any CPU
+		{F62BDB9C-0304-46D3-B088-62DA495B46DD}.Release46|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

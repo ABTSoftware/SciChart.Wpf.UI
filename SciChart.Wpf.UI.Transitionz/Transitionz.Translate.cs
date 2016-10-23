@@ -2,13 +2,14 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using SciChart.Wpf.UI.Transitionz.AttachedBehaviors;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
     public partial class Transitionz
     {
         public static readonly DependencyProperty TranslateProperty =
-            DependencyProperty.RegisterAttached("Translate", typeof(ITranslateParams), typeof(Transitionz), new PropertyMetadata(default(ITranslateParams), OnTranslateParamsChanged));
+            DependencyProperty.RegisterAttached("Translate", typeof(ITranslateParams), typeof(UI.Transitionz.Transitionz), new PropertyMetadata(default(ITranslateParams), OnTranslateParamsChanged));
 
         public static void SetTranslate(UIElement element, ITranslateParams value)
         {
@@ -32,25 +33,25 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
             {
                 target.Loaded -= OnLoadedForTranslate;
                 target.DataContextChanged -= OnDataContextChangedForTranslate;
-                RemoveVisibilityChangedHandler(target, OnVisibilityChangedForTranslate);
+                Transitionz.RemoveVisibilityChangedHandler(target, OnVisibilityChangedForTranslate);
             }
 
             if (newTransitionParams != null)
             {
                 var translateTransform = new TranslateTransform() { X = newTransitionParams.From.X, Y = newTransitionParams.From.Y };
                 target.RenderTransform = translateTransform;
-                if (HasFlag(newTransitionParams.TransitionOn, TransitionOn.Loaded) || HasFlag(newTransitionParams.TransitionOn, TransitionOn.Once))
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Loaded) || Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Once))
                 {
                     target.Loaded += OnLoadedForTranslate;
                     if (target.IsLoaded()) OnLoadedForTranslate(target, null);
                 }
-                if (HasFlag(newTransitionParams.TransitionOn, TransitionOn.DataContextChanged))
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.DataContextChanged))
                 {
                     target.DataContextChanged += OnDataContextChangedForTranslate;
                 }
-                if (HasFlag(newTransitionParams.TransitionOn, TransitionOn.Visibility))
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Visibility))
                 {
-                    AddVisibilityChangedHandler(target, OnVisibilityChangedForTranslate);
+                    Transitionz.AddVisibilityChangedHandler(target, OnVisibilityChangedForTranslate);
                 }
             }
         }
@@ -58,7 +59,7 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
         private static void OnVisibilityChangedForTranslate(object sender, EventArgs e)
         {
             var element = ((FrameworkElement)((PropertyChangeNotifier)sender).PropertySource);
-            var visibility = GetVisibility(element);
+            var visibility = Transitionz.GetVisibility(element);
             if (visibility == Visibility.Visible)
             {
                 element.Visibility = Visibility.Visible;
@@ -80,11 +81,11 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
 
         private static void DoTranslateTransition(ITranslateParams transitionParams, FrameworkElement target, RoutedEventHandler onLoaded, Visibility? visibility)
         {
-            if (onLoaded != null && HasFlag(transitionParams.TransitionOn, TransitionOn.Once))
+            if (onLoaded != null && Transitionz.HasFlag(transitionParams.TransitionOn, TransitionOn.Once))
             {
                 target.Loaded -= onLoaded;
             }
-            var reverse = IsVisibilityHidden(visibility);
+            var reverse = Transitionz.IsVisibilityHidden(visibility);
 
             var x = new DoubleAnimation
             {

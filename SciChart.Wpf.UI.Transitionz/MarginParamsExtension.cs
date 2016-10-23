@@ -39,26 +39,19 @@
 #endregion
 
 using System;
+using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media.Animation;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
-    public interface IOpacityParams : ITransitionParams<double>
+    [MarkupExtensionReturnType(typeof(MarginParamsExtension))]
+    public class MarginParamsExtension : BaseTransitionzExtension<Thickness>
     {
-    }
+        public MarginParamsExtension() { }
 
-    public class OpacityParams : TransitionzParams<double>, IOpacityParams
-    {
-    }
-
-    [MarkupExtensionReturnType(typeof(IOpacityParams))]
-    public class OpacityParamsExtension : BaseTransitionzExtension<double>, IOpacityParams
-    {
-        public OpacityParamsExtension() { }
-
-        public OpacityParamsExtension(double beginTime, double duration, double from, double to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoReverse)
-            : base(beginTime, duration, from, to, ease, reverseEase, transitionOn, autoReverse)
+        public MarginParamsExtension(double beginTime, double duration, Thickness from, Thickness to, EasingFunctionBase ease, TransitionOn transitionOn, bool autoReverse)
+            : base(beginTime, duration, from, to, ease, null, transitionOn, autoReverse)
         {
         }
 

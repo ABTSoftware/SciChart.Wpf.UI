@@ -237,27 +237,10 @@
     <Compile Include="AttachedBehaviours\BindablePasswordBox.cs" />
     <Compile Include="AttachedBehaviours\DataGridMultiSelectBehaviour.cs" />
     <Compile Include="AttachedBehaviours\DesignMode.cs" />
-    <Compile Include="AttachedBehaviours\FreezeHelper.cs" />
     <Compile Include="AttachedBehaviours\ListBoxExtensions.cs" />
-    <Compile Include="AttachedBehaviours\PropertyChangeNotifier.cs" />
     <Compile Include="AttachedBehaviours\SelectedItemsBehavior.cs" />
     <Compile Include="AttachedBehaviours\TextElementEx.cs" />
     <Compile Include="AttachedBehaviours\ToggleButtonExtensions.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\AnimatedContentControl.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\BaseTransitionzParams.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\BlinkControl.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\BlurParamsExtension.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\MarginParamsExtension.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\OpacityParamsExtension.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\ScaleParams.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\Transitionz.Blur.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\Transitionz.Margin.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\Transitionz.Opacity.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\Transitionz.Translate.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\Transitionz.Visibility.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\TransitionzParams.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\TransitionzVisibilityConverter.cs" />
-    <Compile Include="AttachedBehaviours\Transitionz\TranslateParamsExtension.cs" />
     <Compile Include="ClickableLink.cs" />
     <Compile Include="ExceptionViewer.cs" />
     <Compile Include="HyperlinkButton.cs" />
@@ -278,8 +261,6 @@
     <Compile Include="Converters\ToUpperConverter.cs" />
     <Compile Include="Converters\VisibilityConverter.cs" />
     <Compile Include="Converters\YesNoConverter.cs" />
-    <Compile Include="Extensions\AnimationExtensions.cs" />
-    <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="Extensions\VisualTreeExtensions.cs" />
     <Compile Include="Markup\TypeExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -332,6 +313,10 @@
     <ProjectReference Include="..\SciChart.Wpf.UI.Reactive\SciChart.Wpf.UI.Reactive.csproj">
       <Project>{D78F4BCF-C408-422C-A327-FEF8D8E07EE6}</Project>
       <Name>SciChart.Wpf.UI.Reactive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.csproj">
+      <Project>{f62bdb9c-0304-46d3-b088-62da495b46dd}</Project>
+      <Name>SciChart.Wpf.UI.Transitionz</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

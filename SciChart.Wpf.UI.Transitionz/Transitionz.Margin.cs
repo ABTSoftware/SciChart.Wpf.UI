@@ -39,14 +39,11 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Threading;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
     // Five issues remain 
     // 
@@ -58,7 +55,7 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
     {               
 #if !SILVERLIGHT
        public static readonly DependencyProperty MarginProperty =
-            DependencyProperty.RegisterAttached("Margin", typeof(MarginParamsExtension), typeof(Transitionz), new PropertyMetadata(default(MarginParamsExtension), OnMarginParamsChanged));
+            DependencyProperty.RegisterAttached("Margin", typeof(MarginParamsExtension), typeof(UI.Transitionz.Transitionz), new PropertyMetadata(default(MarginParamsExtension), OnMarginParamsChanged));
 
         public static void SetMargin(UIElement element, MarginParamsExtension value)
         {
@@ -106,7 +103,7 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
         }
 
         public static readonly DependencyProperty LayoutScaleProperty =
-            DependencyProperty.RegisterAttached("LayoutScale", typeof(IScaleParams), typeof(Transitionz), new PropertyMetadata(default(IScaleParams), OnLayoutScaleParamsChanged));
+            DependencyProperty.RegisterAttached("LayoutScale", typeof(IScaleParams), typeof(UI.Transitionz.Transitionz), new PropertyMetadata(default(IScaleParams), OnLayoutScaleParamsChanged));
 
         public static void SetLayoutScale(UIElement element, IScaleParams value)
         {

@@ -39,67 +39,32 @@
 #endregion
 
 using System;
-using System.Globalization;
+using System.Windows.Markup;
 using System.Windows.Media.Animation;
-using SciChart.Wpf.UI.Reactive.Annotations;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
-    [Flags]
-    public enum TransitionOn
+    public interface IOpacityParams : ITransitionParams<double>
     {
-        Once = 0x1,
-        Loaded = 0x2,
-        DataContextChanged = 0x4,
-        Visibility = 0x8
     }
 
-    public interface ITransitionParams<T>
+    public class OpacityParams : TransitionzParams<double>, IOpacityParams
     {
-        double BeginTime { get; set; }
-        double Duration { get; set; }
-        T From { get; set; }
-        T To { get; set; }
-        EasingFunctionBase Ease { get; set; }
-        EasingFunctionBase ReverseEase { get; set; }
-        FillBehavior FillBehavior { get; set; }
-        TransitionOn TransitionOn { get; set; }
-        bool AutoReverse { get; set; }
     }
 
-    public class TransitionzParams<T>
+    [MarkupExtensionReturnType(typeof(IOpacityParams))]
+    public class OpacityParamsExtension : BaseTransitionzExtension<double>, IOpacityParams
     {
-        public TransitionzParams()
+        public OpacityParamsExtension() { }
+
+        public OpacityParamsExtension(double beginTime, double duration, double from, double to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoReverse)
+            : base(beginTime, duration, from, to, ease, reverseEase, transitionOn, autoReverse)
         {
-            this.Duration = 300;
-            this.FillBehavior = FillBehavior.HoldEnd;
-            this.TransitionOn = TransitionOn.Once;
         }
 
-        public TransitionzParams(double beginTime, double duration, T from, T to, TransitionOn transitionOn, bool autoReverse)
-            : this()
+        public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            this.BeginTime = beginTime;
-            this.Duration = duration;
-            this.From = from;
-            this.To = to;
-            this.TransitionOn = transitionOn;
-            this.AutoReverse = autoReverse;
-        }
-
-        public EasingFunctionBase Ease { get; set; }
-        public EasingFunctionBase ReverseEase { get; set; }
-        public TransitionOn TransitionOn { get; set; }
-        public double BeginTime { get; set; }
-        public double Duration { get; set; }
-        public T From { get; set; }
-        public T To { get; set; }
-        public FillBehavior FillBehavior { get; set; }
-        public bool AutoReverse { get; set; }
-
-        protected static double ToDbl(string str)
-        {
-            return double.Parse(str, CultureInfo.InvariantCulture);
+            return this;
         }
     }
 }

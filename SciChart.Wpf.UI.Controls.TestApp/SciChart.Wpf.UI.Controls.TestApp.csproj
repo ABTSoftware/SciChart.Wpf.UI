@@ -132,6 +132,10 @@
       <Project>{d78f4bcf-c408-422c-a327-fef8d8e07ee6}</Project>
       <Name>SciChart.Wpf.UI.Reactive</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.csproj">
+      <Project>{F62BDB9C-0304-46D3-B088-62DA495B46DD}</Project>
+      <Name>SciChart.Wpf.UI.Transitionz</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

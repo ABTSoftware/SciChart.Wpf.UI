@@ -2,9 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:SciChart.Wpf.UI.Controls.Converters"
                     xmlns:controls2="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-                    xmlns:tz="clr-namespace:SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz"
                     xmlns:controls1="clr-namespace:SciChart.Wpf.UI.Controls"
-                    xmlns:converters1="clr-namespace:SciChart.Wpf.UI.Controls.Converters">
+                    xmlns:converters1="clr-namespace:SciChart.Wpf.UI.Controls.Converters"
+                    xmlns:tz="http://schemas.abtsoftware.co.uk/transitionz">
 
     <converters:VisibleIfNotNullConverter x:Key="VisibleNotNull"/>
     <converters:VisibleIfNullConverter x:Key="VisibleNull"/>

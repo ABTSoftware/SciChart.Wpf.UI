@@ -43,8 +43,6 @@ using System.Windows.Markup;
 
 
 [assembly: XmlnsDefinition("http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Controls")]
-[assembly: XmlnsDefinition("http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Controls.AttachedBehaviours")]
-[assembly: XmlnsDefinition("http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz")]
 [assembly: XmlnsDefinition("http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Controls.Converters")]
 [assembly: XmlnsDefinition(@"http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Controls.Markup")]
 

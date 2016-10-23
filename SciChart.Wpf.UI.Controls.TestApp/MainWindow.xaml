@@ -4,6 +4,7 @@
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:preview="clr-namespace:SciChart.Wpf.UI.Controls.Preview"
         xmlns:abt="http://schemas.abtsoftware.co.uk/presentation"
+        xmlns:tz="http://schemas.abtsoftware.co.uk/transitionz"
         GlowBrush="{DynamicResource AccentColorBrush}"
         Title="Core Framework | Presentation Preview"
         Width="1025"
@@ -118,9 +119,9 @@
                         
                         <CheckBox Grid.Row="0" Content="Show content" IsChecked="False" x:Name="CheckBox"/>
                         <TextBlock Grid.Row="1" FontSize="42" Text="Hello Transitionz World"
-                                    abt:Transitionz.Opacity="{abt:OpacityParams BeginTime=0, To=1, Duration=350, TransitionOn=Visibility}"
-                                    abt:Transitionz.Translate="{abt:TranslateParams BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"
-                                    abt:Transitionz.Visibility="{Binding ElementName=CheckBox, Path=IsChecked, Converter={StaticResource b2vConverter}}"/>
+                                    tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=0, To=1, Duration=350, TransitionOn=Visibility}"
+                                    tz:Transitionz.Translate="{tz:TranslateParams BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"
+                                    tz:Transitionz.Visibility="{Binding ElementName=CheckBox, Path=IsChecked, Converter={StaticResource b2vConverter}}"/>
                     </Grid>
                 </TabItem>
                 

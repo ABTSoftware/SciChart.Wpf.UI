@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media.Animation;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
     public interface IScaleParams
     {

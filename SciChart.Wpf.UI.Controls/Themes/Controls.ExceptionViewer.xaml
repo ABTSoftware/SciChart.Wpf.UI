@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:SciChart.Wpf.UI.Controls.Converters"
                     xmlns:markup="clr-namespace:SciChart.Wpf.UI.Controls.Markup"
-                    xmlns:transitionz="clr-namespace:SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz"
-                    xmlns:controls="clr-namespace:SciChart.Wpf.UI.Controls">
+                    xmlns:controls="clr-namespace:SciChart.Wpf.UI.Controls"
+                    xmlns:tz="http://schemas.abtsoftware.co.uk/transitionz">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Controls.TextStyles.xaml"/>
@@ -12,7 +12,7 @@
     <converters:NullToBooleanConverter x:Key="Nbc" NullValue="False" NotNullValue="True"/>
     <converters:BoolToValueConverter x:Key="Bvc" TrueValue="Visible" FalseValue="Collapsed"/>
     <converters:VisibleIfNotNullConverter x:Key="Vnn"/>
-    <transitionz:TransitionzVisibilityConverter x:Key="Tvc" FadeInTransition="{transitionz:OpacityParams From=0, To=1, Duration=250}"/>        
+    <tz:TransitionzVisibilityConverter x:Key="Tvc" FadeInTransition="{tz:OpacityParams From=0, To=1, Duration=250}"/>        
         
     <Style TargetType="controls:ExceptionViewer">    
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -21,7 +21,7 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="HasInnerExceptions" Value="{Binding Exception.Exception.InnerException, Converter={StaticResource Nbc}, RelativeSource={RelativeSource Self}}"/>
         <Setter Property="Visibility" Value="{Binding Exception, Converter={StaticResource Vnn}, RelativeSource={RelativeSource Self}}"/>
-        <Setter Property="transitionz:Transitionz.Opacity" Value="{Binding Visibility, RelativeSource={RelativeSource Self}, Converter={StaticResource Tvc}}"/>
+        <Setter Property="tz:Transitionz.Opacity" Value="{Binding Visibility, RelativeSource={RelativeSource Self}, Converter={StaticResource Tvc}}"/>
         <Setter Property="SupportEmailUri" Value="{Binding Exception.SupportEmailUri}"/>
         <Setter Property="ShowEmailSupport" Value="{Binding Exception.ShowEmailSupport}"/>
         <Setter Property="Template">

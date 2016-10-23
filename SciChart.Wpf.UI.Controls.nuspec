@@ -17,6 +17,7 @@ The library also includes Transitionz, an animation library which allows for eas
     <description></description>
     <copyright>Copyright © SciChart Ltd 2013-2016</copyright>
 	<dependencies>
+		<dependency id="SciChart.WPF.UI.Transitionz" version="$version$" />    
 		<dependency id="SciChart.WPF.UI.Reactive" version="$version$" />         
 		<dependency id="MahAppls.Metro" version="0.15.0-ALPHA29" />        
 		<dependency id="Rx.Core" version="2.2.5" />        

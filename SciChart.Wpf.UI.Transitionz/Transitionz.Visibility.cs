@@ -1,12 +1,13 @@
 using System;
 using System.Linq;
 using System.Windows;
+using SciChart.Wpf.UI.Transitionz.AttachedBehaviors;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
     public partial class Transitionz
     {
-        public static readonly DependencyProperty VisibilityProperty = DependencyProperty.RegisterAttached("Visibility", typeof(Visibility), typeof(Transitionz), new PropertyMetadata(default(Visibility)));
+        public static readonly DependencyProperty VisibilityProperty = DependencyProperty.RegisterAttached("Visibility", typeof(Visibility), typeof(UI.Transitionz.Transitionz), new PropertyMetadata(default(Visibility)));
 
         public static void SetVisibility(UIElement element, Visibility value)
         {
@@ -25,7 +26,7 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
 
         public static void AddVisibilityChangedHandler(DependencyObject d, EventHandler handler)
         {
-            var pcn = new PropertyChangeNotifier(d, Transitionz.VisibilityProperty);
+            var pcn = new PropertyChangeNotifier(d, UI.Transitionz.Transitionz.VisibilityProperty);
             pcn.ValueChanged += handler;
         }
 

@@ -39,18 +39,26 @@
 #endregion
 
 using System;
-using System.Windows;
-using System.Windows.Markup;
+using System.Globalization;
 using System.Windows.Media.Animation;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
-    public interface ITranslateParams
+    [Flags]
+    public enum TransitionOn
+    {
+        Once = 0x1,
+        Loaded = 0x2,
+        DataContextChanged = 0x4,
+        Visibility = 0x8
+    }
+
+    public interface ITransitionParams<T>
     {
         double BeginTime { get; set; }
         double Duration { get; set; }
-        Point From { get; set; }
-        Point To { get; set; }
+        T From { get; set; }
+        T To { get; set; }
         EasingFunctionBase Ease { get; set; }
         EasingFunctionBase ReverseEase { get; set; }
         FillBehavior FillBehavior { get; set; }
@@ -58,34 +66,39 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
         bool AutoReverse { get; set; }
     }
 
-    public class TranslateParams : ITranslateParams
+    public class TransitionzParams<T>
     {
-        public double BeginTime { get; set; }
-        public double Duration { get; set; }
-        public Point From { get; set; }
-        public Point To { get; set; }
+        public TransitionzParams()
+        {
+            this.Duration = 300;
+            this.FillBehavior = FillBehavior.HoldEnd;
+            this.TransitionOn = TransitionOn.Once;
+        }
+
+        public TransitionzParams(double beginTime, double duration, T from, T to, TransitionOn transitionOn, bool autoReverse)
+            : this()
+        {
+            this.BeginTime = beginTime;
+            this.Duration = duration;
+            this.From = from;
+            this.To = to;
+            this.TransitionOn = transitionOn;
+            this.AutoReverse = autoReverse;
+        }
+
         public EasingFunctionBase Ease { get; set; }
         public EasingFunctionBase ReverseEase { get; set; }
-        public FillBehavior FillBehavior { get; set; }
         public TransitionOn TransitionOn { get; set; }
+        public double BeginTime { get; set; }
+        public double Duration { get; set; }
+        public T From { get; set; }
+        public T To { get; set; }
+        public FillBehavior FillBehavior { get; set; }
         public bool AutoReverse { get; set; }
-    }
 
-    [MarkupExtensionReturnType(typeof(ITranslateParams))]
-    public class TranslateParamsExtension : BaseTransitionzExtension<Point>, ITranslateParams
-    {
-        public TranslateParamsExtension()
+        protected static double ToDbl(string str)
         {
-        }
-
-        public TranslateParamsExtension(double beginTime, double duration, Point from, Point to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoReverse)
-            : base(beginTime, duration, from, to, ease, reverseEase, transitionOn, autoReverse)
-        {
-        }
-
-        public override object ProvideValue(IServiceProvider serviceProvider)
-        {
-            return this;
+            return double.Parse(str, CultureInfo.InvariantCulture);
         }
     }
 }

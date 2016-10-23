@@ -2,8 +2,9 @@ using System;
 using System.Windows;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using SciChart.Wpf.UI.Transitionz.AttachedBehaviors;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
     public partial class Transitionz
     {
@@ -30,8 +31,8 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
 
             if (oldBlurParams != null)
             {
-                target.Loaded -= OnLoadedForTranslate;
-                target.DataContextChanged -= OnDataContextChangedForTranslate;
+                target.Loaded -= Transitionz.OnLoadedForTranslate;
+                target.DataContextChanged -= Transitionz.OnDataContextChangedForTranslate;
             }
 
             if (newBlurParams != null)
@@ -52,7 +53,7 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
 
         private static void DoBlurTansition(IBlurParams blurParams, FrameworkElement target, RoutedEventHandler onLoaded)
         {
-            if (onLoaded != null && HasFlag(blurParams.TransitionOn, TransitionOn.Once))
+            if (onLoaded != null && Transitionz.HasFlag(blurParams.TransitionOn, TransitionOn.Once))
             {
                 target.Loaded -= onLoaded;
             }

@@ -1,12 +1,13 @@
 using System;
 using System.Windows;
 using System.Windows.Media.Animation;
+using SciChart.Wpf.UI.Transitionz.AttachedBehaviors;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
+namespace SciChart.Wpf.UI.Transitionz
 {
     public partial class Transitionz
     {
-        public static readonly DependencyProperty OpacityProperty = DependencyProperty.RegisterAttached("Opacity", typeof(IOpacityParams), typeof(Transitionz), new PropertyMetadata(default(IOpacityParams), OnOpacityChanged));
+        public static readonly DependencyProperty OpacityProperty = DependencyProperty.RegisterAttached("Opacity", typeof(IOpacityParams), typeof(UI.Transitionz.Transitionz), new PropertyMetadata(default(IOpacityParams), OnOpacityChanged));
 
         public static void SetOpacity(UIElement element, IOpacityParams value)
         {
@@ -30,24 +31,24 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
             {
                 target.Loaded -= OnLoadedForOpacity;
                 target.DataContextChanged -= OnDataContextChangedForOpacity;
-                RemoveVisibilityChangedHandler(target, OnVisibilityChangedForOpacity);
+                Transitionz.RemoveVisibilityChangedHandler(target, OnVisibilityChangedForOpacity);
             }
 
             if (newTransitionParams != null)
             {
-                if (HasFlag(newTransitionParams.TransitionOn, TransitionOn.Loaded) || HasFlag(newTransitionParams.TransitionOn, TransitionOn.Once))
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Loaded) || Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Once))
                 {
                     target.Opacity = newTransitionParams.From;
                     target.Loaded += OnLoadedForOpacity;
                     if (target.IsLoaded()) OnLoadedForOpacity(target, null);
                 }
-                if (HasFlag(newTransitionParams.TransitionOn, TransitionOn.DataContextChanged))
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.DataContextChanged))
                 {
                     target.DataContextChanged += OnDataContextChangedForOpacity;
                 }
-                if (HasFlag(newTransitionParams.TransitionOn, TransitionOn.Visibility))
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Visibility))
                 {
-                    AddVisibilityChangedHandler(target, OnVisibilityChangedForOpacity);
+                    Transitionz.AddVisibilityChangedHandler(target, OnVisibilityChangedForOpacity);
                 }
             }
         }
@@ -55,7 +56,7 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
         private static void OnVisibilityChangedForOpacity(object sender, EventArgs e)
         {
             var element = ((FrameworkElement)((PropertyChangeNotifier)sender).PropertySource);
-            var visibility = GetVisibility(element);
+            var visibility = Transitionz.GetVisibility(element);
             if (visibility == Visibility.Visible)
             {
                 element.Visibility = Visibility.Visible;
@@ -81,12 +82,12 @@ namespace SciChart.Wpf.UI.Controls.AttachedBehaviours.Transitionz
             RoutedEventHandler onLoaded,
             Visibility? visibility)
         {
-            if (onLoaded != null && HasFlag(transitionParams.TransitionOn, TransitionOn.Once))
+            if (onLoaded != null && Transitionz.HasFlag(transitionParams.TransitionOn, TransitionOn.Once))
             {
                 target.Loaded -= onLoaded;
             }
 
-            var reverse = IsVisibilityHidden(visibility);
+            var reverse = Transitionz.IsVisibilityHidden(visibility);
 
             var a = new DoubleAnimation
             {
