@@ -4,41 +4,36 @@
     <version>$version$</version>
     <authors>SciChart Ltd</authors>
     <owners>SciChart Ltd</owners>
-    <id>SciChart</id>
-    <title>SciChart</title>
-	<projectUrl>http://www.scichart.com</projectUrl>	
-	<licenseUrl>http://www.scichart.com/scichart-eula</licenseUrl>
-	<releaseNotes>Release Notes found at www.scichart.com/Downloads/Releasenotes.txt</releaseNotes>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>SciChart - High Performance WPF Charts for Scientific and Trading applications. Includes the 2D Charting libraries (excluding DirectX Rendering Plugin)</description>
-    <copyright>Copyright © SciChart Ltd 2011-2016</copyright>
+    <id>SciChart.Wpf.UI.Controls</id>
+    <title>SciChart.Wpf.UI.Controls</title>
+	<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>	
+	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+	<releaseNotes>Core reactive libraries, custom controls and styles for WPF UI created by SciChart Ltd
+
+Used in the SciChart WPF Examples Application, which demonstrates High Performance WPF Charts, available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (RxMain) to allow for easier testing and integration of Reactive into an MVVM Application.
+
+The library also includes Transitionz, an animation library which allows for easy animating of Opacity or X,Y Transforms on Visibility change with simple XAML markup extensions</releaseNotes>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description></description>
+    <copyright>Copyright © SciChart Ltd 2013-2016</copyright>
+	<dependencies>
+		<dependency id="SciChart.WPF.UI.Reactive" version="$version$" />         
+		<dependency id="MahAppls.Metro" version="0.15.0-ALPHA29" />        
+		<dependency id="Rx.Core" version="2.2.5" />        
+		<dependency id="Rx.Main" version="2.2.5" />        
+		<dependency id="Rx.Linq" version="2.2.5" />    
+		<dependency id="Rx.Interfaces" version="2.2.5" />    
+		<dependency id="Rx.PlatformServices" version="2.2.5" />    
+    </dependencies>
   </metadata>
   <files>
-    <file src="Lib\net40\SciChart.Core.dll" target="lib\net40" />
-	<file src="Lib\net40\SciChart.Data.dll" target="lib\net40" />
-	<file src="Lib\net40\SciChart.Drawing.dll" target="lib\net40" />
-	<file src="Lib\net40\SciChart.Charting.dll" target="lib\net40" />
-	<file src="Lib\net40\SciChart.Core.xml" target="lib\net40" />
-	<file src="Lib\net40\SciChart.Data.xml" target="lib\net40" />
-	<file src="Lib\net40\SciChart.Drawing.xml" target="lib\net40" />
-	<file src="Lib\net40\SciChart.Charting.xml" target="lib\net40" />
+    <file src="Lib\SciChart.Wpf.UI.Controls.dll" target="lib\net40" />
+	<file src="Lib\SciChart.Wpf.UI.Controls.XML" target="lib\net40" />
 	
-	<file src="Lib\net45\SciChart.Core.dll" target="lib\net45" />
-	<file src="Lib\net45\SciChart.Data.dll" target="lib\net45" />
-	<file src="Lib\net45\SciChart.Drawing.dll" target="lib\net45" />
-	<file src="Lib\net45\SciChart.Charting.dll" target="lib\net45" />
-	<file src="Lib\net45\SciChart.Core.xml" target="lib\net45" />
-	<file src="Lib\net45\SciChart.Data.xml" target="lib\net45" />
-	<file src="Lib\net45\SciChart.Drawing.xml" target="lib\net45" />
-	<file src="Lib\net45\SciChart.Charting.xml" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Wpf.UI.Controls.dll" target="lib\net45" />
+	<file src="Lib\net45\SciChart.Wpf.UI.Controls.XML" target="lib\net45" />
 	
-	<file src="Lib\net46\SciChart.Core.dll" target="lib\net46" />
-	<file src="Lib\net46\SciChart.Data.dll" target="lib\net46" />
-	<file src="Lib\net46\SciChart.Drawing.dll" target="lib\net46" />
-	<file src="Lib\net46\SciChart.Charting.dll" target="lib\net46" />
-	<file src="Lib\net46\SciChart.Core.xml" target="lib\net46" />
-	<file src="Lib\net46\SciChart.Data.xml" target="lib\net46" />
-	<file src="Lib\net46\SciChart.Drawing.xml" target="lib\net46" />
-	<file src="Lib\net46\SciChart.Charting.xml" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Wpf.UI.Controls.dll" target="lib\net46" />
+	<file src="Lib\net46\SciChart.Wpf.UI.Controls.XML" target="lib\net46" />
   </files>
 </package>
