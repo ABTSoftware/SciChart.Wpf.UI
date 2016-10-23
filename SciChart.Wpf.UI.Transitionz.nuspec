@@ -8,9 +8,8 @@
     <title>SciChart.Wpf.UI.Transitionz</title>
 	<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>	
 	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
-	<releaseNotes>Transitionz is an animation library made by SciChart Ltd which allows for easy animating of Opacity or X,Y Transforms on Visibility change with simple XAML markup extensions</releaseNotes>
+	<description>Transitionz is an animation library made by SciChart Ltd which allows for easy animating of Opacity or X,Y Transforms on Visibility change with simple XAML markup extensions</description>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description></description>
     <copyright>Copyright © SciChart Ltd 2013-2016</copyright>
   </metadata>
   <files>
