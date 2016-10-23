@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours
+namespace SciChart.Wpf.UI.AttachedBehaviours
 {
     public class ListBoxExtensions
     {        

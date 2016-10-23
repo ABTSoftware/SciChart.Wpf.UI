@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
-namespace SciChart.Wpf.UI.Reactive.Bootstrap
+namespace SciChart.Wpf.UI.Bootstrap
 {
     public class ExplicitAssemblyDiscovery : IAssemblyDiscovery
     {

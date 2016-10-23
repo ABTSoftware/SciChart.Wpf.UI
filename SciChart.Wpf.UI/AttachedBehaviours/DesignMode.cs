@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours
+namespace SciChart.Wpf.UI.AttachedBehaviours
 {
     /// <summary>
     /// Allows setting of Design-Time properties

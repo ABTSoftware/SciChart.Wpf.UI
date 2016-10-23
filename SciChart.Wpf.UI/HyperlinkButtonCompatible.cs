@@ -1,4 +1,4 @@
-﻿namespace SciChart.Wpf.UI.Controls
+﻿namespace SciChart.Wpf.UI
 {
     public class HyperlinkButtonCompatible : HyperlinkButton
     {

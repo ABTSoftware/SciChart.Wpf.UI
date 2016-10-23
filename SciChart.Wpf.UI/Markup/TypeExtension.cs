@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Markup;
 
-namespace SciChart.Wpf.UI.Controls.Markup
+namespace SciChart.Wpf.UI.Markup
 {
     /// <summary>
     /// A MarkupExtension which introduces x:Type like syntax to both WPF and Silverlight (Cross-platform). This is used internally

@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="SciChart.Wpf.UI.Controls.WarningDialogView"
+﻿<UserControl x:Class="SciChart.Wpf.UI.WarningDialogView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:controls="clr-namespace:SciChart.Wpf.UI.Controls"
              xmlns:tz="http://schemas.abtsoftware.co.uk/transitionz"
+             xmlns:ui="clr-namespace:SciChart.Wpf.UI"
              mc:Ignorable="d" 
              VerticalAlignment="Center"
              Background="{DynamicResource AccentColorBrush}"
@@ -13,7 +13,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ExponentialEase x:Key="ExpEase" EasingMode="EaseOut" Exponent="5" />
-            <controls:WarningDialogResultConverter x:Key="WarningDialogResultConverter"/>
+            <ui:WarningDialogResultConverter x:Key="WarningDialogResultConverter"/>
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
@@ -30,7 +30,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock 
 					Text="{Binding Title}"
-					Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:WarningDialogView}}}" 
+					Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ui:WarningDialogView}}}" 
                     MinWidth="180" VerticalAlignment="Center"
 					Margin="0" />
             </StackPanel>
@@ -44,9 +44,9 @@
                                 <ColumnDefinition Width="15"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Ellipse Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Stroke="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:WarningDialogView}}}" Width="10" Height="10" StrokeThickness="1"/>
-                            <Ellipse Grid.Column="0" x:Name="Marker" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:WarningDialogView}}}" Width="6" Height="6"/>
-                            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:WarningDialogView}}}" Text="{Binding Mode=OneWay}" TextWrapping="Wrap" MaxWidth="450"/>
+                            <Ellipse Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Stroke="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ui:WarningDialogView}}}" Width="10" Height="10" StrokeThickness="1"/>
+                            <Ellipse Grid.Column="0" x:Name="Marker" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ui:WarningDialogView}}}" Width="6" Height="6"/>
+                            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ui:WarningDialogView}}}" Text="{Binding Mode=OneWay}" TextWrapping="Wrap" MaxWidth="450"/>
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Bootstrap;
 using SciChart.Wpf.UI.Reactive.Tests.Stubs;
 using NUnit.Framework;
+using SciChart.Wpf.UI.Bootstrap;
 
 namespace SciChart.Wpf.UI.Reactive.Tests
 {

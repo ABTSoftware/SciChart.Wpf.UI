@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
-namespace SciChart.Wpf.UI.Reactive.Bootstrap
+namespace SciChart.Wpf.UI.Bootstrap
 {
     public interface IAssemblyDiscovery
     {

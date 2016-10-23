@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace SciChart.Wpf.UI.Controls.Converters
+namespace SciChart.Wpf.UI.Converters
 {
     public class InverseBooleanConverter : IValueConverter
     {

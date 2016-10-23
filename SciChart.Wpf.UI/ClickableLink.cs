@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Documents;
 
-namespace SciChart.Wpf.UI.Controls
+namespace SciChart.Wpf.UI
 {
     /// <summary>
     /// A hyperlink that actually clicks

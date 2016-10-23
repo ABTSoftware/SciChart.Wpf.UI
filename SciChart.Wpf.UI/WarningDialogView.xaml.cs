@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace SciChart.Wpf.UI.Controls
+namespace SciChart.Wpf.UI
 {
     /// <summary>
     /// Interaction logic for WarningDialogView.xaml

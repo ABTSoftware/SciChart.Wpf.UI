@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SciChart.Wpf.UI.Reactive.Utility
+namespace SciChart.Wpf.UI.Bootstrap.Utility
 {
     public class NumberUtil
     {

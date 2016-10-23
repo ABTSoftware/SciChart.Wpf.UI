@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Markup;
 
-namespace SciChart.Wpf.UI.Controls
+namespace SciChart.Wpf.UI
 {
     [ContentProperty("Content")]
     public class LabelControl : Control

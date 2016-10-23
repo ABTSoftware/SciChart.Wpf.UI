@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours
+namespace SciChart.Wpf.UI.AttachedBehaviours
 {
     // Taken from http://webcache.googleusercontent.com/search?q=cache:40po_mP2pFIJ:blog.functionalfun.net/2008/06/wpf-passwordbox-and-data-binding.html+&cd=5&hl=en&ct=clnk&gl=uk&client=safari
     public class BindablePasswordBox

@@ -4,9 +4,9 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Effects;
 using System.Windows.Threading;
-using SciChart.Wpf.UI.Controls.Extensions;
+using SciChart.Wpf.UI.Extensions;
 
-namespace SciChart.Wpf.UI.Controls
+namespace SciChart.Wpf.UI
 {
     public class PopupHost : ContentControl
     {

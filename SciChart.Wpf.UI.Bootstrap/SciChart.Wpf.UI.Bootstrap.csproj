@@ -88,6 +88,8 @@
     <Compile Include="IAttributedTypeDiscoveryService.cs" />
     <Compile Include="IViewContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLocator.cs" />
+    <Compile Include="UnityExtensions.cs" />
     <Compile Include="Utility\LogFacade.cs" />
     <Compile Include="Utility\NumberUtil.cs" />
     <Compile Include="Utility\ReflectionUtil.cs" />

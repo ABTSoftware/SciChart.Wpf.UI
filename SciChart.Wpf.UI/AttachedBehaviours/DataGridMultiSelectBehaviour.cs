@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours
+namespace SciChart.Wpf.UI.AttachedBehaviours
 {
     /// <summary>
     /// DataGrid MultipleSelection behaviour from http://www.codeproject.com/Articles/412417/Managing-Multiple-selection-in-View-Model-NET-Metr

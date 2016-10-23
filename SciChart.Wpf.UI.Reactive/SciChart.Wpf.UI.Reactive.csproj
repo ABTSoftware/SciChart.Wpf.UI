@@ -228,7 +228,6 @@
     <Compile Include="ReactiveBootstrapper.cs" />
     <Compile Include="Services\ExampleUsage.cs" />
     <Compile Include="Services\ReportEvents.cs" />
-    <Compile Include="UnityExtensions.cs" />
     <Compile Include="Validate.cs" />
     <Compile Include="Observability\ObservableObjectBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

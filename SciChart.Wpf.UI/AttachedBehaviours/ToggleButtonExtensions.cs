@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours
+namespace SciChart.Wpf.UI.AttachedBehaviours
 {
     /// <summary>
     /// Attached property to mimic radio grouping on toggle buttons

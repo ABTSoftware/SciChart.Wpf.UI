@@ -1,20 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:SciChart.Wpf.UI.Controls.Converters"
-                    xmlns:markup="clr-namespace:SciChart.Wpf.UI.Controls.Markup"
-                    xmlns:controls="clr-namespace:SciChart.Wpf.UI.Controls"
-                    xmlns:tz="http://schemas.abtsoftware.co.uk/transitionz">
+                    xmlns:tz="http://schemas.abtsoftware.co.uk/transitionz"
+                    xmlns:converters1="clr-namespace:SciChart.Wpf.UI.Converters"
+                    xmlns:ui="clr-namespace:SciChart.Wpf.UI">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Controls.TextStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
-    <converters:NullToBooleanConverter x:Key="Nbc" NullValue="False" NotNullValue="True"/>
-    <converters:BoolToValueConverter x:Key="Bvc" TrueValue="Visible" FalseValue="Collapsed"/>
-    <converters:VisibleIfNotNullConverter x:Key="Vnn"/>
+    <converters1:NullToBooleanConverter x:Key="Nbc" NullValue="False" NotNullValue="True"/>
+    <converters1:BoolToValueConverter x:Key="Bvc" TrueValue="Visible" FalseValue="Collapsed"/>
+    <converters1:VisibleIfNotNullConverter x:Key="Vnn"/>
     <tz:TransitionzVisibilityConverter x:Key="Tvc" FadeInTransition="{tz:OpacityParams From=0, To=1, Duration=250}"/>        
         
-    <Style TargetType="controls:ExceptionViewer">    
+    <Style TargetType="ui:ExceptionViewer">    
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Background" Value="Crimson"/>
@@ -26,7 +25,7 @@
         <Setter Property="ShowEmailSupport" Value="{Binding Exception.ShowEmailSupport}"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="controls:ExceptionViewer">
+                <ControlTemplate TargetType="ui:ExceptionViewer">
                     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                         <Border DataContext="{TemplateBinding Exception}"
                                 BorderBrush="{TemplateBinding BorderBrush}" 
@@ -62,11 +61,11 @@
 
                                 <TextBlock Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="2"
                                            Visibility="{Binding Path=ShowEmailSupport, Converter={StaticResource Bvc}, RelativeSource={RelativeSource TemplatedParent}}">
-                                    <controls:ClickableLink NavigateUri="{Binding Path=SupportEmailUri, RelativeSource={RelativeSource TemplatedParent}}"
+                                    <ui:ClickableLink NavigateUri="{Binding Path=SupportEmailUri, RelativeSource={RelativeSource TemplatedParent}}"
                                                             MailToSubject="{Binding Header}"
                                                             MailToBody="{Binding Messages}">
                                         <Run Text="Email Support" Foreground="White" TextDecorations="Underline"/>
-                                    </controls:ClickableLink>
+                                    </ui:ClickableLink>
                                 </TextBlock>
 
                                 

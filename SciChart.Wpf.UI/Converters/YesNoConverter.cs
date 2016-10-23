@@ -1,4 +1,4 @@
-﻿namespace SciChart.Wpf.UI.Controls.Converters
+﻿namespace SciChart.Wpf.UI.Converters
 {
     public class YesNoConverter : BoolToValueConverter
     {

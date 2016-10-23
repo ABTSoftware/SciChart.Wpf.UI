@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using SciChart.Wpf.UI.Reactive;
 
-namespace SciChart.Wpf.UI.Controls.AttachedBehaviours
+namespace SciChart.Wpf.UI.AttachedBehaviours
 {
     /// <summary>
     /// A simple behaviour which injects DataGrid.SelectedItems into a ViewModel via an ActionCommand{T}

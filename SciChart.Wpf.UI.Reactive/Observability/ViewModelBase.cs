@@ -1,5 +1,5 @@
-﻿using SciChart.Wpf.UI.Reactive.Behaviours;
-using SciChart.Wpf.UI.Reactive.Bootstrap;
+﻿using SciChart.Wpf.UI.Bootstrap;
+using SciChart.Wpf.UI.Reactive.Behaviours;
 
 namespace SciChart.Wpf.UI.Reactive.Observability
 {

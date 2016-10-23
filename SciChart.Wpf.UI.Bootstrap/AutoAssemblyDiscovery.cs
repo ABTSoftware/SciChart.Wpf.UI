@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using SciChart.Wpf.UI.Reactive.Utility;
+using SciChart.Wpf.UI.Bootstrap.Utility;
 
-namespace SciChart.Wpf.UI.Reactive.Bootstrap
+namespace SciChart.Wpf.UI.Bootstrap
 {    
     public class AutoAssemblyDiscovery : IAssemblyDiscovery
     {

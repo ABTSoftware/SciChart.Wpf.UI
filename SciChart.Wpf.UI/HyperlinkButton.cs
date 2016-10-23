@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace SciChart.Wpf.UI.Controls
+namespace SciChart.Wpf.UI
 {
     public class HyperlinkButton : Button
     {

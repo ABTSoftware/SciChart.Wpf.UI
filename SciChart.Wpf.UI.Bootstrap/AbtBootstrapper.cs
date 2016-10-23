@@ -1,16 +1,9 @@
 ﻿using System.Linq;
-using SciChart.Wpf.UI.Reactive.Utility;
 using Microsoft.Practices.Unity;
+using SciChart.Wpf.UI.Bootstrap.Utility;
 
-namespace SciChart.Wpf.UI.Reactive.Bootstrap
+namespace SciChart.Wpf.UI.Bootstrap
 {
-    public class ServiceLocator
-    {
-        private static readonly IUnityContainer _container = new UnityContainer();
-
-        public static IUnityContainer Container { get { return _container; } }
-    }
-
     public class AbtBootstrapper
     {
         private static readonly ILogFacade Log = LogManagerFacade.GetLogger(typeof(AbtBootstrapper));

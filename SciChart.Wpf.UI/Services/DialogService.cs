@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows;
-using SciChart.Wpf.UI.Reactive.Bootstrap;
 using Microsoft.Win32;
+using SciChart.Wpf.UI.Bootstrap;
 
-namespace SciChart.Wpf.UI.Controls.Services
+namespace SciChart.Wpf.UI.Services
 {
     public interface IDialogService
     {

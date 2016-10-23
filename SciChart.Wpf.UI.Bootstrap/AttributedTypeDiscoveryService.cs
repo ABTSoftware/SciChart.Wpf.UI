@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using SciChart.Wpf.UI.Reactive.Utility;
+using SciChart.Wpf.UI.Bootstrap.Utility;
 
-namespace SciChart.Wpf.UI.Reactive.Bootstrap
+namespace SciChart.Wpf.UI.Bootstrap
 {
     public class AttributedTypeDiscoveryService : IAttributedTypeDiscoveryService
     {

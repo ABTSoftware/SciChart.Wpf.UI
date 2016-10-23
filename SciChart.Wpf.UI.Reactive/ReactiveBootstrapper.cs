@@ -2,11 +2,11 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
+using SciChart.Wpf.UI.Bootstrap;
 using SciChart.Wpf.UI.Reactive.Async;
-using SciChart.Wpf.UI.Reactive.Bootstrap;
 using SciChart.Wpf.UI.Reactive.Observability;
 
-namespace SciChart.WPF.UI.Reactive
+namespace SciChart.Wpf.UI.Reactive
 {
     public class ReactiveBootstrapper : AbtBootstrapper
     {

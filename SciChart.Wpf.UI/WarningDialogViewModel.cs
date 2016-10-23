@@ -7,7 +7,7 @@ using System.Reactive.Subjects;
 using SciChart.Wpf.UI.Reactive;
 using SciChart.Wpf.UI.Reactive.Observability;
 
-namespace SciChart.Wpf.UI.Controls
+namespace SciChart.Wpf.UI
 {
     public class WarningsDialogViewModelDesignTime : WarningsDialogViewModel
     {

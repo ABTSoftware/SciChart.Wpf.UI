@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
-using SciChart.Wpf.UI.Reactive.Bootstrap;
 using NUnit.Framework;
+using SciChart.Wpf.UI.Bootstrap;
 
 namespace SciChart.Wpf.UI.Reactive.Tests.Bootstrap
 {
