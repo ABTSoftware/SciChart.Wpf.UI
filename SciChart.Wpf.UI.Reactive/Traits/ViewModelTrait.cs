@@ -3,7 +3,7 @@ using System.Reactive.Disposables;
 using SciChart.Wpf.UI.Reactive;
 using SciChart.Wpf.UI.Reactive.Observability;
 
-namespace SciChart.WPF.UI.Reactive.Traits
+namespace SciChart.Wpf.UI.Reactive.Traits
 {
     public interface IViewModelTrait : ICompositeDisposable
     {        

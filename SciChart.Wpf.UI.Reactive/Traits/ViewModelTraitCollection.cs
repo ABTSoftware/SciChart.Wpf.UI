@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Reactive.Disposables;
 using Microsoft.Practices.Unity;
-using SciChart.Wpf.UI.Reactive;
 using SciChart.Wpf.UI.Reactive.Observability;
 
-namespace SciChart.WPF.UI.Reactive.Traits
+namespace SciChart.Wpf.UI.Reactive.Traits
 {
     /// <summary>
     /// A collection of <see cref="IViewModelTrait"/> - traits or viewmodel behaviours which are added to <see cref="ViewModelWithTraitsBase"/> 

@@ -7,8 +7,8 @@
     <ProjectGuid>{D78F4BCF-C408-422C-A327-FEF8D8E07EE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SciChart.WPF.UI.Reactive</RootNamespace>
-    <AssemblyName>SciChart.WPF.UI.Reactive</AssemblyName>
+    <RootNamespace>SciChart.Wpf.UI.Reactive</RootNamespace>
+    <AssemblyName>SciChart.Wpf.UI.Reactive</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Build\Debug\SciChart.WPF.UI.Reactive.XML</DocumentationFile>
+    <DocumentationFile>..\Build\Debug\SciChart.Wpf.UI.Reactive.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Build\Release\SciChart.WPF.UI.Reactive.XML</DocumentationFile>
+    <DocumentationFile>..\Build\Release\SciChart.Wpf.UI.Reactive.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -78,7 +78,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>..\Build\Release\net45\SciChart.WPF.UI.Reactive.XML</DocumentationFile>
+    <DocumentationFile>..\Build\Release\net45\SciChart.Wpf.UI.Reactive.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release45|x86'">
     <OutputPath>bin\x86\Release45\</OutputPath>
@@ -106,7 +106,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>..\Build\Release\net46\SciChart.WPF.UI.Reactive.XML</DocumentationFile>
+    <DocumentationFile>..\Build\Release\net46\SciChart.Wpf.UI.Reactive.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release46|x86'">
     <OutputPath>bin\x86\Release46\</OutputPath>
