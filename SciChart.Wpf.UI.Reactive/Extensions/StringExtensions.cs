@@ -30,6 +30,12 @@ namespace SciChart.Wpf.UI.Reactive.Extensions
             return stream;
         }
 
+        /// <summary>
+        /// SQL-Like search with wildcard support e.g. if ("HelloWorld".Like("%W%rld%")) will return true
+        /// </summary>
+        /// <param name="toSearch">The string to search.</param>
+        /// <param name="toFind">To search query using SQL Like syntax.</param>
+        /// <returns>True if the query appears in the search</returns>
         public static bool Like(this string toSearch, string toFind)
         {
             toFind = toFind.Replace('*', '%');

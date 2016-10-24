@@ -28,7 +28,7 @@ namespace SciChart.Wpf.UI
         Cancel = 0x8
     }
 
-    public class WarningsDialogViewModel : ViewModelBase
+    public class WarningsDialogViewModel : ViewModelWithTraitsBase
     {
         private readonly Subject<WarningDialogResult> _sub = new Subject<WarningDialogResult>();
 

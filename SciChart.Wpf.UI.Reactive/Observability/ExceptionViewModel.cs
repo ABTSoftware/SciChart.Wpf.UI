@@ -4,7 +4,7 @@ using System.Reactive.Linq;
 
 namespace SciChart.Wpf.UI.Reactive.Observability
 {
-    public class ExceptionViewModel : ViewModelBase
+    public class ExceptionViewModel : ViewModelWithTraitsBase
     {
         public static string DefaultSupportEmailUri { get; set; }
         public static bool DefaultShowEmailSupport { get; set; }

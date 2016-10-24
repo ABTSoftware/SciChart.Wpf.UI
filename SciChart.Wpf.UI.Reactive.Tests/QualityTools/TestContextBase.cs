@@ -11,7 +11,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools
         {
             Container = new UnityContainer();
 
-            // Required for ViewModel BehaviourCollection
+            // Required for ViewModel ViewModelTraitCollection
             ViewContext.Container = Container;
 
             SchedulerContext = new TestSchedulerContext();

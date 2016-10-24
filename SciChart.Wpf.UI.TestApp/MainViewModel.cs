@@ -12,7 +12,7 @@ using SciChart.Wpf.UI.Controls;
 
 namespace SciChart.Wpf.UI.Controls.Preview
 {
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelWithTraitsBase
     {
         public MainViewModel()
         {            

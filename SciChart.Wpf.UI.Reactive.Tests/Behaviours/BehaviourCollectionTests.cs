@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Behaviours;
 using SciChart.Wpf.UI.Reactive.Observability;
 using SciChart.Wpf.UI.Reactive.Tests.Stubs;
 using Microsoft.Practices.Unity;
 using NUnit.Framework;
+using SciChart.WPF.UI.Reactive.Traits;
 
 namespace SciChart.Wpf.UI.Reactive.Tests.Behaviours
 {
@@ -18,9 +18,9 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Behaviours
         {            
         }
 
-        public class MyBehaviour : Behaviour<MyObservableObject>
+        public class MyViewModelTrait : ViewModelTrait<MyObservableObject>
         {
-            public MyBehaviour(MyObservableObject target) : base(target)
+            public MyViewModelTrait(MyObservableObject target) : base(target)
             {
             }
 
@@ -42,14 +42,14 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Behaviours
             // Arrange
             var container = new UnityContainer();
             var parent = new MyObservableObject();
-            var collection = new BehaviourCollection(parent, container);
+            var collection = new ViewModelTraitCollection(parent, container);
 
             // Act
-            var b = collection.Add<MyBehaviour>();
+            var b = collection.Add<MyViewModelTrait>();
 
             // Assert
             Assert.That(b, Is.Not.Null);
-            Assert.That(collection.Contains<MyBehaviour>(), Is.True);
+            Assert.That(collection.Contains<MyViewModelTrait>(), Is.True);
             Assert.That(b.Target, Is.EqualTo(parent));
         }
 
@@ -59,18 +59,18 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Behaviours
             // Arrange
             var container = new UnityContainer();
             var parent = new MyObservableObject();
-            var collection = new BehaviourCollection(parent, container);
+            var collection = new ViewModelTraitCollection(parent, container);
 
             // Act
-            var b0 = collection.Add<MyBehaviour>();
+            var b0 = collection.Add<MyViewModelTrait>();
             b0.Id = "b0";
-            var b1 = collection.Add<MyBehaviour>();
+            var b1 = collection.Add<MyViewModelTrait>();
             b1.Id = "b1";
 
             // Assert
             Assert.That(b0, Is.Not.Null);
             Assert.That(b1, Is.Not.Null);
-            Assert.That(collection.Contains<MyBehaviour>(), Is.True);
+            Assert.That(collection.Contains<MyViewModelTrait>(), Is.True);
             Assert.That(b0.IsDisposed, Is.True);
             Assert.That(b1.IsDisposed, Is.False);
             Assert.That(b1.Target, Is.EqualTo(parent));
@@ -82,10 +82,10 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Behaviours
             // Arrange
             var container = new UnityContainer();
             var parent = new MyObservableObject();
-            var collection = new BehaviourCollection(parent, container);
+            var collection = new ViewModelTraitCollection(parent, container);
 
             // Act
-            var b0 = collection.Add<MyBehaviour>();
+            var b0 = collection.Add<MyViewModelTrait>();
             parent.Dispose();
 
             // Assert            

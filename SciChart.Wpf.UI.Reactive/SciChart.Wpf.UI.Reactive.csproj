@@ -216,8 +216,8 @@
     <Compile Include="Async\TaskEx.cs" />
     <Compile Include="Async\TaskImmediateScheduler.cs" />
     <Compile Include="ActionCommand.cs" />
-    <Compile Include="Behaviours\Behaviour.cs" />
-    <Compile Include="Behaviours\BehaviourCollection.cs" />
+    <Compile Include="Traits\ViewModelTrait.cs" />
+    <Compile Include="Traits\ViewModelTraitCollection.cs" />
     <Compile Include="Common\StringlyTyped.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\ObservableExtensions.cs" />
@@ -225,14 +225,13 @@
     <Compile Include="ICompositeDisposable.cs" />
     <Compile Include="Observability\ExceptionViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="ReactiveBootstrapper.cs" />
     <Compile Include="Services\ExampleUsage.cs" />
     <Compile Include="Services\ReportEvents.cs" />
     <Compile Include="Validate.cs" />
     <Compile Include="Observability\ObservableObjectBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Observability\ObservableObjectExtensions.cs" />
-    <Compile Include="Observability\ViewModelBase.cs" />
+    <Compile Include="Observability\ViewModelWithTraitsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
