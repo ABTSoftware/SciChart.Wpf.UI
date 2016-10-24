@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Observability;
-using SciChart.Wpf.UI.Reactive.Tests.Stubs;
+﻿using SciChart.Wpf.UI.Reactive.Observability;
 using Microsoft.Practices.Unity;
 using NUnit.Framework;
-using SciChart.WPF.UI.Reactive.Traits;
+using SciChart.Wpf.UI.Reactive.Traits;
 
 namespace SciChart.Wpf.UI.Reactive.Tests.Behaviours
 {

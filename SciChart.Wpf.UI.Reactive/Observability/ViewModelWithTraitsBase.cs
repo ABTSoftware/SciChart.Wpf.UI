@@ -1,5 +1,5 @@
 ﻿using SciChart.Wpf.UI.Bootstrap;
-using SciChart.WPF.UI.Reactive.Traits;
+using SciChart.Wpf.UI.Reactive.Traits;
 
 namespace SciChart.Wpf.UI.Reactive.Observability
 {
