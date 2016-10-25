@@ -22,7 +22,7 @@ namespace SciChart.Wpf.UI.Transitionz
     }
 
     [MarkupExtensionReturnType(typeof(IBlurParams))]
-    public class BlurParamsExtension : BaseTransitionzExtension<double>, IOpacityParams
+    public class BlurParamsExtension : BaseTransitionzExtension<double>, IBlurParams
     {
         public BlurParamsExtension() { }
 
