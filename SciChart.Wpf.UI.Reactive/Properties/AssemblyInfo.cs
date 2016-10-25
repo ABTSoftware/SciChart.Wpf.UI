@@ -6,11 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SciChart.Wpf.UI.Reactive")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Home to ObservableObjectBase - a class which implements INotifyPropertyChanged and a reactive subject for publishing to Rx observers via WhenPropertyChanged extension method. Also contains helper functions and classes to simplify exception handling and interop between Rx and TPL")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SciChart.Wpf.UI.Reactive")]
-[assembly: AssemblyCopyright("Copyright ©  2013 - 2016 SciChart Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

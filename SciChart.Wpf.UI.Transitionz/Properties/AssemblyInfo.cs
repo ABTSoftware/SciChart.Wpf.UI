@@ -8,10 +8,8 @@ using System.Windows.Markup;
 // associated with an assembly.
 [assembly: AssemblyTitle("SciChart.Wpf.UI.Transitionz")]
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyConfiguration("Transitionz provides an animation binding library allowing you to animate element opacity, translate-transform and blur on Visibiblity or Loaded or property changed")]
 [assembly: AssemblyProduct("SciChart.Wpf.UI.Transitionz")]
-[assembly: AssemblyCopyright("Copyright © 2013-2016 SciChart Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

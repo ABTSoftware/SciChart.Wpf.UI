@@ -9,11 +9,9 @@ using System.Windows.Markup;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SciChart.Wpf.UI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Home to common controls, views and themes used in the SciChart WPF Examples Suite")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SciChart.Wpf.UI")]
-[assembly: AssemblyCopyright("Copyright ©  2013 - 2016 SciChart Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
