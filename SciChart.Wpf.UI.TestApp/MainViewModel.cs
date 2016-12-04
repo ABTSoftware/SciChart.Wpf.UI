@@ -63,6 +63,12 @@ namespace SciChart.Wpf.UI.Controls.Preview
             set { SetDynamicValue("WarningsDialogViewModel", value); }
         }
 
+        public bool ShowTransitionzContent
+        {
+            get { return GetDynamicValue<bool>("ShowTransitionzContent"); }
+            set { SetDynamicValue("ShowTransitionzContent", value); }
+        }
+
         public bool IsPopupShown
         {
             get { return GetDynamicValue<bool>("IsPopupShown"); }
