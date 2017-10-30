@@ -19,8 +19,8 @@ namespace SciChart.Wpf.UI.Transitionz
     {
         public MarginParamsExtension() { }
 
-        public MarginParamsExtension(double beginTime, double duration, Thickness from, Thickness to, EasingFunctionBase ease, TransitionOn transitionOn, bool autoReverse)
-            : base(beginTime, duration, from, to, ease, null, transitionOn, autoReverse)
+        public MarginParamsExtension(double beginTime, double duration, Thickness from, Thickness to, EasingFunctionBase ease, TransitionOn transitionOn, bool autoReverse, RepeatBehavior repeatBehavior)
+            : base(beginTime, duration, from, to, ease, null, transitionOn, autoReverse, repeatBehavior)
         {
         }
 

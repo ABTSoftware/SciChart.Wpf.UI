@@ -33,6 +33,7 @@ namespace SciChart.Wpf.UI.Transitionz
         FillBehavior FillBehavior { get; set; }
         TransitionOn TransitionOn { get; set; }
         bool AutoReverse { get; set; }
+        RepeatBehavior RepeatBehavior { get; set; }
     }
 
     public class TransitionzParams<T>
@@ -44,7 +45,7 @@ namespace SciChart.Wpf.UI.Transitionz
             this.TransitionOn = TransitionOn.Once;
         }
 
-        public TransitionzParams(double beginTime, double duration, T from, T to, TransitionOn transitionOn, bool autoReverse)
+        public TransitionzParams(double beginTime, double duration, T from, T to, TransitionOn transitionOn, bool autoReverse, RepeatBehavior repeatBehavior)
             : this()
         {
             this.BeginTime = beginTime;
@@ -53,6 +54,7 @@ namespace SciChart.Wpf.UI.Transitionz
             this.To = to;
             this.TransitionOn = transitionOn;
             this.AutoReverse = autoReverse;
+            this.RepeatBehavior = repeatBehavior;
         }
 
         public EasingFunctionBase Ease { get; set; }
@@ -64,6 +66,7 @@ namespace SciChart.Wpf.UI.Transitionz
         public T To { get; set; }
         public FillBehavior FillBehavior { get; set; }
         public bool AutoReverse { get; set; }
+        public RepeatBehavior RepeatBehavior { get; set; }
 
         protected static double ToDbl(string str)
         {

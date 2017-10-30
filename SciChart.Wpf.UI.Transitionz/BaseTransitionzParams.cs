@@ -18,9 +18,10 @@ namespace SciChart.Wpf.UI.Transitionz
         {
             this.FillBehavior = FillBehavior.HoldEnd;
             this.TransitionOn = TransitionOn.Once;
+            this.RepeatBehavior = new RepeatBehavior(0);
         }
 
-        protected BaseTransitionzExtension(double beginTime, double duration, T from, T to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoreverse)
+        protected BaseTransitionzExtension(double beginTime, double duration, T from, T to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoreverse, RepeatBehavior repeatBehavior)
             : this()
         {
             this.BeginTime = beginTime;
@@ -31,6 +32,7 @@ namespace SciChart.Wpf.UI.Transitionz
             this.ReverseEase = reverseEase;
             this.TransitionOn = transitionOn;
             this.AutoReverse = autoreverse;
+            this.RepeatBehavior = repeatBehavior;
         }
 
         [ConstructorArgument("BeginTime")]
@@ -58,5 +60,8 @@ namespace SciChart.Wpf.UI.Transitionz
 
         [ConstructorArgument("AutoReverse")]
         public bool AutoReverse { get; set; }
+
+        [ConstructorArgument("RepeatBehavior")]
+        public RepeatBehavior RepeatBehavior { get; set; }
     }
 }

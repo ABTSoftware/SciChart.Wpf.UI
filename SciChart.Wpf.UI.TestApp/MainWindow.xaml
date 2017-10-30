@@ -115,13 +115,24 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        
+
                         <CheckBox Grid.Row="0" Content="Show content" IsChecked="{Binding ShowTransitionzContent, Mode=TwoWay}" x:Name="CheckBox"/>
                         <TextBlock Grid.Row="1" FontSize="42" Text="Hello Transitionz World"
                                     tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=0, To=1, Duration=350, TransitionOn=Visibility}"
                                     tz:Transitionz.Translate="{tz:TranslateParams BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"
                                     tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
+
+                        <TextBlock Grid.Row="2"
+                                   FontSize="42"
+                                   Text="Left and right forever"
+                                   tz:Transitionz.Translate="{tz:TranslateParams AutoReverse=True, RepeatBehavior={x:Static RepeatBehavior.Forever}, BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}" />
+                        <TextBlock Grid.Row="3"
+                                   FontSize="42"
+                                   Text="Left and right for 20 seconds"
+                                   tz:Transitionz.Translate="{tz:TranslateParams AutoReverse=True, RepeatBehavior=0:00:20, BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}" />
                     </Grid>
                 </TabItem>
                 

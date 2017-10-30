@@ -26,8 +26,8 @@ namespace SciChart.Wpf.UI.Transitionz
     {
         public BlurParamsExtension() { }
 
-        public BlurParamsExtension(double beginTime, double duration, double from, double to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoReverse)
-            : base(beginTime, duration, from, to, ease, reverseEase, transitionOn, autoReverse)
+        public BlurParamsExtension(double beginTime, double duration, double from, double to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoReverse, RepeatBehavior repeatBehavior)
+            : base(beginTime, duration, from, to, ease, reverseEase, transitionOn, autoReverse, repeatBehavior)
         {
         }
 

@@ -16,15 +16,16 @@ namespace SciChart.Wpf.UI.Transitionz
 {
     public interface ITranslateParams
     {
+        bool AutoReverse { get; set; }
         double BeginTime { get; set; }
         double Duration { get; set; }
+        EasingFunctionBase Ease { get; set; }
+        FillBehavior FillBehavior { get; set; }
         Point From { get; set; }
         Point To { get; set; }
-        EasingFunctionBase Ease { get; set; }
         EasingFunctionBase ReverseEase { get; set; }
-        FillBehavior FillBehavior { get; set; }
         TransitionOn TransitionOn { get; set; }
-        bool AutoReverse { get; set; }
+        RepeatBehavior RepeatBehavior { get; set; }
     }
 
     public class TranslateParams : ITranslateParams
@@ -38,6 +39,7 @@ namespace SciChart.Wpf.UI.Transitionz
         public FillBehavior FillBehavior { get; set; }
         public TransitionOn TransitionOn { get; set; }
         public bool AutoReverse { get; set; }
+        public RepeatBehavior RepeatBehavior { get; set; }
     }
 
     [MarkupExtensionReturnType(typeof(ITranslateParams))]
@@ -47,8 +49,8 @@ namespace SciChart.Wpf.UI.Transitionz
         {
         }
 
-        public TranslateParamsExtension(double beginTime, double duration, Point from, Point to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoReverse)
-            : base(beginTime, duration, from, to, ease, reverseEase, transitionOn, autoReverse)
+        public TranslateParamsExtension(double beginTime, double duration, Point from, Point to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoReverse, RepeatBehavior repeatBehavior)
+            : base(beginTime, duration, from, to, ease, reverseEase, transitionOn, autoReverse, repeatBehavior)
         {
         }
 

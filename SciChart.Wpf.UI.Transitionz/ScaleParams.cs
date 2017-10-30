@@ -45,8 +45,8 @@ namespace SciChart.Wpf.UI.Transitionz
         {
         }
 
-        public ScaleParamsExtension(double beginTime, double duration, Point from, Point to, EasingFunctionBase ease, TransitionOn transitionOn, bool autoReverse)
-            : base(beginTime, duration, from, to, ease, null, transitionOn, autoReverse)
+        public ScaleParamsExtension(double beginTime, double duration, Point from, Point to, EasingFunctionBase ease, TransitionOn transitionOn, bool autoReverse, RepeatBehavior repeatBehavior)
+            : base(beginTime, duration, from, to, ease, null, transitionOn, autoReverse, repeatBehavior)
         {
         }
 
