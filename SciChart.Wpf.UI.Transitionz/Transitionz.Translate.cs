@@ -106,6 +106,7 @@ namespace SciChart.Wpf.UI.Transitionz
                 EasingFunction = reverse ? (transitionParams.ReverseEase ?? transitionParams.Ease) : transitionParams.Ease,
                 AutoReverse = transitionParams.AutoReverse,
             };
+            
             var y = new DoubleAnimation
             {
                 From = reverse ? transitionParams.To.Y : transitionParams.From.Y,
@@ -116,6 +117,15 @@ namespace SciChart.Wpf.UI.Transitionz
                 EasingFunction = reverse ? (transitionParams.ReverseEase ?? transitionParams.Ease) : transitionParams.Ease,
                 AutoReverse = transitionParams.AutoReverse,
             };
+
+            // Directly adding RepeatBehavior to constructor breaks existing animations, so only add it if properly defined
+            if ( transitionParams.RepeatBehavior == RepeatBehavior.Forever 
+                || transitionParams.RepeatBehavior.HasDuration 
+                || (transitionParams.RepeatBehavior.HasDuration && transitionParams.RepeatBehavior.Count > 0))
+            {
+                x.RepeatBehavior = transitionParams.RepeatBehavior;
+                y.RepeatBehavior = transitionParams.RepeatBehavior;
+            }
 
             if (visibility.HasValue)
                 x.Completed += (_, __) => target.Visibility = visibility.Value;

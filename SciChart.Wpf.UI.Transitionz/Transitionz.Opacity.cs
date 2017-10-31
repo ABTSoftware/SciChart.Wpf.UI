@@ -109,6 +109,14 @@ namespace SciChart.Wpf.UI.Transitionz
                 AutoReverse = transitionParams.AutoReverse,
             };
 
+            // Directly adding RepeatBehavior to constructor breaks existing animations, so only add it if properly defined
+            if (transitionParams.RepeatBehavior == RepeatBehavior.Forever
+                || transitionParams.RepeatBehavior.HasDuration
+                || (transitionParams.RepeatBehavior.HasDuration && transitionParams.RepeatBehavior.Count > 0))
+            {
+                a.RepeatBehavior = transitionParams.RepeatBehavior;
+            }
+
             if (visibility.HasValue)
                 a.Completed += (_, __) => target.Visibility = visibility.Value;
 

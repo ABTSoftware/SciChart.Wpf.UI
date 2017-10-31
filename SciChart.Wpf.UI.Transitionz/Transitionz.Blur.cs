@@ -80,6 +80,14 @@ namespace SciChart.Wpf.UI.Transitionz
                 AutoReverse = blurParams.AutoReverse,
             };
 
+            // Directly adding RepeatBehavior to constructor breaks existing animations, so only add it if properly defined
+            if (blurParams.RepeatBehavior == RepeatBehavior.Forever
+                || blurParams.RepeatBehavior.HasDuration
+                || (blurParams.RepeatBehavior.HasDuration && blurParams.RepeatBehavior.Count > 0))
+            {
+                a.RepeatBehavior = blurParams.RepeatBehavior;
+            }
+
             if (blurParams.To == 0.0)
             {
                 a.Completed += (_, __) => target.Effect = null;

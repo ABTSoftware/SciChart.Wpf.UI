@@ -38,25 +38,34 @@ namespace SciChart.Wpf.UI.Transitionz
 
         private static void OnMarginParamsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var transtionParams = e.NewValue as MarginParamsExtension;
+            var transitionParams = e.NewValue as MarginParamsExtension;
             var target = d as FrameworkElement;
-            if (transtionParams == null || target == null)
+            if (transitionParams == null || target == null)
                 return;
             
-            target.Margin = transtionParams.From;
+            target.Margin = transitionParams.From;
             RoutedEventHandler onLoaded = null;
             onLoaded = (_, __) => target.BeginInvoke(() =>
             {
                 target.Loaded -= onLoaded;
                 var a = new ThicknessAnimation
                 {
-                    From = transtionParams.From,
-                    To = transtionParams.To,
-                    FillBehavior = transtionParams.FillBehavior,
-                    BeginTime = TimeSpan.FromMilliseconds(transtionParams.BeginTime),
-                    Duration = new Duration(TimeSpan.FromMilliseconds(transtionParams.Duration)),
-                    EasingFunction = transtionParams.Ease
+                    From = transitionParams.From,
+                    To = transitionParams.To,
+                    FillBehavior = transitionParams.FillBehavior,
+                    BeginTime = TimeSpan.FromMilliseconds(transitionParams.BeginTime),
+                    Duration = new Duration(TimeSpan.FromMilliseconds(transitionParams.Duration)),
+                    EasingFunction = transitionParams.Ease
                 };
+
+
+                // Directly adding RepeatBehavior to constructor breaks existing animations, so only add it if properly defined
+                if (transitionParams.RepeatBehavior == RepeatBehavior.Forever
+                    || transitionParams.RepeatBehavior.HasDuration
+                    || (transitionParams.RepeatBehavior.HasDuration && transitionParams.RepeatBehavior.Count > 0))
+                {
+                    a.RepeatBehavior = transitionParams.RepeatBehavior;
+                }
                 var storyboard = new Storyboard();
 
                 storyboard.Children.Add(a);
