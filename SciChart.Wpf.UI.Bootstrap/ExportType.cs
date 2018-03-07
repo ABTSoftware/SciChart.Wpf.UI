@@ -15,16 +15,25 @@ namespace SciChart.Wpf.UI.Bootstrap
         Singleton
     }
 
+    public enum DataMode
+    {
+        Any,
+        Local,
+        Remote
+    }
+
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]    
     public class ExportTypeAttribute : Attribute
     {
         private readonly Type _from;
         private CreateAs _createAs;
+        private DataMode _dataMode;
 
-        public ExportTypeAttribute(Type @from, CreateAs createAs = CreateAs.Default)
+        public ExportTypeAttribute(Type @from, CreateAs createAs = CreateAs.Default, DataMode datamode = Bootstrap.DataMode.Any)
         {
             _from = @from;
             _createAs = createAs;
+            _dataMode = datamode;
         }
 
         public Type TFrom
@@ -35,6 +44,11 @@ namespace SciChart.Wpf.UI.Bootstrap
         public CreateAs CreateAs
         {
             get { return _createAs; }
+        }
+
+        public DataMode DataMode
+        {
+            get { return _dataMode; }
         }
     }
 }
