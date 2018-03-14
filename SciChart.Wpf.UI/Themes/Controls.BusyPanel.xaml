@@ -17,6 +17,7 @@
                 <ControlTemplate TargetType="{x:Type ui:BusyPanel}">
                     <Grid>                                    
                         <ContentControl Content="{TemplateBinding Content}" 
+                                        ContentTemplate="{TemplateBinding ContentTemplate}"
                                         IsTabStop="False"
                                         tz:Transitionz.Visibility="{Binding BusyMessage, Converter={StaticResource VisibleNull}, RelativeSource={RelativeSource TemplatedParent}}"
                                         tz:Transitionz.Opacity="{tz:OpacityParams Duration=150, From=0,To=1, TransitionOn=Visibility}"/>

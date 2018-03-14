@@ -11,6 +11,8 @@ namespace SciChart.Wpf.UI
 
         public static readonly DependencyProperty ContentProperty = DependencyProperty.Register("Content", typeof (object), typeof (BusyPanel), new PropertyMetadata(default(object)));
 
+        public static readonly DependencyProperty ContentTemplateProperty = DependencyProperty.Register("ContentTemplate", typeof(DataTemplate), typeof(BusyPanel), new PropertyMetadata(default(DataTemplate)));
+
         public BusyPanel()
         {
             DefaultStyleKey = typeof (BusyPanel);
@@ -26,6 +28,12 @@ namespace SciChart.Wpf.UI
         {
             get { return (string) GetValue(BusyMessageProperty); }
             set { SetValue(BusyMessageProperty, value); }
+        }
+
+        public DataTemplate ContentTemplate
+        {
+            get { return (DataTemplate)GetValue(ContentTemplateProperty); }
+            set { SetValue(ContentTemplateProperty, value); }
         }
     }
 }
