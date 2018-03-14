@@ -3,12 +3,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Controls.BusyPanel.xaml"/>
-        <ResourceDictionary Source="Controls.Buttons.xaml"/>
-        <ResourceDictionary Source="Controls.ExceptionViewer.xaml"/>
-        <ResourceDictionary Source="Controls.LabelControl.xaml"/>
-        <ResourceDictionary Source="Controls.PopupHost.xaml"/>
-        <ResourceDictionary Source="Controls.TextBox.xaml"/>
-        <ResourceDictionary Source="Controls.TextStyles.xaml"/>
+        <ResourceDictionary Source="/SciChart.Wpf.UI;component/Themes/Controls.BusyPanel.xaml"/>
+        <ResourceDictionary Source="/SciChart.Wpf.UI;component/Themes/Controls.Buttons.xaml"/>
+        <ResourceDictionary Source="/SciChart.Wpf.UI;component/Themes/Controls.ExceptionViewer.xaml"/>
+        <ResourceDictionary Source="/SciChart.Wpf.UI;component/Themes/Controls.LabelControl.xaml"/>
+        <ResourceDictionary Source="/SciChart.Wpf.UI;component/Themes/Controls.PopupHost.xaml"/>
+        <ResourceDictionary Source="/SciChart.Wpf.UI;component/Themes/Controls.TextBox.xaml"/>
+        <ResourceDictionary Source="/SciChart.Wpf.UI;component/Themes/Controls.TextStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
