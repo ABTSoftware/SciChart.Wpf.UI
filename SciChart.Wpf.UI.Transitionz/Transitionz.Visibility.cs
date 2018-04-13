@@ -34,9 +34,16 @@ namespace SciChart.Wpf.UI.Transitionz
         }
 
         public static void AddVisibilityChangedHandler(DependencyObject d, EventHandler handler)
-        {
+        {           
             var pcn = new PropertyChangeNotifier(d, UI.Transitionz.Transitionz.VisibilityProperty);
             pcn.ValueChanged += handler;
+
+            var currentValue = (Visibility)d.GetValue(Transitionz.VisibilityProperty);
+            if (currentValue == Visibility.Visible)
+            {
+                // Execute handler now if already Visible
+                handler(pcn, EventArgs.Empty);
+            }
         }
 
         public static void RemoveVisibilityChangedHandler(DependencyObject d, EventHandler handler)

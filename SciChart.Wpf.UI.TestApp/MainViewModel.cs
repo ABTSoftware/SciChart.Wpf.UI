@@ -32,6 +32,8 @@ namespace SciChart.Wpf.UI.Controls.Preview
                             WarningsDialogViewModel = null;
                         }).DisposeWith(this);
                 });
+
+            ShowTransitionzContent = true;
         }
 
         private void ThrowAnException()
