@@ -28,12 +28,14 @@ namespace SciChart.Wpf.UI.Bootstrap
         private readonly Type _from;
         private CreateAs _createAs;
         private DataMode _dataMode;
+        private string _name;
 
-        public ExportTypeAttribute(Type @from, CreateAs createAs = CreateAs.Default, DataMode datamode = Bootstrap.DataMode.Any)
+        public ExportTypeAttribute(Type @from, CreateAs createAs = CreateAs.Default, DataMode datamode = Bootstrap.DataMode.Any, string name = null)
         {
             _from = @from;
             _createAs = createAs;
             _dataMode = datamode;
+            _name = name;
         }
 
         public Type TFrom
@@ -49,6 +51,11 @@ namespace SciChart.Wpf.UI.Bootstrap
         public DataMode DataMode
         {
             get { return _dataMode; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
         }
     }
 }

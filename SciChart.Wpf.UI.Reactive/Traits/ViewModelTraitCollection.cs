@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reactive.Disposables;
-using Microsoft.Practices.Unity;
+using Unity;
 using SciChart.Wpf.UI.Reactive.Observability;
+using Unity.Resolution;
 
 namespace SciChart.Wpf.UI.Reactive.Traits
 {

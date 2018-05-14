@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity;
+﻿using Unity;
+using Unity.Lifetime;
 
 namespace SciChart.Wpf.UI.Bootstrap
 {

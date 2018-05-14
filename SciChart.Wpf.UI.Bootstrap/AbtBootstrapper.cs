@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using Microsoft.Practices.Unity;
+using Unity;
+using Unity.Lifetime;
 using SciChart.Wpf.UI.Bootstrap.Utility;
 
 namespace SciChart.Wpf.UI.Bootstrap
@@ -41,13 +42,29 @@ namespace SciChart.Wpf.UI.Bootstrap
                         {
                             if (exportAttribute.CreateAs == CreateAs.Singleton)
                             {
-                                Log.DebugFormat("Registering Singleton: {0} as {1}", tTo.Name, exportAttribute.TFrom.Name);
-                                _container.RegisterType(exportAttribute.TFrom, tTo, new ContainerControlledLifetimeManager());
+                                if (string.IsNullOrEmpty(exportAttribute.Name))
+                                {
+                                    Log.DebugFormat("Registering Singleton: {0} as {1}", tTo.Name, exportAttribute.TFrom.Name);
+                                    _container.RegisterType(exportAttribute.TFrom, tTo, new ContainerControlledLifetimeManager());
+                                }
+                                else
+                                {
+                                    Log.DebugFormat("Registering Singleton: {0} as {1} with name {2}", tTo.Name, exportAttribute.TFrom.Name, exportAttribute.Name);
+                                    _container.RegisterType(exportAttribute.TFrom, tTo, exportAttribute.Name, new ContainerControlledLifetimeManager());
+                                }
                             }
                             else
                             {
-                                Log.DebugFormat("Registering: {0} as {1}", tTo.Name, exportAttribute.TFrom.Name);
-                                _container.RegisterType(exportAttribute.TFrom, tTo);
+                                if (string.IsNullOrEmpty(exportAttribute.Name))
+                                {
+                                    Log.DebugFormat("Registering: {0} as {1}", tTo.Name, exportAttribute.TFrom.Name);
+                                    _container.RegisterType(exportAttribute.TFrom, tTo);
+                                }
+                                else
+                                {
+                                    Log.DebugFormat("Registering: {0} as {1} with name {2}", tTo.Name, exportAttribute.TFrom.Name, exportAttribute.Name);
+                                    _container.RegisterType(exportAttribute.TFrom, tTo, exportAttribute.Name);
+                                }
                             }
                         }
                     }
