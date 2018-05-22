@@ -166,10 +166,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx">
-      <HintPath>..\..\..\Dev\ABT\GitRepos\SciChart.Wpf.UI\packages\ControlzEx.3.0.2.4\lib\net40\ControlzEx.dll</HintPath>
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net40\ControlzEx.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro">
-      <HintPath>..\..\..\Dev\ABT\GitRepos\SciChart.Wpf.UI\packages\MahApps.Metro.1.6.2\lib\net40\MahApps.Metro.dll</HintPath>
+      <HintPath>..\packages\MahApps.Metro.1.6.2\lib\net40\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
