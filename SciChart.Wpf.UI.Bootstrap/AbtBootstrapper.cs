@@ -36,11 +36,19 @@ namespace SciChart.Wpf.UI.Bootstrap
 
                 foreach (var tTo in exportTypes)
                 {
-                    foreach (var exportAttribute in tTo.GetCustomAttributes(true).OfType<ExportTypeAttribute>())
+                    var exportAttributes = tTo.GetCustomAttributes(true).OfType<ExportTypeAttribute>();
+                    bool preRegistered = false;
+                    if (exportAttributes.Count() > 1 && exportAttributes.All(e => e.CreateAs == CreateAs.Singleton))
+                    {
+                        Log.DebugFormat("Registering Singleton: {0} in preparation for multiple mapping", tTo.Name);
+                        _container.RegisterType(tTo, new ContainerControlledLifetimeManager());
+                        preRegistered = true;
+                    }
+                    foreach (var exportAttribute in exportAttributes)
                     {
                         if (dataMode == DataMode.Any || exportAttribute.DataMode == DataMode.Any || exportAttribute.DataMode == dataMode)
                         {
-                            if (exportAttribute.CreateAs == CreateAs.Singleton)
+                            if (exportAttribute.CreateAs == CreateAs.Singleton && !preRegistered)
                             {
                                 if (string.IsNullOrEmpty(exportAttribute.Name))
                                 {

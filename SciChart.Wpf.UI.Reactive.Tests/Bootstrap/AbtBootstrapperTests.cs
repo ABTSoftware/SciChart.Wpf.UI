@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SciChart.Wpf.UI.Reactive.Tests.QualityTools.Stubs;
 using SciChart.Wpf.UI.Reactive.Tests.Stubs;
-using Microsoft.Practices.Unity;
+using Unity;
 using NUnit.Framework;
 using SciChart.Wpf.UI.Bootstrap;
 
@@ -32,7 +32,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Bootstrap
     }
 
     public interface ISomeOtherConfig
-    {        
+    {     
     }
 
     public interface ISomeConfig : ISomeOtherConfig
@@ -42,7 +42,21 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Bootstrap
     [ExportType(typeof(ISomeConfig), CreateAs.Singleton)]
     [ExportType(typeof(ISomeOtherConfig), CreateAs.Singleton)]
     public class ExportedConfig : ISomeConfig
-    {        
+    {
+    }
+
+    public interface IMulti
+    {
+    }
+
+    [ExportType(typeof(IMulti), CreateAs.Singleton, DataMode.Any, "Multi1")]
+    public class SomeMulti : IMulti
+    {
+    }
+
+    [ExportType(typeof(IMulti), CreateAs.Singleton, DataMode.Any, "Multi2")]
+    public class SomeOtherMulti : IMulti
+    {
     }
     #endregion
 
@@ -91,12 +105,15 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Bootstrap
             var exportedConfig2 = container.Resolve<ISomeOtherConfig>();
             var exportedConfig3 = container.Resolve<ISomeOtherConfig>();
 
+            var exportedList = container.ResolveAll<IMulti>();
+
             // Assert            
             Assert.That(ReferenceEquals(exportedType0, exportedType1), Is.False);
             Assert.That(ReferenceEquals(exportedSingleton0, exportedSingleton1), Is.True);
             Assert.That(ReferenceEquals(exportedConfig0, exportedConfig1), Is.True);
             Assert.That(ReferenceEquals(exportedConfig2, exportedConfig3), Is.True);
             Assert.That(ReferenceEquals(exportedConfig0, exportedConfig2), Is.True);
+            Assert.That(exportedList.Count(), Is.EqualTo(2));
         }
     }
 }

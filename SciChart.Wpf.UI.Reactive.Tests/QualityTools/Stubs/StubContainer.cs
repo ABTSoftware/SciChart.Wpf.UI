@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Practices.Unity;
+using Unity;
+using Unity.Extension;
+using Unity.Lifetime;
+using Unity.Registration;
+using Unity.Resolution;
 
 namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools.Stubs
 {
@@ -17,7 +21,11 @@ namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools.Stubs
         public IUnityContainer RegisterType(Type @from, Type to, string name, LifetimeManager lifetimeManager,
                                             params InjectionMember[] injectionMembers)
         {
+            if (from == null)
+                from = to;
             if (lifetimeManager is ContainerControlledLifetimeManager)
+                SingletonRegistrations[from] = to;
+            else if (SingletonRegistrations.ContainsKey(to))
                 SingletonRegistrations[from] = to;
             else
                 TypeRegistrations[from] = to;
@@ -71,8 +79,13 @@ namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools.Stubs
             throw new NotImplementedException();
         }
 
+        public bool IsRegistered(Type type, string name)
+        {
+            throw new NotImplementedException();
+        }
+
         public IUnityContainer Parent { get; private set; }
-        public IEnumerable<ContainerRegistration> Registrations { get; private set; }
+        public IEnumerable<IContainerRegistration> Registrations { get; private set; }
     }
 }
 

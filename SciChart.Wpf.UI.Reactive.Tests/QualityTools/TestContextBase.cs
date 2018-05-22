@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using SciChart.Wpf.UI.Reactive.Async;
-using Microsoft.Practices.Unity;
+using Unity;
 using SciChart.Wpf.UI.Bootstrap;
 
 namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools

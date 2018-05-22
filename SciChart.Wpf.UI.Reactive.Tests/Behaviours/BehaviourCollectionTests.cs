@@ -1,5 +1,5 @@
 ﻿using SciChart.Wpf.UI.Reactive.Observability;
-using Microsoft.Practices.Unity;
+using Unity;
 using NUnit.Framework;
 using SciChart.Wpf.UI.Reactive.Traits;
 
