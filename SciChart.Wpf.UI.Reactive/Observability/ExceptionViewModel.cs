@@ -44,32 +44,32 @@ namespace SciChart.Wpf.UI.Reactive.Observability
 
         public string SupportEmailUri
         {
-            get { return GetDynamicValue<string>("SupportEmailUri"); }
-            set { SetDynamicValue("SupportEmailUri", value); }
+            get { return GetDynamicValue<string>(); }
+            set { SetDynamicValue(value); }
         }
 
         public bool ShowEmailSupport
         {
-            get { return GetDynamicValue<bool>("ShowEmailSupport"); }
-            set { SetDynamicValue("ShowEmailSupport", value); }
+            get { return GetDynamicValue<bool>(); }
+            set { SetDynamicValue(value); }
         }
 
         public string Header
         {
-            get { return GetDynamicValue<string>("Header"); }
-            set { SetDynamicValue("Header", value); }
+            get { return GetDynamicValue<string>(); }
+            set { SetDynamicValue(value); }
         }
 
         public Exception Exception
         {
-            get { return GetDynamicValue<Exception>("Exception"); }
-            set { SetDynamicValue("Exception", value); }
+            get { return GetDynamicValue<Exception>(); }
+            set { SetDynamicValue(value); }
         }
 
         public IEnumerable<string> Messages
         {
-            get { return GetDynamicValue<IEnumerable<string>>("Messages"); }
-            set { SetDynamicValue("Messages", value); }
+            get { return GetDynamicValue<IEnumerable<string>>(); }
+            set { SetDynamicValue(value); }
         }
 
         private void UpdateMessages(Tuple<string, Exception> t)

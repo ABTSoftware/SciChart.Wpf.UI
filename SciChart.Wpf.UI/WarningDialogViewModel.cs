@@ -50,8 +50,8 @@ namespace SciChart.Wpf.UI
 
         public string Title
         {
-            get { return GetDynamicValue<string>("Title"); }
-            set { SetDynamicValue<string>("Title", value); }
+            get { return GetDynamicValue<string>(); }
+            set { SetDynamicValue<string>(value); }
         }
 
         public WarningDialogResult Buttons { get; set; }

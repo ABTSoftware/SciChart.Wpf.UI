@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reactive.Disposables;
 using System.Reactive.Subjects;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using SciChart.Wpf.UI.Reactive.Annotations;
 
@@ -41,7 +42,7 @@ namespace SciChart.Wpf.UI.Reactive.Observability
         /// <param name="propertyName">Name of the property.</param>
         /// <param name="value">The value.</param>
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged(string propertyName, object value)
+        protected virtual void OnPropertyChanged(object value, [CallerMemberName] string propertyName = null)
         {
             Action notifyPropChanged = () =>
             {
@@ -71,13 +72,13 @@ namespace SciChart.Wpf.UI.Reactive.Observability
         /// <typeparam name="T">The type of property</typeparam>
         /// <param name="propertyName">Name of the property.</param>
         /// <param name="value">The value.</param>
-        public void SetDynamicValue<T>(string propertyName, T value)
+        public void SetDynamicValue<T>(T value, [CallerMemberName]string propertyName = null)
         {
             bool isSame = Equals(value, GetDynamicValue<T>(propertyName));
             if (isSame) return;
 
             _dynamicProperties[propertyName] = value;
-            OnPropertyChanged(propertyName, value);
+            OnPropertyChanged(value, propertyName);
         }
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace SciChart.Wpf.UI.Reactive.Observability
         /// <typeparam name="T">The type of property</typeparam>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns>The value.</returns>
-        public T GetDynamicValue<T>(string propertyName)
+        public T GetDynamicValue<T>([CallerMemberName]string propertyName = null)
         {
             object value;
             if (_dynamicProperties.TryGetValue(propertyName, out value))

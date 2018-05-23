@@ -61,50 +61,50 @@ namespace SciChart.Wpf.UI.Controls.Preview
 
         public WarningsDialogViewModel WarningsDialogViewModel
         {
-            get { return GetDynamicValue<WarningsDialogViewModel>("WarningsDialogViewModel"); }
-            set { SetDynamicValue("WarningsDialogViewModel", value); }
+            get { return GetDynamicValue<WarningsDialogViewModel>(); }
+            set { SetDynamicValue(value); }
         }
 
         public bool ShowTransitionzContent
         {
-            get { return GetDynamicValue<bool>("ShowTransitionzContent"); }
-            set { SetDynamicValue("ShowTransitionzContent", value); }
+            get { return GetDynamicValue<bool>(); }
+            set { SetDynamicValue(value); }
         }
 
         public bool IsPopupShown
         {
-            get { return GetDynamicValue<bool>("IsPopupShown"); }
-            set { SetDynamicValue("IsPopupShown", value); }
+            get { return GetDynamicValue<bool>(); }
+            set { SetDynamicValue(value); }
         }
 
         public ExceptionViewModel Exception
         {
-            get { return GetDynamicValue<ExceptionViewModel>("Exception"); }
-            set { SetDynamicValue("Exception", value); }
+            get { return GetDynamicValue<ExceptionViewModel>(); }
+            set { SetDynamicValue(value); }
         }
 
         public ICommand HidePopupCommand
         {
-            get { return GetDynamicValue<ICommand>("HidePopupCommand"); }
-            set { SetDynamicValue("HidePopupCommand", value); }
+            get { return GetDynamicValue<ICommand>(); }
+            set { SetDynamicValue(value); }
         }
 
         public ICommand ThrowExceptionCommand
         {
-            get { return GetDynamicValue<ICommand>("ThrowExceptionCommand"); }
-            set { SetDynamicValue("ThrowExceptionCommand", value); }
+            get { return GetDynamicValue<ICommand>(); }
+            set { SetDynamicValue(value); }
         }
 
         public ICommand ShowAPopupCommand
         {
-            get { return GetDynamicValue<ICommand>("ShowAPopupCommand"); }
-            set { SetDynamicValue("ShowAPopupCommand", value); }
+            get { return GetDynamicValue<ICommand>(); }
+            set { SetDynamicValue(value); }
         }
 
         public ICommand ShowWarningsCommand
         {
             get { return GetDynamicValue<ICommand>("ShowWarningsCommand"); }
-            set { SetDynamicValue("ShowWarningsCommand", value); }
+            set { SetDynamicValue(value); }
         }
     }
 }

@@ -36,8 +36,8 @@ namespace SciChart.Wpf.UI.Reactive.Observability
 
         public ExceptionViewModel Exception
         {
-            get { return GetDynamicValue<ExceptionViewModel>("Exception"); }
-            set { SetDynamicValue("Exception", value); }
+            get { return GetDynamicValue<ExceptionViewModel>(); }
+            set { SetDynamicValue(value); }
         }
     }
 }

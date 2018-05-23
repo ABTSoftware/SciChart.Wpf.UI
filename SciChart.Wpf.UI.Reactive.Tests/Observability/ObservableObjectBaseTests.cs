@@ -27,7 +27,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
                 {
                     if (_isChecked == value) return;
                     _isChecked = value;
-                    OnPropertyChanged("IsChecked", value);
+                    OnPropertyChanged(value);
                 }
             }
 
@@ -38,14 +38,14 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
                 {
                     if (_something == value) return;
                     _something = value;
-                    OnPropertyChanged("Something", value);
+                    OnPropertyChanged(value);
                 }
             }
 
             public object ADynamicValue
             {
-                get { return GetDynamicValue<object>("ADynamicValue"); }
-                set { SetDynamicValue("ADynamicValue", value);}
+                get { return GetDynamicValue<object>(); }
+                set { SetDynamicValue(value);}
             }
         }
 
@@ -113,7 +113,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             var obj = new MyObservableObject(false, null);
 
             // Act
-            obj.SetDynamicValue<int>("SomeProp", 123);
+            obj.SetDynamicValue<int>(123, "SomeProp");
 
             // Assert
             Assert.That(obj.GetDynamicValue<int>("SomeProp"), Is.EqualTo(123));
@@ -138,9 +138,9 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             var obj = new MyObservableObject(false, null);
 
             // Act
-            obj.SetDynamicValue<int>("SomeProp", 123);
-            obj.SetDynamicValue<int>("SomeProp", 456);
-            obj.SetDynamicValue<int>("SomeProp", 789);
+            obj.SetDynamicValue<int>(123, "SomeProp");
+            obj.SetDynamicValue<int>(456, "SomeProp");
+            obj.SetDynamicValue<int>(789, "SomeProp");
 
             // Assert
             Assert.That(obj.GetDynamicValue<int>("SomeProp"), Is.EqualTo(789));
@@ -155,9 +155,9 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             obj.PropertyChanged += (s, e) => propertiesNotified.Add(e.PropertyName);
 
             // Act
-            obj.SetDynamicValue<int>("SomeProp", 123);
-            obj.SetDynamicValue<int>("SomeOtherProp", 456);
-            obj.SetDynamicValue<int>("SomeProp", 789);
+            obj.SetDynamicValue<int>(123, "SomeProp");
+            obj.SetDynamicValue<int>(456, "SomeOtherProp");
+            obj.SetDynamicValue<int>(789, "SomeProp");
 
             // Assert
             Assert.That(propertiesNotified.Count, Is.EqualTo(3));
@@ -174,9 +174,9 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             objectsReceived.Clear();
 
             // Act
-            obj.SetDynamicValue<object>("ADynamicValue", 123);
+            obj.SetDynamicValue<object>(123, "ADynamicValue");
             obj.ADynamicValue = "Testing";
-            obj.SetDynamicValue<object>("ADynamicValue", "Dynamic");
+            obj.SetDynamicValue<object>("Dynamic", "ADynamicValue");
 
             // Assert
             Assert.That(objectsReceived.Count, Is.EqualTo(3));
@@ -192,12 +192,12 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             obj.PropertyChanged += (s, e) => propertiesNotified.Add(e.PropertyName);
 
             // Act
-            obj.SetDynamicValue<string>("SomeProp", "Hi there!");
-            obj.SetDynamicValue<string>("SomeProp", "Hi there!");
-            obj.SetDynamicValue<int>("SomeOtherProp", 456);
-            obj.SetDynamicValue<int>("SomeOtherProp", 456);
-            obj.SetDynamicValue<bool?>("SomeNullableProp", true);
-            obj.SetDynamicValue<bool?>("SomeNullableProp", true);
+            obj.SetDynamicValue<string>("Hi there!", "SomeProp");
+            obj.SetDynamicValue<string>("Hi there!", "SomeProp");
+            obj.SetDynamicValue<int>(456, "SomeOtherProp");
+            obj.SetDynamicValue<int>(456, "SomeOtherProp");
+            obj.SetDynamicValue<bool?>(true, "SomeNullableProp");
+            obj.SetDynamicValue<bool?>(true, "SomeNullableProp");
 
             // Assert
             Assert.That(propertiesNotified.Count, Is.EqualTo(3));
@@ -214,10 +214,10 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             objectsReceived.Clear();
 
             // Act
-            obj.SetDynamicValue<object>("ADynamicValue", 123);
+            obj.SetDynamicValue<object>(123, "ADynamicValue");
             obj.ADynamicValue = "Testing";
-            obj.SetDynamicValue<object>("ADynamicValue", "Dynamic");
-            obj.SetDynamicValue<object>("ADynamicValue", "Dynamic");
+            obj.SetDynamicValue<object>("Dynamic", "ADynamicValue");
+            obj.SetDynamicValue<object>("Dynamic", "ADynamicValue");
             obj.ADynamicValue = "Dynamic";
 
             // Assert
@@ -230,7 +230,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
         {
             // Arrange
             var obj = new MyObservableObject(false, null);
-            obj.SetDynamicValue<object>("ObjectProp", new ObservableObjectBase());
+            obj.SetDynamicValue<object>(new ObservableObjectBase(), "ObjectProp");
             Assert.That(obj.GetDynamicValue<object>("ObjectProp"), Is.Not.Null);
 
             // Act            
