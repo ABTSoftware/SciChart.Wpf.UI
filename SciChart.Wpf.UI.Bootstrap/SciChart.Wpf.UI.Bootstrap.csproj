@@ -93,6 +93,7 @@
     <Compile Include="AbtBootstrapper.cs" />
     <Compile Include="AttributedTypeDiscoveryService.cs" />
     <Compile Include="AutoAssemblyDiscovery.cs" />
+    <Compile Include="FinalizableObject.cs" />
     <Compile Include="ExplicitAssemblyDiscovery.cs" />
     <Compile Include="ExportType.cs" />
     <Compile Include="IAssemblyDiscovery.cs" />

@@ -5,6 +5,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Subjects;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using SciChart.Wpf.UI.Bootstrap;
 using SciChart.Wpf.UI.Reactive.Annotations;
 
 namespace SciChart.Wpf.UI.Reactive.Observability
@@ -18,7 +19,7 @@ namespace SciChart.Wpf.UI.Reactive.Observability
     /// o.WhenPropertyChanged(x => x.SomeProperty).Subscribe(...);
     /// </code>
     /// </summary>
-    public class ObservableObjectBase : INotifyPropertyChanged, ICompositeDisposable
+    public class ObservableObjectBase : FinalizableObject, INotifyPropertyChanged, ICompositeDisposable
     {
         private readonly IDictionary<string, object> _dynamicProperties = new Dictionary<string, object>();
         private readonly CompositeDisposable _composite = new CompositeDisposable();
@@ -99,21 +100,22 @@ namespace SciChart.Wpf.UI.Reactive.Observability
         }
 
         /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            _composite.Dispose();
-            _dynamicProperties.Clear();
-        }
-
-        /// <summary>
         /// Adds the disposable to the inner <see cref="CompositeDisposable"/>
         /// </summary>
         /// <param name="disposable">The disposable.</param>
         public void AddDisposable(IDisposable disposable)
         {
             _composite.Add(disposable);
+        }
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources.
+        /// </summary>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        protected override void Dispose(bool disposing)
+        {
+            _composite.Dispose();
+            _dynamicProperties.Clear();
         }
     }
 }
