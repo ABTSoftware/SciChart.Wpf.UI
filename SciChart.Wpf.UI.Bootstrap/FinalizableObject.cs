@@ -1,4 +1,5 @@
 ﻿using System;
+using log4net;
 
 namespace SciChart.Wpf.UI.Bootstrap
 {
@@ -7,12 +8,30 @@ namespace SciChart.Wpf.UI.Bootstrap
     /// </summary>
     public abstract class FinalizableObject : IDisposable
     {
+        private static volatile bool _enableFinalizerLogging;
+
+        private static readonly ILog Log = LogManager.GetLogger(typeof(FinalizableObject));
+
         /// <summary>
         /// Finalizes an instance of the <see cref="FinalizableObject"/> class.
         /// </summary>
         ~FinalizableObject()
         {
+            if (EnableFinalizerLogging)
+            {
+                Log.InfoFormat("Type {0} was finalized. Consider using Dispose", GetType().Name);
+            }
+
             Dispose(false);
+        }
+
+        /// <summary>
+        /// When true, log Finalizer 
+        /// </summary>
+        public static bool EnableFinalizerLogging
+        {
+            get { return _enableFinalizerLogging; }
+            set { _enableFinalizerLogging = value; }
         }
 
         /// <summary>

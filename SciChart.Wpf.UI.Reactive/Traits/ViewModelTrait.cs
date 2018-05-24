@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reactive.Disposables;
+using SciChart.Wpf.UI.Bootstrap;
 using SciChart.Wpf.UI.Reactive;
 using SciChart.Wpf.UI.Reactive.Observability;
 
@@ -14,7 +15,7 @@ namespace SciChart.Wpf.UI.Reactive.Traits
     /// of search and updating of results.
     /// </summary>
     /// <typeparam name="T">The type of <see cref="ObservableObjectBase"/> we are targetting</typeparam>
-    public class ViewModelTrait<T> : IViewModelTrait where T:ObservableObjectBase
+    public class ViewModelTrait<T> : FinalizableObject, IViewModelTrait where T:ObservableObjectBase
     {
         private readonly T _target;
         private readonly CompositeDisposable _composite = new CompositeDisposable();
@@ -33,11 +34,6 @@ namespace SciChart.Wpf.UI.Reactive.Traits
             get { return _target; }
         }
 
-        public virtual void Dispose()
-        {
-            _composite.Dispose();
-        }
-
         /// <summary>
         /// Adds the disposable to the inner  <see cref="CompositeDisposable"/>
         /// </summary>
@@ -45,6 +41,12 @@ namespace SciChart.Wpf.UI.Reactive.Traits
         public void AddDisposable(IDisposable disposable)
         {
             _composite.Add(disposable);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _composite.Dispose();
+            _composite.Clear();
         }
     }
 }

@@ -87,7 +87,11 @@
     </Compile>
     <Compile Include="Async\SharedSchedulerTests.cs" />
     <Compile Include="Async\TaskExtensionsTests.cs" />
-    <Compile Include="Behaviours\BehaviourCollectionTests.cs" />
+    <Compile Include="Traits\StubDisposable.cs" />
+    <Compile Include="Traits\StubObservableObject.cs" />
+    <Compile Include="Traits\StubViewModelTrait.cs" />
+    <Compile Include="Traits\ViewModelTraitCollectionTests.cs" />
+    <Compile Include="Traits\ViewModelTraitTests.cs" />
     <Compile Include="Bootstrap\AbtBootstrapperTests.cs" />
     <Compile Include="Bootstrap\AssemblyDiscoveryTests.cs" />
     <Compile Include="Bootstrap\AttributedTypeDiscoveryTests.cs" />
