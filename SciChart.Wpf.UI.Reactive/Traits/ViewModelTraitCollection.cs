@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reactive.Disposables;
-using Unity;
 using SciChart.Wpf.UI.Reactive.Observability;
-using Unity.Resolution;
 
 namespace SciChart.Wpf.UI.Reactive.Traits
 {
@@ -14,7 +12,7 @@ namespace SciChart.Wpf.UI.Reactive.Traits
     public class ViewModelTraitCollection : ICompositeDisposable
     {
         private readonly ObservableObjectBase _parent;
-        private readonly IUnityContainer _container;
+        private readonly ITraitDependencyResolver _resolver;
         private readonly IDictionary<Type, IViewModelTrait> _children = new Dictionary<Type, IViewModelTrait>();
         private readonly CompositeDisposable _composite = new CompositeDisposable();
 
@@ -23,11 +21,13 @@ namespace SciChart.Wpf.UI.Reactive.Traits
         /// </summary>
         /// <param name="parent">The parent.</param>
         /// <param name="container">The container.</param>
-        public ViewModelTraitCollection(ObservableObjectBase parent, IUnityContainer container)
+        public ViewModelTraitCollection(ObservableObjectBase parent, ITraitDependencyResolver resolver)
         {
             _parent = parent;
+
             this.DisposeWith(parent);
-            _container = container;
+
+            _resolver = resolver;
         }
 
         /// <summary>
@@ -44,10 +44,12 @@ namespace SciChart.Wpf.UI.Reactive.Traits
                 _composite.Remove(oldBehaviour);
             }
 
-            var parameterOverride = new ParameterOverrides { { "target", _parent } };
-            var newBehaviour = _container.Resolve<T>(parameterOverride);
-            _children[typeof (T)] = newBehaviour;
-            newBehaviour.DisposeWith(this);
+            var newBehaviour = _resolver.ResolveWithParent<T>(_parent);
+            if (newBehaviour != null)
+            {
+                _children[typeof(T)] = newBehaviour;
+                newBehaviour.DisposeWith(this);
+            }
 
             return newBehaviour;
         }

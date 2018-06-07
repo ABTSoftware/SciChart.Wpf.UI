@@ -1,5 +1,6 @@
 ﻿using SciChart.Wpf.UI.Bootstrap;
 using SciChart.Wpf.UI.Reactive.Traits;
+using Unity;
 
 namespace SciChart.Wpf.UI.Reactive.Observability
 {
@@ -15,7 +16,7 @@ namespace SciChart.Wpf.UI.Reactive.Observability
         /// </summary>
         public ViewModelWithTraitsBase()
         {
-            ViewModelTraits = new ViewModelTraitCollection(this, ViewContext.Container);
+            ViewModelTraits = new ViewModelTraitCollection(this, ViewContext.Container.Resolve<ITraitDependencyResolver>());
         }
 
         /// <summary>
