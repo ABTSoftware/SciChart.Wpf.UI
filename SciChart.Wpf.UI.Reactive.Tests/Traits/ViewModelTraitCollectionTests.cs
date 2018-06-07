@@ -13,7 +13,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Traits
             // Arrange
             var container = new UnityContainer();
             var parent = new StubObservableObject();
-            var collection = new ViewModelTraitCollection(parent, container);
+            var collection = new ViewModelTraitCollection(parent, new TraitDependencyResolver(container));
 
             // Act
             var b = collection.Add<StubViewModelTrait>();
@@ -25,12 +25,28 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Traits
         }
 
         [Test]
+        public void WhenAddTrait_AndNullDependencyResolver_ShouldAdd()
+        {
+            // Arrange
+            var container = new UnityContainer();
+            var parent = new StubObservableObject();
+            var collection = new ViewModelTraitCollection(parent, new NullTraitDependencyResolver());
+
+            // Act
+            var b = collection.Add<StubViewModelTrait>();
+
+            // Assert
+            Assert.That(b, Is.Null);
+            Assert.That(collection.Contains<StubViewModelTrait>(), Is.False);
+        }
+
+        [Test]
         public void WhenAddTraitTwiceShouldReplace()
         {
             // Arrange
             var container = new UnityContainer();
             var parent = new StubObservableObject();
-            var collection = new ViewModelTraitCollection(parent, container);
+            var collection = new ViewModelTraitCollection(parent, new TraitDependencyResolver(container));
 
             // Act
             var b0 = collection.Add<StubViewModelTrait>();
@@ -53,7 +69,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Traits
             // Arrange
             var container = new UnityContainer();
             var parent = new StubObservableObject();
-            var collection = new ViewModelTraitCollection(parent, container);
+            var collection = new ViewModelTraitCollection(parent, new TraitDependencyResolver(container));
             var child = new StubDisposable();
 
             // Act

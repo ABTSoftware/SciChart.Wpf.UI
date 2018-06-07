@@ -1,12 +1,22 @@
 ﻿using System;
 using SciChart.Wpf.UI.Reactive.Observability;
 using NUnit.Framework;
+using SciChart.Wpf.UI.Reactive.Tests.QualityTools;
 
 namespace SciChart.Wpf.UI.Reactive.Tests.Observability
 {
     [TestFixture]
     public class ExceptionViewModelTests
-    {        
+    {
+        private ExceptionViewModelTestContext _ctx;
+
+        public class ExceptionViewModelTestContext : TestContextBase { }
+
+        [SetUp]
+        public void Setup()
+        {
+            this._ctx = new ExceptionViewModelTestContext();
+        }
         [Test]
         public void WhenHeaderUpdatedShouldUpdateMessages()
         {
