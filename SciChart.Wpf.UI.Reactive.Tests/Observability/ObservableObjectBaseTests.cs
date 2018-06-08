@@ -117,6 +117,57 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
         }
 
         [Test]
+        public void WhenCombineLatest_AndExistingValues_ShouldSubscribeToPropertyChanges()
+        {
+            // Arrange
+            List<Tuple<bool, string, object>> tuples = new List<Tuple<bool, string, object>>();
+            var vm = new MyObservableObject(false, null);
+            vm.IsChecked = true;
+            vm.Something = "Woot";
+            vm.ADynamicValue = vm;
+
+            Observable.CombineLatest(
+                    vm.WhenPropertyChanged(x => x.IsChecked),
+                    vm.WhenPropertyChanged(x => x.Something),
+                    vm.WhenPropertyChanged(x => x.ADynamicValue),
+                    Tuple.Create)
+                .Throttle(TimeSpan.FromMilliseconds(100), _ctx.Default)
+                .Subscribe(arg => tuples.Add(arg));
+
+            Assert.That(tuples.Count, Is.EqualTo(1));
+            Assert.That(tuples[0].Item1, Is.EqualTo(true));
+            Assert.That(tuples[0].Item2, Is.EqualTo("Woot"));
+            Assert.That(tuples[0].Item3, Is.EqualTo((object)vm));          
+        }
+
+        [Test]
+        public void WhenCombineLatest_AndSomeExistingValues_ShouldSubscribeToPropertyChanges()
+        {
+            // Arrange
+            List<Tuple<bool, string, object>> tuples = new List<Tuple<bool, string, object>>();
+            var vm = new MyObservableObject(false, null);
+            vm.Something = "Woot";
+            vm.ADynamicValue = vm;
+
+            Observable.CombineLatest(
+                    vm.WhenPropertyChanged(x => x.IsChecked),
+                    vm.WhenPropertyChanged(x => x.Something),
+                    vm.WhenPropertyChanged(x => x.ADynamicValue),
+                    Tuple.Create)
+                .Throttle(TimeSpan.FromMilliseconds(100), _ctx.Default)
+                .Subscribe(arg => tuples.Add(arg));
+
+            // Act 
+            tuples.Clear();
+            vm.IsChecked = true;
+
+            Assert.That(tuples.Count, Is.EqualTo(1));
+            Assert.That(tuples[0].Item1, Is.EqualTo(true));
+            Assert.That(tuples[0].Item2, Is.EqualTo("Woot"));
+            Assert.That(tuples[0].Item3, Is.EqualTo((object)vm));
+        }
+
+        [Test]
         public void ShouldSubscribeToPropertyChanges2()
         {
             // Arrange
