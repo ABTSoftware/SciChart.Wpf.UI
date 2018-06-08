@@ -80,32 +80,40 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
         public void WhenCombineLatest_ShouldSubscribeToPropertyChanges()
         {
             // Arrange
-            List<Tuple<bool, string>> tuples = new List<Tuple<bool, string>>();
+            List<Tuple<bool, string, object>> tuples = new List<Tuple<bool, string, object>>();
             var vm = new MyObservableObject(false, null);
 
             Observable.CombineLatest(
                 vm.WhenPropertyChanged(x => x.IsChecked),
                 vm.WhenPropertyChanged(x => x.Something),
+                vm.WhenPropertyChanged(x => x.ADynamicValue),
                 Tuple.Create)
                 .Throttle(TimeSpan.FromMilliseconds(100), _ctx.Default)
                 .Subscribe(arg => tuples.Add(arg));      
 
-            Assert.That(tuples.Contains(Tuple.Create(false, (string)null)));
+            Assert.That(tuples.Contains(Tuple.Create(false, (string)null, (object) null)));
 
             // Act 1
             tuples.Clear();
             vm.IsChecked = true;
-            Assert.That(tuples.Contains(Tuple.Create(true, (string)null)));
+            Assert.That(tuples.Contains(Tuple.Create(true, (string)null, (object)null)));
 
             // Act 2
             tuples.Clear();
             vm.Something = "Woot";
-            Assert.That(tuples.Contains(Tuple.Create(true, "Woot")));
+            Assert.That(tuples.Contains(Tuple.Create(true, "Woot", (object)null)));
+
+            // Act 3
+            tuples.Clear();
+            vm.ADynamicValue = vm;
+            Assert.That(tuples.Contains(Tuple.Create(true, "Woot", (object)vm)));
 
             // Act 3
             tuples.Clear();
             vm.IsChecked = false;
-            Assert.That(tuples.Contains(Tuple.Create(false, "Woot")));
+            Assert.That(tuples.Contains(Tuple.Create(false, "Woot", (object)vm)));
+
+
         }
 
         [Test]
