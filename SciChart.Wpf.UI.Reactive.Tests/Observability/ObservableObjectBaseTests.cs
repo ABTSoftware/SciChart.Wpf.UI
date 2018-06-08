@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Reactive.Linq;
 using SciChart.Wpf.UI.Reactive.Observability;
 using NUnit.Framework;
+using SciChart.Wpf.UI.Reactive.Tests.QualityTools;
 
 namespace SciChart.Wpf.UI.Reactive.Tests.Observability
 {
     [TestFixture]
     public class ObservableObjectBaseTests
     {
+        private TestSchedulerContext _ctx;
+
         private class MyObservableObject : ObservableObjectBase
         {
             private bool _isChecked;
@@ -49,6 +52,11 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             }
         }
 
+        [SetUp]
+        public void Setup()
+        {
+            this._ctx = new TestSchedulerContext();
+        }
         [Test]
         public void ShouldSubscribeToPropertyChanges()
         {
@@ -66,6 +74,38 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             Assert.That(vm.IsChecked, Is.True);
             Assert.That(boolReceived, Is.True);
             Assert.That(somethingReceived, Is.Null);
+        }
+
+        [Test]
+        public void WhenCombineLatest_ShouldSubscribeToPropertyChanges()
+        {
+            // Arrange
+            List<Tuple<bool, string>> tuples = new List<Tuple<bool, string>>();
+            var vm = new MyObservableObject(false, null);
+
+            Observable.CombineLatest(
+                vm.WhenPropertyChanged(x => x.IsChecked),
+                vm.WhenPropertyChanged(x => x.Something),
+                Tuple.Create)
+                .Throttle(TimeSpan.FromMilliseconds(100), _ctx.Default)
+                .Subscribe(arg => tuples.Add(arg));      
+
+            Assert.That(tuples.Contains(Tuple.Create(false, (string)null)));
+
+            // Act 1
+            tuples.Clear();
+            vm.IsChecked = true;
+            Assert.That(tuples.Contains(Tuple.Create(true, (string)null)));
+
+            // Act 2
+            tuples.Clear();
+            vm.Something = "Woot";
+            Assert.That(tuples.Contains(Tuple.Create(true, "Woot")));
+
+            // Act 3
+            tuples.Clear();
+            vm.IsChecked = false;
+            Assert.That(tuples.Contains(Tuple.Create(false, "Woot")));
         }
 
         [Test]
