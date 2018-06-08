@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reactive.Linq;
 using SciChart.Wpf.UI.Reactive.Observability;
 using NUnit.Framework;
@@ -135,9 +136,9 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
                 .Subscribe(arg => tuples.Add(arg));
 
             Assert.That(tuples.Count, Is.EqualTo(1));
-            Assert.That(tuples[0].Item1, Is.EqualTo(true));
-            Assert.That(tuples[0].Item2, Is.EqualTo("Woot"));
-            Assert.That(tuples[0].Item3, Is.EqualTo((object)vm));          
+            Assert.That(tuples.Last().Item1, Is.EqualTo(true));
+            Assert.That(tuples.Last().Item2, Is.EqualTo("Woot"));
+            Assert.That(tuples.Last().Item3, Is.EqualTo((object)vm));          
         }
 
         [Test]
@@ -198,7 +199,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             // Act
             vm.Something = "Hello";
             vm.Dispose();
-            vm.Something = "World";
+            Assert.Throws<ObjectDisposedException>(() => vm.Something = "World");
 
             // Assert
             Assert.That(vm.IsChecked, Is.False);

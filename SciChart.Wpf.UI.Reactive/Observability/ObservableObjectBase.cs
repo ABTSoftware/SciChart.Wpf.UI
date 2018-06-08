@@ -63,7 +63,7 @@ namespace SciChart.Wpf.UI.Reactive.Observability
             {
                 notifyPropChanged();
             }                   
-
+            
             PropertyChangedSubject.OnNext(Tuple.Create(propertyName, value));
         }
 
@@ -115,6 +115,7 @@ namespace SciChart.Wpf.UI.Reactive.Observability
         protected override void Dispose(bool disposing)
         {
             _composite.Dispose();
+            PropertyChangedSubject.Dispose();
             _dynamicProperties.Clear();
         }
     }
