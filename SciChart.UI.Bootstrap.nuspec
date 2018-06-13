@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>SciChart Ltd</authors>
+    <owners>SciChart Ltd</owners>
+    <id>SciChart.UI.Bootstrap</id>
+    <title>SciChart.UI.Bootstrap</title>
+	<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>	
+	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+	<description>Bootstrap is a library which includes automatic wire-up of dependencies with the ExportType attribute, a little bit like MEF! Yes we know its like MEF, but we've been using this since before MEF so it kinda got stuck that way ... </description>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright © SciChart Ltd 2013-2018</copyright>
+	<dependencies>
+		<dependency id="CommonServiceLocator" version="1.0" />  		
+		<dependency id="log4net" version="2.0.3" />        
+		<dependency id="Unity" version="2.1.505.0" />  		
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Build\Release\SciChart.Wpf.UI.Bootstrap.dll" target="lib\net40" />
+	<file src="Build\Release\SciChart.Wpf.UI.Bootstrap.XML" target="lib\net40" />
+	
+	<file src="Build\Release\net45\SciChart.Wpf.UI.Bootstrap.dll" target="lib\net45" />
+	<file src="Build\Release\net45\SciChart.Wpf.UI.Bootstrap.XML" target="lib\net45" />
+	
+	<file src="Build\Release\net46\SciChart.Wpf.UI.Bootstrap.dll" target="lib\net46" />
+	<file src="Build\Release\net46\SciChart.Wpf.UI.Bootstrap.XML" target="lib\net46" />
+	
+	<file src="Build\Release\netstandard2.0\SciChart.UI.Bootstrap.dll" target="lib\netstandard2.0" />
+	<file src="Build\Release\netstandard2.0\SciChart.UI.Bootstrap.XML" target="lib\netstandard2.0" />
+  </files>
+</package>

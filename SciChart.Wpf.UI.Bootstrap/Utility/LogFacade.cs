@@ -10,7 +10,9 @@ namespace SciChart.Wpf.UI.Bootstrap.Utility
 
         static Log4NetFacade()
         {
+#if !NETSTANDARD2_0
             log4net.Config.XmlConfigurator.Configure();
+#endif           
         }
 
         public Log4NetFacade(log4net.ILog log4NetLog)

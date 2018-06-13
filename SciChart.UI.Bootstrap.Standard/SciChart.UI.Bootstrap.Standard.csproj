@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SciChart.UI.Bootstrap</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\Build\Release\netstandard2.0\</OutputPath>
+    <DocumentationFile>..\Build\Release\netstandard2.0\SciChart.UI.Bootstrap.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\AbtBootstrapper.cs" Link="AbtBootstrapper.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\AttributedTypeDiscoveryService.cs" Link="AttributedTypeDiscoveryService.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\AutoAssemblyDiscovery.cs" Link="AutoAssemblyDiscovery.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\ExplicitAssemblyDiscovery.cs" Link="ExplicitAssemblyDiscovery.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\ExportType.cs" Link="ExportType.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\FinalizableObject.cs" Link="FinalizableObject.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\IAssemblyDiscovery.cs" Link="IAssemblyDiscovery.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\IAttributedTypeDiscoveryService.cs" Link="IAttributedTypeDiscoveryService.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\IViewContext.cs" Link="IViewContext.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\ServiceLocator.cs" Link="ServiceLocator.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\UnityExtensions.cs" Link="UnityExtensions.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\Utility\LogFacade.cs" Link="Utility\LogFacade.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\Utility\NumberUtil.cs" Link="Utility\NumberUtil.cs" />
+    <Compile Include="..\SciChart.Wpf.UI.Bootstrap\Utility\ReflectionUtil.cs" Link="Utility\ReflectionUtil.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Unity" Version="5.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utility\" />
+  </ItemGroup>
+
+</Project>
