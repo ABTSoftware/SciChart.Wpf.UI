@@ -1,7 +1,6 @@
 @echo off
 
-SET version=1.0.2
-
+SET version=2.0.0
 ECHO Parameters = %1
 
 if [%1] NEQ [] SET version=%1
@@ -20,14 +19,14 @@ REM -------------------------------------------
 REM Build .NET 4.0 AnyCPU
 REM -------------------------------------------
 
-call "C:\Program Files (x86)\MSBuild\12.0\Bin\msbuild.exe" /ToolsVersion:12.0 /p:Configuration="Release" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
+call "%MSBUILDPATH%\msbuild.exe" /ToolsVersion:15.0 /p:Configuration="Release" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
 if ERRORLEVEL 1 goto :msBuildErrorNet40
 
 REM -------------------------------------------
 REM Build .NET 4.5 AnyCPU
 REM -------------------------------------------
 
-call "C:\Program Files (x86)\MSBuild\12.0\Bin\msbuild.exe" /ToolsVersion:12.0 /p:Configuration="Release45" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
+call "%MSBUILDPATH%\msbuild.exe" /ToolsVersion:15.0 /p:Configuration="Release45" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
 if ERRORLEVEL 1 goto :msBuildErrorNet45
 
 
@@ -35,7 +34,7 @@ REM -------------------------------------------
 REM Build .NET 4.6 AnyCPU
 REM -------------------------------------------
 
-call "C:\Program Files (x86)\MSBuild\12.0\Bin\msbuild.exe" /ToolsVersion:12.0 /p:Configuration="Release46" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
+call "%MSBUILDPATH%\msbuild.exe" /ToolsVersion:15.0 /p:Configuration="Release46" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
 if ERRORLEVEL 1 goto :msBuildErrorNet46
 
 Echo SUCCESS KID!
