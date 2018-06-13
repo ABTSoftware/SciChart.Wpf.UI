@@ -9,6 +9,7 @@ using System.Windows.Input;
 using SciChart.Wpf.UI.Reactive;
 using SciChart.Wpf.UI.Reactive.Observability;
 using SciChart.Wpf.UI.Controls;
+using System.Reactive.Linq;
 
 namespace SciChart.Wpf.UI.Controls.Preview
 {
