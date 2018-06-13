@@ -13,9 +13,9 @@
     <copyright>Copyright © SciChart Ltd 2013-2018</copyright>
 	<dependencies>
 		<dependency id="SciChart.UI.Bootstrap" version="$version$" />  		
-		<dependency id="Log4Net" version="1.0" />  		
+		<dependency id="Log4Net" version="2.0.8" />  		
 		<dependency id="System.Reactive" version="4.0.0" />        		
-		<dependency id="Unity" version="2.1.505.0" />  		
+		<dependency id="Unity" version="5.8.6" />  		
     </dependencies>
   </metadata>
   <files>
