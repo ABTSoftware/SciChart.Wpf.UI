@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SciChart.UI.Reactive</AssemblyName>
+    <RootNamespace>SciChart.UI.Reactive</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\Build\Release</OutputPath>
+    <DocumentationFile>..\Build\Release\netstandard2.0\SciChart.UI.Reactive.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\Build\Release</OutputPath>
+    <DocumentationFile>..\Build\Release\netstandard2.0\SciChart.UI.Reactive.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Behaviours\**" />
+    <EmbeddedResource Remove="Behaviours\**" />
+    <None Remove="Behaviours\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="packages.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfoCommon.cs" Link="Properties\AssemblyInfoCommon.cs" />    
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="System.Reactive" Version="4.0.0" />
+    <PackageReference Include="Unity" Version="5.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SciChart.UI.Bootstrap\SciChart.UI.Bootstrap.csproj" />
+  </ItemGroup>
+
+</Project>

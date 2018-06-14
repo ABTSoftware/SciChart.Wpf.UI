@@ -313,13 +313,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SciChart.Wpf.UI.Bootstrap\SciChart.Wpf.UI.Bootstrap.csproj">
-      <Project>{47b46a21-285d-4677-a6c3-45e51cfa8562}</Project>
-      <Name>SciChart.Wpf.UI.Bootstrap</Name>
+    <ProjectReference Include="..\SciChart.UI.Bootstrap\SciChart.UI.Bootstrap.csproj">
+      <Project>{bc358a29-722e-4028-a8f8-3895ddc645fc}</Project>
+      <Name>SciChart.UI.Bootstrap</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SciChart.Wpf.UI.Reactive\SciChart.Wpf.UI.Reactive.csproj">
-      <Project>{d78f4bcf-c408-422c-a327-fef8d8e07ee6}</Project>
-      <Name>SciChart.Wpf.UI.Reactive</Name>
+    <ProjectReference Include="..\SciChart.UI.Reactive\SciChart.UI.Reactive.csproj">
+      <Project>{3c6af1f9-066b-46cc-b58d-f938b659bba1}</Project>
+      <Name>SciChart.UI.Reactive</Name>
     </ProjectReference>
     <ProjectReference Include="..\SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.csproj">
       <Project>{f62bdb9c-0304-46d3-b088-62da495b46dd}</Project>
