@@ -15,6 +15,9 @@ REM Prepare for deployment
 call powershell.exe ".\DeploymentFiles\UpdateAssemblyInfoCommon.ps1" "AssemblyInfoCommon.cs" %version%
 if ERRORLEVEL 1 goto :powershellError
 
+REM Restore nuget packages 
+call "%MSBUILDPATH%\msbuild.exe" /ToolsVersion:15.0 /t:restore /p:Configuration="Release" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
+
 REM -------------------------------------------
 REM Build .NET 4.0 AnyCPU
 REM -------------------------------------------
