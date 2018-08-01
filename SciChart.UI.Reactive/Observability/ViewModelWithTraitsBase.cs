@@ -1,8 +1,8 @@
-﻿using SciChart.Wpf.UI.Bootstrap;
-using SciChart.Wpf.UI.Reactive.Traits;
+﻿using SciChart.UI.Bootstrap;
+using SciChart.UI.Reactive.Traits;
 using Unity;
 
-namespace SciChart.Wpf.UI.Reactive.Observability
+namespace SciChart.UI.Reactive.Observability
 {
     /// <summary>
     /// Defines a ViewModel base class which extends <see cref="ObservableObjectBase"/> to allow Reactive (Rx) subscription to PropertyChanged

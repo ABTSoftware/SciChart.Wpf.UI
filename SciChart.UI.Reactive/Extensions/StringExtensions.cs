@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text.RegularExpressions;
 
-namespace SciChart.Wpf.UI.Reactive.Extensions
+namespace SciChart.UI.Reactive.Extensions
 {
     public static class StringExtensions
     {

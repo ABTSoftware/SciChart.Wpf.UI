@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
-using SciChart.Wpf.UI.Bootstrap;
+using SciChart.UI.Bootstrap;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.Bootstrap
+namespace SciChart.UI.Reactive.Tests.Bootstrap
 {
     [TestFixture]
     public class AssemblyDiscoveryTests

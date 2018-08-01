@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools.XmlCompare
+namespace SciChart.UI.Reactive.Tests.QualityTools.XmlCompare
 {
     public class XmlComparer
     {

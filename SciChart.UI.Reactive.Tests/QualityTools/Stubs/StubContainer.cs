@@ -6,7 +6,7 @@ using Unity.Lifetime;
 using Unity.Registration;
 using Unity.Resolution;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools.Stubs
+namespace SciChart.UI.Reactive.Tests.QualityTools.Stubs
 {
     public class StubContainer : IUnityContainer
     {

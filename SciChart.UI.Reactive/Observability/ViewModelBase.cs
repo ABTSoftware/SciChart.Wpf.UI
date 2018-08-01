@@ -1,30 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Reactive.Disposables;
 using System.Reactive.Subjects;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using SciChart.UI.Bootstrap;
 using SciChart.UI.Reactive.Annotations;
 
 namespace SciChart.UI.Reactive.Observability
 {
     /// <summary>
-    /// An ObservableObject implements <see cref="INotifyPropertyChanged"/> as well as exposes a PropertyChanged <see cref="Subject{T}"/>
-    /// which allows observing properties via the <see cref="ObservableObjectExtensions.WhenPropertyChanged{TViewModel, TProperty}"/> extension method. 
+    /// An ViewModel class which implements <see cref="INotifyPropertyChanged"/> as well but does not expose observable subject and does not have a Finalizer. 
     /// 
-    /// <code>
-    /// ObservableObjectBase o;
-    /// o.WhenPropertyChanged(x => x.SomeProperty).Subscribe(...);
-    /// </code>
+    /// Used for smaller, more frequently created ViewModels where you do not want to add to memory pressure
     /// </summary>
-    public class ObservableObjectBase : FinalizableObject, INotifyPropertyChanged, ICompositeDisposable
+    public class ViewModelBase : INotifyPropertyChanged
     {
         private readonly IDictionary<string, object> _dynamicProperties = new Dictionary<string, object>();
-        private readonly CompositeDisposable _composite = new CompositeDisposable();
-
-        internal readonly Subject<Tuple<string, object>> PropertyChangedSubject = new Subject<Tuple<string, object>>();
 
         /// <summary>
         /// Occurs when a property value changes.
@@ -45,26 +35,7 @@ namespace SciChart.UI.Reactive.Observability
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(object value, [CallerMemberName] string propertyName = null)
         {
-            Action notifyPropChanged = () =>
-            {
-                PropertyChangedEventHandler handler = PropertyChanged;
-                if (handler != null)
-                {
-                    handler(this, new PropertyChangedEventArgs(propertyName));
-                }   
-            };
-
-            if (DispatcherSynchronizationContext != null &&
-                DispatcherSynchronizationContext != SynchronizationContext.Current)
-            {
-                DispatcherSynchronizationContext.Send(_ => notifyPropChanged(), null);
-            }
-            else
-            {
-                notifyPropChanged();
-            }                   
-            
-            PropertyChangedSubject.OnNext(Tuple.Create(propertyName, value));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
@@ -97,26 +68,6 @@ namespace SciChart.UI.Reactive.Observability
             }
 
             return default(T);
-        }
-
-        /// <summary>
-        /// Adds the disposable to the inner <see cref="CompositeDisposable"/>
-        /// </summary>
-        /// <param name="disposable">The disposable.</param>
-        public void AddDisposable(IDisposable disposable)
-        {
-            _composite.Add(disposable);
-        }
-
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
-        protected override void Dispose(bool disposing)
-        {
-            _composite.Dispose();
-            PropertyChangedSubject.Dispose();
-            _dynamicProperties.Clear();
-        }
+        }        
     }
 }

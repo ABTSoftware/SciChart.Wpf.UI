@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SciChart.Wpf.UI.Reactive.Async
+namespace SciChart.UI.Reactive.Async
 {
     public class TaskImmediateScheduler : TaskScheduler
     {

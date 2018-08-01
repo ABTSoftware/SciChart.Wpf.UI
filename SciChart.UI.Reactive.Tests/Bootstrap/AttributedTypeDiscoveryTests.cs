@@ -4,11 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Tests.Stubs;
+using SciChart.UI.Reactive.Tests.Stubs;
 using NUnit.Framework;
-using SciChart.Wpf.UI.Bootstrap;
+using SciChart.UI.Bootstrap;
 
-namespace SciChart.Wpf.UI.Reactive.Tests
+namespace SciChart.UI.Reactive.Tests
 {
     #region Support classes
     public class MyAttribute : Attribute { }

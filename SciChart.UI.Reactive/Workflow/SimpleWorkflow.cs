@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Async;
+using SciChart.UI.Reactive.Async;
 
 namespace Abt.Framework.Core.Workflow
 {

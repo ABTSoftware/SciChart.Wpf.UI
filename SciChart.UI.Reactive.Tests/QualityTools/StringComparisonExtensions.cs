@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools
+namespace SciChart.UI.Reactive.Tests.QualityTools
 {
     public static class StringComparisonExtensions
     {

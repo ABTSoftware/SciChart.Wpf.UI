@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SciChart.Wpf.UI.Reactive.Tests")]
+[assembly: AssemblyTitle("SciChart.UI.Reactive.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("SciChart.Wpf.UI.Reactive.Tests")]
+[assembly: AssemblyProduct("SciChart.UI.Reactive.Tests")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

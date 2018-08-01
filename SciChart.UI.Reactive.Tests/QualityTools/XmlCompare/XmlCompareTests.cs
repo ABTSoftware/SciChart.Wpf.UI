@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools.XmlCompare
+namespace SciChart.UI.Reactive.Tests.QualityTools.XmlCompare
 {
     [TestFixture]
     [Category("DoNotRunOnBuildServer")] // fails on teamcity, but not locally 

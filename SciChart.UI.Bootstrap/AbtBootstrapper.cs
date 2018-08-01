@@ -3,9 +3,9 @@ using System.Linq;
 using System.Reflection;
 using Unity;
 using Unity.Lifetime;
-using SciChart.Wpf.UI.Bootstrap.Utility;
+using SciChart.UI.Bootstrap.Utility;
 
-namespace SciChart.Wpf.UI.Bootstrap
+namespace SciChart.UI.Bootstrap
 {    
     public class AbtBootstrapper
     {

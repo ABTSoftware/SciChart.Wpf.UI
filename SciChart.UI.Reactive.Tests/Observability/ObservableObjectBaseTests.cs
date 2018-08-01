@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
-using SciChart.Wpf.UI.Reactive.Observability;
+using SciChart.UI.Reactive.Observability;
 using NUnit.Framework;
-using SciChart.Wpf.UI.Reactive.Tests.QualityTools;
+using SciChart.UI.Reactive.Tests.QualityTools;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.Observability
+namespace SciChart.UI.Reactive.Tests.Observability
 {
     [TestFixture]
     public class ObservableObjectBaseTests
@@ -49,7 +49,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             public object ADynamicValue
             {
                 get { return GetDynamicValue<object>(); }
-                set { SetDynamicValue(value);}
+                set { SetDynamicValue(value); }
             }
         }
 
@@ -90,9 +90,9 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
                 vm.WhenPropertyChanged(x => x.ADynamicValue),
                 Tuple.Create)
                 .Throttle(TimeSpan.FromMilliseconds(100), _ctx.Default)
-                .Subscribe(arg => tuples.Add(arg));      
+                .Subscribe(arg => tuples.Add(arg));
 
-            Assert.That(tuples.Contains(Tuple.Create(false, (string)null, (object) null)));
+            Assert.That(tuples.Contains(Tuple.Create(false, (string)null, (object)null)));
 
             // Act 1
             tuples.Clear();
@@ -138,7 +138,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
             Assert.That(tuples.Count, Is.EqualTo(1));
             Assert.That(tuples.Last().Item1, Is.EqualTo(true));
             Assert.That(tuples.Last().Item2, Is.EqualTo("Woot"));
-            Assert.That(tuples.Last().Item3, Is.EqualTo((object)vm));          
+            Assert.That(tuples.Last().Item3, Is.EqualTo((object)vm));
         }
 
         [Test]
@@ -224,7 +224,7 @@ namespace SciChart.Wpf.UI.Reactive.Tests.Observability
         {
             // Arrange
             var obj = new MyObservableObject(false, null);
-            
+
             // Assert/Assert
             Assert.That(obj.GetDynamicValue<int>("SomeProp"), Is.EqualTo(default(int)));
             Assert.That(obj.GetDynamicValue<int?>("SomeOtherProp"), Is.Null);

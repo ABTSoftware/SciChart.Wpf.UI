@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using SciChart.Wpf.UI.Reactive;
-using SciChart.Wpf.UI.Reactive.Observability;
+using SciChart.UI.Reactive;
+using SciChart.UI.Reactive.Observability;
 
 namespace SciChart.Wpf.UI
 {

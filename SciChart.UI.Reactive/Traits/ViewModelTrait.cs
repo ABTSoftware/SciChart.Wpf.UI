@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Reactive.Disposables;
-using SciChart.Wpf.UI.Bootstrap;
-using SciChart.Wpf.UI.Reactive;
-using SciChart.Wpf.UI.Reactive.Observability;
+using SciChart.UI.Bootstrap;
+using SciChart.UI.Reactive;
+using SciChart.UI.Reactive.Observability;
 
-namespace SciChart.Wpf.UI.Reactive.Traits
+namespace SciChart.UI.Reactive.Traits
 {
     public interface IViewModelTrait : ICompositeDisposable
     {        

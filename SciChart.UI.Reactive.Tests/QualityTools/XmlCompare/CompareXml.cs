@@ -1,4 +1,4 @@
-﻿namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools.XmlCompare
+﻿namespace SciChart.UI.Reactive.Tests.QualityTools.XmlCompare
 {
     public static class CompareXml
     {

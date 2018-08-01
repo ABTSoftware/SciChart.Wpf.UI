@@ -5,7 +5,7 @@ using System.Reactive.Threading.Tasks;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SciChart.Wpf.UI.Reactive.Async
+namespace SciChart.UI.Reactive.Async
 {
     public static class TaskEx
     {

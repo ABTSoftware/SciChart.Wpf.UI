@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Async;
-using SciChart.Wpf.UI.Reactive.Observability;
-using SciChart.Wpf.UI.Reactive.Tests.QualityTools;
+using SciChart.UI.Reactive.Async;
+using SciChart.UI.Reactive.Observability;
+using SciChart.UI.Reactive.Tests.QualityTools;
 using NUnit.Framework;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.Async
+namespace SciChart.UI.Reactive.Tests.Async
 {
     [TestFixture]
     public class SharedSchedulerTests

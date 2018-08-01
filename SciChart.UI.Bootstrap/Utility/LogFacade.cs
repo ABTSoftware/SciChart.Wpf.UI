@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SciChart.Wpf.UI.Bootstrap.Utility
+namespace SciChart.UI.Bootstrap.Utility
 {
 #if !SILVERLIGHT
 

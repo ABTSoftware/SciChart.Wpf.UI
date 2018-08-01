@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reactive.Linq;
 
-namespace SciChart.Wpf.UI.Reactive.Observability
+namespace SciChart.UI.Reactive.Observability
 {
     public class ExceptionViewModel : ViewModelWithTraitsBase
     {

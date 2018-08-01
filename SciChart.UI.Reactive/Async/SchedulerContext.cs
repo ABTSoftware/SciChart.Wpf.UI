@@ -1,6 +1,6 @@
 ﻿using System.Reactive.Concurrency;
 
-namespace SciChart.Wpf.UI.Reactive.Async
+namespace SciChart.UI.Reactive.Async
 {
     public interface ISchedulerContext
     {

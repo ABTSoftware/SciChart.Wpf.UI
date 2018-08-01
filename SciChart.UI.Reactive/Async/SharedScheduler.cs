@@ -2,7 +2,7 @@
 using System.Reactive.Concurrency;
 using System.Threading.Tasks;
 
-namespace SciChart.Wpf.UI.Reactive.Async
+namespace SciChart.UI.Reactive.Async
 {
     /// <summary>
     /// A shared Scheduler which can be passed to both RX methods and TPL methods 

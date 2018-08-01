@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Common;
+using SciChart.UI.Reactive.Common;
 using NUnit.Framework;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.Common
+namespace SciChart.UI.Reactive.Tests.Common
 {
     [TestFixture]
     public class StringlyTypedTests

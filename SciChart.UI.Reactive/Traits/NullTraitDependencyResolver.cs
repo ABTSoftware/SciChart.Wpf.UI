@@ -1,6 +1,6 @@
-﻿using SciChart.Wpf.UI.Reactive.Observability;
+﻿using SciChart.UI.Reactive.Observability;
 
-namespace SciChart.Wpf.UI.Reactive.Traits
+namespace SciChart.UI.Reactive.Traits
 {
     public class NullTraitDependencyResolver : ITraitDependencyResolver
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SciChart.Wpf.UI.Reactive.Common
+namespace SciChart.UI.Reactive.Common
 {
     /// <summary>
     /// A base type for value types to avoid 'Stringly Typed' applications http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html

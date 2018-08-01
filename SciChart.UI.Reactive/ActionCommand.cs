@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace SciChart.Wpf.UI.Reactive
+namespace SciChart.UI.Reactive
 {
     /// <summary>
     /// Provides an ICommand derived class allowing delegates to be invokved directly on the view model 

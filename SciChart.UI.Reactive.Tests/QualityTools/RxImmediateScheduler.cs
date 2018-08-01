@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive.Concurrency;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools
+namespace SciChart.UI.Reactive.Tests.QualityTools
 {
     /// <summary>
     /// A Reactive-Extensions Scheduler which processes everything immediately. Used for Unit Tests

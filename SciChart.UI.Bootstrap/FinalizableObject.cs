@@ -1,7 +1,7 @@
 ﻿using System;
 using log4net;
 
-namespace SciChart.Wpf.UI.Bootstrap
+namespace SciChart.UI.Bootstrap
 {
     /// <summary>
     /// A base class which implements IDisposable and implements the Finalizer pattern to ensure dispose is called by the Garbage Collector if not called by the user 

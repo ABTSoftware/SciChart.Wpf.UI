@@ -6,8 +6,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using SciChart.Wpf.UI.Reactive;
-using SciChart.Wpf.UI.Reactive.Observability;
+using SciChart.UI.Reactive;
+using SciChart.UI.Reactive.Observability;
 using SciChart.Wpf.UI.Controls;
 using System.Reactive.Linq;
 

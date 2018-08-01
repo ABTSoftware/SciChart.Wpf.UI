@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
-using SciChart.Wpf.UI.Reactive.Observability;
+using SciChart.UI.Reactive.Observability;
 
-namespace SciChart.Wpf.UI.Reactive.Async
+namespace SciChart.UI.Reactive.Async
 {
     public static class ObservableEx
     {

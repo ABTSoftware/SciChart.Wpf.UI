@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Reactive.Linq;
-using SciChart.Wpf.UI.Reactive.Async;
+using SciChart.UI.Reactive.Async;
 
-namespace SciChart.Wpf.UI.Reactive.Extensions
+namespace SciChart.UI.Reactive.Extensions
 {
     public static class ObservableExtensions
     {

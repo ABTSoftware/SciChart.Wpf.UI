@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Extensions;
+using SciChart.UI.Reactive.Extensions;
 using NUnit.Framework;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.Extensions
+namespace SciChart.UI.Reactive.Tests.Extensions
 {
     [TestFixture]
     public class EnumerableExtensionsTest

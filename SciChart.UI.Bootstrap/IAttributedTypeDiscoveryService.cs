@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SciChart.Wpf.UI.Bootstrap
+namespace SciChart.UI.Bootstrap
 {
     public interface IAttributedTypeDiscoveryService
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using SciChart.Wpf.UI.Reactive.Extensions;
+using SciChart.UI.Reactive.Extensions;
 
-namespace SciChart.Wpf.UI.Reactive
+namespace SciChart.UI.Reactive
 {
     public static class Validate
     {

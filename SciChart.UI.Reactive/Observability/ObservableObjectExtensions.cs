@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reactive.Linq;
 
-namespace SciChart.Wpf.UI.Reactive.Observability
+namespace SciChart.UI.Reactive.Observability
 {
     /// <summary>
     /// Extension methods for <see cref="ObservableObjectBase"/>

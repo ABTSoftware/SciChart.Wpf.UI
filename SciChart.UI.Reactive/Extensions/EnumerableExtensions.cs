@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SciChart.Wpf.UI.Reactive.Extensions
+namespace SciChart.UI.Reactive.Extensions
 {
     public static class EnumerableExtensions
     {

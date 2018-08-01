@@ -1,9 +1,9 @@
 ﻿using System;
-using SciChart.Wpf.UI.Reactive.Observability;
+using SciChart.UI.Reactive.Observability;
 using NUnit.Framework;
-using SciChart.Wpf.UI.Reactive.Tests.QualityTools;
+using SciChart.UI.Reactive.Tests.QualityTools;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.Observability
+namespace SciChart.UI.Reactive.Tests.Observability
 {
     [TestFixture]
     public class ExceptionViewModelTests

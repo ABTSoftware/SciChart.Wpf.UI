@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
-using SciChart.Wpf.UI.Reactive.Extensions;
+using SciChart.UI.Reactive.Extensions;
 
 namespace SciChart.Wpf.UI.Converters
 {

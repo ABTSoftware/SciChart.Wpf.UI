@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using Microsoft.Win32;
-using SciChart.Wpf.UI.Bootstrap;
+using SciChart.UI.Bootstrap;
 
 namespace SciChart.Wpf.UI.Services
 {

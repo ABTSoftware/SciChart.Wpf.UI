@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SciChart.Wpf.UI.Reactive.Services
+namespace SciChart.UI.Reactive.Services
 {
     public enum ExampleFeedbackType
     {

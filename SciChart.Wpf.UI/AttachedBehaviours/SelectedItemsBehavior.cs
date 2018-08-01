@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
-using SciChart.Wpf.UI.Reactive;
+using SciChart.UI.Reactive;
 
 namespace SciChart.Wpf.UI.AttachedBehaviours
 {

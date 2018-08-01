@@ -1,6 +1,6 @@
 ﻿using Unity;
 
-namespace SciChart.Wpf.UI.Bootstrap
+namespace SciChart.UI.Bootstrap
 {
     public class ViewContext 
     {

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Extensions;
+using SciChart.UI.Reactive.Extensions;
 using NUnit.Framework;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools
+namespace SciChart.UI.Reactive.Tests.QualityTools
 {
     public static class ObjectExtensions
     {

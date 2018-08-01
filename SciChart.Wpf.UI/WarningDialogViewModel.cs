@@ -4,8 +4,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
-using SciChart.Wpf.UI.Reactive;
-using SciChart.Wpf.UI.Reactive.Observability;
+using SciChart.UI.Reactive;
+using SciChart.UI.Reactive.Observability;
 
 namespace SciChart.Wpf.UI
 {

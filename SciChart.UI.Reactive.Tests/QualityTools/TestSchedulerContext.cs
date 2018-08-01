@@ -1,6 +1,6 @@
-﻿using SciChart.Wpf.UI.Reactive.Async;
+﻿using SciChart.UI.Reactive.Async;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools
+namespace SciChart.UI.Reactive.Tests.QualityTools
 {
     /// <summary>
     /// A <see cref="ISchedulerContext"/> implementation for unit tests. Both Background and Dispatcher Scheduler execute immediately

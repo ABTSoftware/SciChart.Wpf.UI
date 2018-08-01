@@ -1,8 +1,8 @@
 ﻿using Unity;
 using NUnit.Framework;
-using SciChart.Wpf.UI.Reactive.Traits;
+using SciChart.UI.Reactive.Traits;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.Traits
+namespace SciChart.UI.Reactive.Tests.Traits
 {
     [TestFixture]
     public class ViewModelTraitCollectionTests

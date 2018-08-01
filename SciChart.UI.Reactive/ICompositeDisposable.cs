@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive.Disposables;
 
-namespace SciChart.Wpf.UI.Reactive
+namespace SciChart.UI.Reactive
 {
     /// <summary>
     /// The interface to a type which is <see cref="CompositeDisposable"/> - it composes a number of types which themselves are disposable. 

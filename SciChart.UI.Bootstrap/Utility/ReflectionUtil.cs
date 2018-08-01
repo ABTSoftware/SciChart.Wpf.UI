@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace SciChart.Wpf.UI.Bootstrap.Utility
+namespace SciChart.UI.Bootstrap.Utility
 {
     internal static class ReflectionUtil
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Reactive.Subjects;
-using SciChart.Wpf.UI.Bootstrap;
+using SciChart.UI.Bootstrap;
 
-namespace SciChart.Wpf.UI.Reactive.Services
+namespace SciChart.UI.Reactive.Services
 {
     public interface IReportEvents : IObservable<EventInfo>
     {        

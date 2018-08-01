@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SciChart.Wpf.UI.Bootstrap
+namespace SciChart.UI.Bootstrap
 {
     public enum CreateAs
     {

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SciChart.Wpf.UI.Reactive.Async;
+using SciChart.UI.Reactive.Async;
 using Microsoft.Reactive.Testing;
 using NUnit.Framework;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.Async
+namespace SciChart.UI.Reactive.Tests.Async
 {
     [TestFixture]
     public class TaskExtensionsTests : ReactiveTest

@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
-using SciChart.Wpf.UI.Reactive.Async;
+using SciChart.UI.Reactive.Async;
 using Unity;
-using SciChart.Wpf.UI.Bootstrap;
-using SciChart.Wpf.UI.Reactive.Traits;
+using SciChart.UI.Bootstrap;
+using SciChart.UI.Reactive.Traits;
 
-namespace SciChart.Wpf.UI.Reactive.Tests.QualityTools
+namespace SciChart.UI.Reactive.Tests.QualityTools
 {
     public abstract class TestContextBase
     {
