@@ -37,5 +37,61 @@ namespace SciChart.UI.Reactive.Observability
 
             return viewModel.PropertyChangedSubject.Where(x => x.Item1.Equals(propertyName)).Select(x => getValueFunc(viewModel)).StartWith(getValueFunc(viewModel));
         }
+
+        public static IObservable<Tuple<TProp1, TProp2>> WhenPropertiesChanged<TViewModel, TProp1, TProp2>(this TViewModel viewModel,
+            Expression<Func<TViewModel, TProp1>> property1, 
+            Expression<Func<TViewModel, TProp2>> property2)
+            where TViewModel : ObservableObjectBase
+        {
+            return Observable.CombineLatest(
+                viewModel.WhenPropertyChanged(property1),
+                viewModel.WhenPropertyChanged(property2),
+                Tuple.Create);
+        }
+
+        public static IObservable<Tuple<TProp1, TProp2, TProp3>> WhenPropertiesChanged<TViewModel, TProp1, TProp2, TProp3>(this TViewModel viewModel,
+            Expression<Func<TViewModel, TProp1>> property1,
+            Expression<Func<TViewModel, TProp2>> property2,
+            Expression<Func<TViewModel, TProp3>> property3)
+            where TViewModel : ObservableObjectBase
+        {
+            return Observable.CombineLatest(
+                viewModel.WhenPropertyChanged(property1),
+                viewModel.WhenPropertyChanged(property2),
+                viewModel.WhenPropertyChanged(property3),
+                Tuple.Create);
+        }
+
+        public static IObservable<Tuple<TProp1, TProp2, TProp3, TProp4>> WhenPropertiesChanged<TViewModel, TProp1, TProp2, TProp3, TProp4>(this TViewModel viewModel,
+            Expression<Func<TViewModel, TProp1>> property1,
+            Expression<Func<TViewModel, TProp2>> property2,
+            Expression<Func<TViewModel, TProp3>> property3,
+            Expression<Func<TViewModel, TProp4>> property4)
+            where TViewModel : ObservableObjectBase
+        {
+            return Observable.CombineLatest(
+                viewModel.WhenPropertyChanged(property1),
+                viewModel.WhenPropertyChanged(property2),
+                viewModel.WhenPropertyChanged(property3),
+                viewModel.WhenPropertyChanged(property4),
+                Tuple.Create);
+        }
+
+        public static IObservable<Tuple<TProp1, TProp2, TProp3, TProp4, TProp5>> WhenPropertiesChanged<TViewModel, TProp1, TProp2, TProp3, TProp4, TProp5>(this TViewModel viewModel,
+            Expression<Func<TViewModel, TProp1>> property1,
+            Expression<Func<TViewModel, TProp2>> property2,
+            Expression<Func<TViewModel, TProp3>> property3,
+            Expression<Func<TViewModel, TProp4>> property4,
+            Expression<Func<TViewModel, TProp5>> property5)
+            where TViewModel : ObservableObjectBase
+        {
+            return Observable.CombineLatest(
+                viewModel.WhenPropertyChanged(property1),
+                viewModel.WhenPropertyChanged(property2),
+                viewModel.WhenPropertyChanged(property3),
+                viewModel.WhenPropertyChanged(property4),
+                viewModel.WhenPropertyChanged(property5),
+                Tuple.Create);
+        }
     }
 }
