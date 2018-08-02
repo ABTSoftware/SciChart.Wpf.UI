@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Async\SharedSchedulerTests.cs" />
     <Compile Include="Async\TaskExtensionsTests.cs" />
+    <Compile Include="Extensions\ObservableExtensionsTests.cs" />
     <Compile Include="Observability\ObservablePropertyTests.cs" />
     <Compile Include="Observability\ViewModelbaseTests.cs" />
     <Compile Include="Traits\StubDisposable.cs" />
