@@ -11,6 +11,18 @@ using SciChart.UI.Reactive.Annotations;
 namespace SciChart.UI.Reactive.Observability
 {
     /// <summary>
+    /// The interface to an Observable Object allowing reactive and INotifyPropertyChanged events on property changed
+    /// <see cref="ObservableObjectExtensions"/> for extension methods such as WhenPropertyChanged to get reactive subscriptions on properties 
+    /// </summary>
+    public interface IObservableObject : ICompositeDisposable, INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Reactive subject for property changes. First item in the Tuple is the property name (string), second item is the property value as System.Object
+        /// </summary>
+        Subject<Tuple<string, object>> PropertyChangedSubject { get; }
+    }
+
+    /// <summary>
     /// An ObservableObject implements <see cref="INotifyPropertyChanged"/> as well as exposes a PropertyChanged <see cref="Subject{T}"/>
     /// which allows observing properties via the <see cref="ObservableObjectExtensions.WhenPropertyChanged{TViewModel, TProperty}"/> extension method. 
     /// 
@@ -19,12 +31,17 @@ namespace SciChart.UI.Reactive.Observability
     /// o.WhenPropertyChanged(x => x.SomeProperty).Subscribe(...);
     /// </code>
     /// </summary>
-    public class ObservableObjectBase : FinalizableObject, INotifyPropertyChanged, ICompositeDisposable
+    public class ObservableObjectBase : FinalizableObject, IObservableObject
     {
         private readonly IDictionary<string, object> _dynamicProperties = new Dictionary<string, object>();
         private readonly CompositeDisposable _composite = new CompositeDisposable();
 
-        internal readonly Subject<Tuple<string, object>> PropertyChangedSubject = new Subject<Tuple<string, object>>();
+        private readonly Subject<Tuple<string, object>> _propertyChangedSubject = new Subject<Tuple<string, object>>();
+
+        /// <summary>
+        /// Reactive subject for property changes. First item in the Tuple is the property name (string), second item is the property value as System.Object
+        /// </summary>
+        Subject<Tuple<string, object>> IObservableObject.PropertyChangedSubject => _propertyChangedSubject;
 
         /// <summary>
         /// Occurs when a property value changes.
@@ -64,7 +81,7 @@ namespace SciChart.UI.Reactive.Observability
                 notifyPropChanged();
             }                   
             
-            PropertyChangedSubject.OnNext(Tuple.Create(propertyName, value));
+            _propertyChangedSubject.OnNext(Tuple.Create(propertyName, value));
         }
 
         /// <summary>
@@ -115,7 +132,7 @@ namespace SciChart.UI.Reactive.Observability
         protected override void Dispose(bool disposing)
         {
             _composite.Dispose();
-            PropertyChangedSubject.Dispose();
+            _propertyChangedSubject.Dispose();
             _dynamicProperties.Clear();
         }
     }

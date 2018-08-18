@@ -4,6 +4,12 @@ using System.Reactive.Linq;
 
 namespace SciChart.UI.Reactive.Observability
 {
+    public enum RxBindingMode
+    {
+        OneWay,
+        OneWayToSource,        
+        TwoWay,
+    }
     /// <summary>
     /// Extension methods for <see cref="ObservableObjectBase"/>
     /// </summary>
@@ -25,7 +31,7 @@ namespace SciChart.UI.Reactive.Observability
         /// <returns>An <see cref="IObservable{TProperty}"/> for this property</returns>
         /// <exception cref="System.NotSupportedException">Only use expressions that call a single property</exception>
         public static IObservable<TProp> WhenPropertyChanged<TViewModel, TProp>(this TViewModel viewModel, Expression<Func<TViewModel, TProp>> property)
-            where TViewModel : ObservableObjectBase
+            where TViewModel : IObservableObject
         {
             var f = property.Body as MemberExpression;
 
@@ -38,10 +44,26 @@ namespace SciChart.UI.Reactive.Observability
             return viewModel.PropertyChangedSubject.Where(x => x.Item1.Equals(propertyName)).Select(x => getValueFunc(viewModel)).StartWith(getValueFunc(viewModel));
         }
 
+        public static void WhenPropertyChanged<TViewModel, TProp>(this TViewModel viewModel,
+            Expression<Func<TViewModel, TProp>> whichProperty, Action<TProp> onPropertyChangedCallback)
+            where TViewModel : IObservableObject
+        {            
+            viewModel.WhenPropertyChanged(whichProperty).Subscribe(onPropertyChangedCallback).DisposeWith(viewModel);
+        }
+
+//        public static IDisposable BindProperty<TViewModel1, TProp1, TViewModel2, TProp2>(this TViewModel1 source,
+//            Expression<Func<TViewModel1, TProp1>> sourceProperty,
+//            TViewModel2 dest, Expression<Func<TViewModel2, TProp2>> destProperty, RxBindingMode bindingMode = RxBindingMode.OneWay)
+//            where TViewModel1 : ObservableObjectBase
+//            where TViewModel2 : ObservableObjectBase
+//        {
+//            var sourceDispoisource.WhenPropertyChanged(sourceProperty).Subscribe();
+//        }
+
         public static IObservable<Tuple<TProp1, TProp2>> WhenPropertiesChanged<TViewModel, TProp1, TProp2>(this TViewModel viewModel,
             Expression<Func<TViewModel, TProp1>> property1, 
             Expression<Func<TViewModel, TProp2>> property2)
-            where TViewModel : ObservableObjectBase
+            where TViewModel : IObservableObject
         {
             return Observable.CombineLatest(
                 viewModel.WhenPropertyChanged(property1),
@@ -53,7 +75,7 @@ namespace SciChart.UI.Reactive.Observability
             Expression<Func<TViewModel, TProp1>> property1,
             Expression<Func<TViewModel, TProp2>> property2,
             Expression<Func<TViewModel, TProp3>> property3)
-            where TViewModel : ObservableObjectBase
+            where TViewModel : IObservableObject
         {
             return Observable.CombineLatest(
                 viewModel.WhenPropertyChanged(property1),
@@ -67,7 +89,7 @@ namespace SciChart.UI.Reactive.Observability
             Expression<Func<TViewModel, TProp2>> property2,
             Expression<Func<TViewModel, TProp3>> property3,
             Expression<Func<TViewModel, TProp4>> property4)
-            where TViewModel : ObservableObjectBase
+            where TViewModel : IObservableObject
         {
             return Observable.CombineLatest(
                 viewModel.WhenPropertyChanged(property1),
@@ -83,7 +105,7 @@ namespace SciChart.UI.Reactive.Observability
             Expression<Func<TViewModel, TProp3>> property3,
             Expression<Func<TViewModel, TProp4>> property4,
             Expression<Func<TViewModel, TProp5>> property5)
-            where TViewModel : ObservableObjectBase
+            where TViewModel : IObservableObject
         {
             return Observable.CombineLatest(
                 viewModel.WhenPropertyChanged(property1),
