@@ -29,5 +29,12 @@ namespace SciChart.UI.Reactive
                 throw new ArgumentNullException(argName);
             }
         }
+
+        public static void IsTrue(bool expression, string name, string message = null)
+        {
+            if (expression) return;
+
+            throw new ArgumentException(string.IsNullOrWhiteSpace(message) ? $"The value passed for '{name}' is not valid." : message);
+        }
     }
 }
