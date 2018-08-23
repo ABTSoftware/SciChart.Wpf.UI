@@ -50,12 +50,11 @@ namespace SciChart.UI.Reactive.Extensions
 
         /// <summary>
         /// returns the IObservable&lt;EventPattern&lt;NotifyCollectionChangedEventArgs&gt;&gt; for collection Changed events on the ObservableCollection of type T
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// </summary>        
         /// <param name="collection"></param>
         /// <returns></returns>
-        public static IObservable<EventPattern<NotifyCollectionChangedEventArgs>> WhenCollectionChanged<T>(
-            this ObservableCollection<T> collection)
+        public static IObservable<EventPattern<NotifyCollectionChangedEventArgs>> WhenCollectionChanged(
+            this INotifyCollectionChanged collection)
         {
             if (collection == null) return Observable.Empty<EventPattern<NotifyCollectionChangedEventArgs>>();
 
@@ -67,7 +66,6 @@ namespace SciChart.UI.Reactive.Extensions
         /// <summary>
         /// Returns an IObservable&lt;EventPattern&lt;NotifyCollectionChangedEventArgs&gt;&gt; which also fires when the property instance is changed on a class.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <example>
         /// <code>
         /// public class MyClass
@@ -78,12 +76,13 @@ namespace SciChart.UI.Reactive.Extensions
         /// Usage: MyClass.WhenCollectionChanged(x => x.MyCollection).Subscribe(..)
         /// </code>
         /// </example>
-        public static IObservable<EventPattern<NotifyCollectionChangedEventArgs>> WhenCollectionChanged<TContainer, TProp>(
-            this TContainer parent, Expression<Func<TContainer, ObservableCollection<TProp>>> selector)
+        /// <typeparam name="TContainer">The type of the containing object</typeparam>
+        public static IObservable<EventPattern<NotifyCollectionChangedEventArgs>> WhenCollectionChanged<TContainer>(
+            this TContainer parent, Expression<Func<TContainer, INotifyCollectionChanged>> selector)
             where TContainer : ObservableObjectBase
         {
             // When the parent TContainer property (ObservableCollection) instance changes
-            var newCollectionObservable = parent.WhenPropertyChanged<TContainer, ObservableCollection<TProp>>(selector);
+            var newCollectionObservable = parent.WhenPropertyChanged<TContainer, INotifyCollectionChanged>(selector);
 
             // ... get an IObservable<EventPattern> for the new collection
             var collectionChangedObservable = newCollectionObservable.Select(c => c.WhenCollectionChanged()).Switch();
