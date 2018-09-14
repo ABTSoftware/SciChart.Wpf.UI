@@ -72,14 +72,14 @@ namespace SciChart.UI.Reactive.Tests.QualityTools.XmlCompare
             comparer.Compare(expectedXml);
         }
 
-//        [Test]
-//        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: DifferentNode, expected: element1, actual: element2
-//Position in expected document: /test[1]/element1[2]
-//Position in actual document: /test[1]/element2[1]")]
-//        public void OneElement1MissingThrows()
-//        {
-//            comparer.Compare(oneElement1Missing);
-//        }
+        [Test]
+        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: DifferentNode, expected: element1, actual: element2
+Position in expected document: /test[1]/element1[2]
+Position in actual document: /test[1]/element2[1]")]
+        public void OneElement1MissingThrows()
+        {
+            comparer.Compare(oneElement1Missing);
+        }
 
         [Test]
         public void OneElement1MissingCallback()
@@ -101,14 +101,14 @@ Position in actual document: ");
             handler.VerifyAll();
         }
 
-//        [Test]
-//        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: DifferentNode, expected: element2, actual: element1
-//Position in expected document: /test[1]/element2[1]
-//Position in actual document: /test[1]/element1[3]")]
-//        public void ExtraElement1Throws()
-//        {
-//            comparer.Compare(extraElement1);
-//        }
+        [Test]
+        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: DifferentNode, expected: element2, actual: element1
+Position in expected document: /test[1]/element2[1]
+Position in actual document: /test[1]/element1[3]")]
+        public void ExtraElement1Throws()
+        {
+            comparer.Compare(extraElement1);
+        }
 
         [Test]
         public void ExtraElement1Callback()
@@ -130,14 +130,14 @@ Position in actual document: /test[1]/element2[1]");
             handler.VerifyAll();
         }
 
-//        [Test]
-//        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: ExtraAttribute, expected: , actual: 
-//Position in expected document: 
-//Position in actual document: /test[1]/@attribute2")]
-//        public void ExtraTopLevelAttributeThrows()
-//        {
-//            comparer.Compare(extraTopLevelAttribute);
-//        }
+        [Test]
+        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: ExtraAttribute, expected: , actual: 
+Position in expected document: 
+Position in actual document: /test[1]/@attribute2")]
+        public void ExtraTopLevelAttributeThrows()
+        {
+            comparer.Compare(extraTopLevelAttribute);
+        }
 
         [Test]
         public void ExtraTopLevelAttributeCallback()
@@ -150,14 +150,14 @@ Position in actual document: /test[1]/@attribute2");
             handler.VerifyAll();
         }
 
-//        [Test]
-//        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: MissingNode, expected: , actual: 
-//Position in expected document: /test[1]/element1[1]/text()
-//Position in actual document: ")]
-//        public void TextMissingThrows()
-//        {
-//            comparer.Compare(textMissing);
-//        }
+        [Test]
+        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: MissingNode, expected: , actual: 
+Position in expected document: /test[1]/element1[1]/text()
+Position in actual document: ")]
+        public void TextMissingThrows()
+        {
+            comparer.Compare(textMissing);
+        }
 
         [Test]
         public void TextMissingCallback()
@@ -170,14 +170,14 @@ Position in actual document: ");
             handler.VerifyAll();
         }
 
-//        [Test]
-//        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: NodeValue, expected: test text, actual: other
-//Position in expected document: /test[1]/element1[1]/text()
-//Position in actual document: /test[1]/element1[1]/text()")]
-//        public void DifferentTextThrows()
-//        {
-//            comparer.Compare(differentText);
-//        }
+        [Test]
+        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: NodeValue, expected: test text, actual: other
+Position in expected document: /test[1]/element1[1]/text()
+Position in actual document: /test[1]/element1[1]/text()")]
+        public void DifferentTextThrows()
+        {
+            comparer.Compare(differentText);
+        }
 
         [Test]
         public void DifferentTextCallback()
@@ -190,14 +190,14 @@ Position in actual document: /test[1]/element1[1]/text()");
             handler.VerifyAll();
         }
 
-//        [Test]
-//        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: MissingAttribute, expected: , actual: 
-//Position in expected document: /test[1]/element2[1]/@otherAttribute
-//Position in actual document: ")]
-//        public void AttributeMissingThrows()
-//        {
-//            comparer.Compare(attributeMissing);
-//        }
+        [Test]
+        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: MissingAttribute, expected: , actual: 
+Position in expected document: /test[1]/element2[1]/@otherAttribute
+Position in actual document: ")]
+        public void AttributeMissingThrows()
+        {
+            comparer.Compare(attributeMissing);
+        }
 
         [Test]
         public void AttributeMissingCallback()
