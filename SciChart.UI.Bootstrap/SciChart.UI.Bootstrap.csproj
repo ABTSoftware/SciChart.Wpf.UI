@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.8" />
-    <PackageReference Include="Unity" Version="5.8.6" />
+    <PackageReference Include="Unity" Version="5.8.11" />
   </ItemGroup>
 
 </Project>
