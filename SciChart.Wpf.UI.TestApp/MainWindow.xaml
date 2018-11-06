@@ -110,33 +110,86 @@
                         </abt:PopupHost>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Transitionz" IsSelected="True">
+                <TabItem Header="Transitionz.Visibility" IsSelected="True">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <CheckBox Grid.Row="0" Content="Show content" IsChecked="{Binding ShowTransitionzContent, Mode=TwoWay}" x:Name="CheckBox"/>
-                        <TextBlock Grid.Row="1" FontSize="42" Text="Hello Transitionz World"
-                                    Opacity="0"
-                                    tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=100, To=1, Duration=350, TransitionOn=Visibility}"
-                                    tz:Transitionz.Translate="{tz:TranslateParams BeginTime=100, From='150,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"
-                                    tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
+                        <CheckBox Grid.Row="0" Content="Click me to Toggle Visibility" IsChecked="{Binding ShowTransitionzContent, Mode=TwoWay}" x:Name="CheckBox"/>
 
-                        <TextBlock Grid.Row="2"
-                                   FontSize="42"
-                                   Text="Left and right forever"
-                                   tz:Transitionz.Translate="{tz:TranslateParams AutoReverse=True, RepeatBehavior={x:Static RepeatBehavior.Forever}, BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}" />
-                        <TextBlock Grid.Row="3"
-                                   FontSize="42"
-                                   Text="Left and right for 20 seconds"
-                                   tz:Transitionz.Translate="{tz:TranslateParams AutoReverse=True, RepeatBehavior=0:00:20, BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}" />
+                        <abt:LabelControl Grid.Row="1" Header="These elements respond to the Checkbox Above">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock FontSize="42" Text="Opacity on Visibility Changed"
+                                           Opacity="0"
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=100, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
+
+                                <TextBlock FontSize="42" Text="Blur on Visibility Changed"
+                                           tz:Transitionz.Blur="{tz:BlurParams From='20', To='0', BeginTime=100, Duration=350, TransitionOn=Visibility}"             
+                                           tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
+
+                                <TextBlock FontSize="42" Text="Translate and Opacity on Visibility Changed"
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=100, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.Translate="{tz:TranslateParams BeginTime=100, To='0,0', From='100,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
+
+                                <TextBlock FontSize="42" Text="Scale and Opacity on Visibility Changed"
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=100, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.LayoutScale="{tz:ScaleParams BeginTime=100, To='1,1', From='0.1,0.1', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
+                            </StackPanel>
+                        </abt:LabelControl>
+                        
                     </Grid>
                 </TabItem>
-                
+
+                <TabItem Header="Transitionz.Loaded" IsSelected="True">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <abt:LabelControl Grid.Row="0" Header="These elements demonstrate Repeat behaviour">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock
+                                    FontSize="42"
+                                           Text="Left and right forever"
+                                           tz:Transitionz.Translate="{tz:TranslateParams AutoReverse=True, RepeatBehavior={x:Static RepeatBehavior.Forever}, BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}" />
+                                <TextBlock
+                                    FontSize="42"
+                                           Text="Left and right for 20 seconds"
+                                           tz:Transitionz.Translate="{tz:TranslateParams AutoReverse=True, RepeatBehavior=0:00:20, BeginTime=0, From='15,0', To='0,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}" />
+                            </StackPanel>
+                        </abt:LabelControl>
+                        <abt:LabelControl Grid.Row="1" Header="These elements respond to the Loaded event">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock FontSize="42" Text="Opacity on Loaded"
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=250, From=0, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}"/>
+
+                                <TextBlock FontSize="42" Text="Blur on Loaded"
+                                           tz:Transitionz.Blur="{tz:BlurParams From='20', To='0', BeginTime=250, Duration=350, TransitionOn=Loaded}"/>
+
+                                <TextBlock FontSize="42" Text="Translate and Opacity on Loaded"
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=250, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}"                                    
+                                           tz:Transitionz.Translate="{tz:TranslateParams BeginTime=100, To='0,0', From='100,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}"/>
+
+                                <TextBlock FontSize="42" Text="Scale and Opacity on Loaded"
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=250, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}"                                    
+                                           tz:Transitionz.LayoutScale="{tz:ScaleParams BeginTime=250, To='1,1', From='0.1,0.1', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Loaded}"/>
+
+                            </StackPanel>
+                        </abt:LabelControl>
+
+                    </Grid>
+                </TabItem>
+
             </TabControl.Items>
         </TabControl>
     </Grid>

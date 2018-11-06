@@ -91,12 +91,12 @@ namespace SciChart.Wpf.UI.Transitionz
             RoutedEventHandler onLoaded,
             Visibility? visibility)
         {
+            var reverse = Transitionz.IsVisibilityHidden(visibility);
+
             if (onLoaded != null && Transitionz.HasFlag(transitionParams.TransitionOn, TransitionOn.Once))
             {
                 target.Loaded -= onLoaded;
             }
-
-            var reverse = Transitionz.IsVisibilityHidden(visibility);
 
             var a = new DoubleAnimation
             {

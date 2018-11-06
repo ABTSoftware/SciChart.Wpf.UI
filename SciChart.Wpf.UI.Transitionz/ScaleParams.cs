@@ -21,6 +21,7 @@ namespace SciChart.Wpf.UI.Transitionz
         Point From { get; set; }
         Point To { get; set; }
         EasingFunctionBase Ease { get; set; }
+        EasingFunctionBase ReverseEase { get; set; }
         FillBehavior FillBehavior { get; set; }
         TransitionOn TransitionOn { get; set; }
         bool AutoReverse { get; set; }
@@ -33,20 +34,21 @@ namespace SciChart.Wpf.UI.Transitionz
         public Point From { get; set; }
         public Point To { get; set; }
         public EasingFunctionBase Ease { get; set; }
+        public EasingFunctionBase ReverseEase { get; set; }
         public FillBehavior FillBehavior { get; set; }
         public TransitionOn TransitionOn { get; set; }
         public bool AutoReverse { get; set; }
     }
 
     [MarkupExtensionReturnType(typeof(IScaleParams))]
-    public class ScaleParamsExtension : BaseTransitionzExtension<Point>, ITranslateParams
+    public class ScaleParamsExtension : BaseTransitionzExtension<Point>, IScaleParams
     {
         public ScaleParamsExtension()
         {
         }
 
-        public ScaleParamsExtension(double beginTime, double duration, Point from, Point to, EasingFunctionBase ease, TransitionOn transitionOn, bool autoReverse, RepeatBehavior repeatBehavior)
-            : base(beginTime, duration, from, to, ease, null, transitionOn, autoReverse, repeatBehavior)
+        public ScaleParamsExtension(double beginTime, double duration, Point from, Point to, EasingFunctionBase ease, EasingFunctionBase reverseEase, TransitionOn transitionOn, bool autoReverse, RepeatBehavior repeatBehavior)
+            : base(beginTime, duration, from, to, ease, reverseEase, transitionOn, autoReverse, repeatBehavior)
         {
         }
 

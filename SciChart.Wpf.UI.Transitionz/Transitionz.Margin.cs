@@ -22,7 +22,6 @@ namespace SciChart.Wpf.UI.Transitionz
     // Cannot declare EventManager.RegisterRoutedEvent
     public partial class Transitionz
     {               
-#if !SILVERLIGHT
        public static readonly DependencyProperty MarginProperty =
             DependencyProperty.RegisterAttached("Margin", typeof(MarginParamsExtension), typeof(UI.Transitionz.Transitionz), new PropertyMetadata(default(MarginParamsExtension), OnMarginParamsChanged));
 
@@ -79,74 +78,6 @@ namespace SciChart.Wpf.UI.Transitionz
             else
                 target.Loaded += onLoaded;
         }
-
-        public static readonly DependencyProperty LayoutScaleProperty =
-            DependencyProperty.RegisterAttached("LayoutScale", typeof(IScaleParams), typeof(UI.Transitionz.Transitionz), new PropertyMetadata(default(IScaleParams), OnLayoutScaleParamsChanged));
-
-        public static void SetLayoutScale(UIElement element, IScaleParams value)
-        {
-            element.SetValue(LayoutScaleProperty, value);
-        }
-
-        public static IScaleParams GetLayoutScale(UIElement element)
-        {
-            return (IScaleParams)element.GetValue(LayoutScaleProperty);
-        }
-
-        private static void OnLayoutScaleParamsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var scaleParams = e.NewValue as IScaleParams;
-            var target = d as FrameworkElement;
-            if (scaleParams == null || target == null)
-                return;
-
-            var scaleTransform = new ScaleTransform() { ScaleX = scaleParams.From.X, ScaleY = scaleParams.From.Y };
-            target.LayoutTransform = scaleTransform;
-
-            RoutedEventHandler onLoaded = null;
-            onLoaded = (_, __) => target.BeginInvoke(() =>
-            {
-                target.Loaded -= onLoaded;
-
-                if (Math.Abs(scaleParams.From.X - scaleParams.To.X) > 0.001)
-                {
-                    var x = new DoubleAnimation
-                    {
-                        From = scaleParams.From.X,
-                        To = scaleParams.To.X,
-                        FillBehavior = scaleParams.FillBehavior,
-                        BeginTime = TimeSpan.FromMilliseconds(scaleParams.BeginTime),
-                        Duration = new Duration(TimeSpan.FromMilliseconds(scaleParams.Duration)),
-                        EasingFunction = scaleParams.Ease,
-                        AutoReverse = scaleParams.AutoReverse,
-                    };
-
-                    scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, x);
-                }
-
-                if (Math.Abs(scaleParams.From.Y - scaleParams.To.Y) > 0.001)
-                {
-                    var y = new DoubleAnimation
-                    {
-                        From = scaleParams.From.Y,
-                        To = scaleParams.To.Y,
-                        FillBehavior = scaleParams.FillBehavior,
-                        BeginTime = TimeSpan.FromMilliseconds(scaleParams.BeginTime),
-                        Duration = new Duration(TimeSpan.FromMilliseconds(scaleParams.Duration)),
-                        EasingFunction = scaleParams.Ease,
-                        AutoReverse = scaleParams.AutoReverse,
-                    };
-
-                    scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, y);
-                }
-
-            }, DispatchPriority.DataBind);
-
-            if (target.IsLoaded())
-                onLoaded(null, null);
-            else
-                target.Loaded += onLoaded;
-        }                
-#endif        
+      
     }
 }

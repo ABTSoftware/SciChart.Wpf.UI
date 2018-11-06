@@ -32,42 +32,73 @@ namespace SciChart.Wpf.UI.Transitionz
 
         private static void OnBlurParamsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var oldBlurParams = e.OldValue as IBlurParams;
-            var newBlurParams = e.NewValue as IBlurParams;
+            var oldTransitionParams = e.OldValue as IBlurParams;
+            var newTransitionParams = e.NewValue as IBlurParams;
             var target = d as FrameworkElement;
             if (target == null)
                 return;
 
-            if (oldBlurParams != null)
+            if (oldTransitionParams != null)
             {
                 target.Loaded -= Transitionz.OnLoadedForTranslate;
                 target.DataContextChanged -= Transitionz.OnDataContextChangedForTranslate;
             }
 
-            if (newBlurParams != null)
-            {                               
-                target.Loaded += OnLoadedForBlur;
-                if (target.IsLoaded()) OnLoadedForBlur(target, null);
+            if (newTransitionParams != null)
+            {
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Loaded))
+                {
+                    target.Loaded += OnLoadedForBlur;
+                    if (target.IsLoaded()) OnLoadedForBlur(target, null);
+                }
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.DataContextChanged))
+                {
+                    target.DataContextChanged += OnDataContextChangedForBlur;
+                }
+                if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Visibility))
+                {
+                    Transitionz.AddVisibilityChangedHandler(target, OnVisibilityChangedForBlur);
+                }
             }
+        }
+
+        private static void OnVisibilityChangedForBlur(object sender, EventArgs e)
+        {
+            var element = ((FrameworkElement)((PropertyChangeNotifier)sender).PropertySource);
+            var visibility = Transitionz.GetVisibility(element);
+            if (visibility == Visibility.Visible)
+            {
+                element.Visibility = Visibility.Visible;
+            }
+            element.BeginInvoke(() => DoBlurTansition(GetBlur(element), element, null, visibility), DispatchPriority.DataBind);
         }
 
         private static void OnLoadedForBlur(object sender, RoutedEventArgs e)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(() => DoBlurTansition(GetBlur(element), element, OnLoadedForBlur), DispatchPriority.DataBind);
+            element.BeginInvoke(() => DoBlurTansition(GetBlur(element), element, OnLoadedForBlur, null), DispatchPriority.DataBind);
         }
 
-        private static void DoBlurTansition(IBlurParams blurParams, FrameworkElement target, RoutedEventHandler onLoaded)
+        private static void OnDataContextChangedForBlur(object sender, DependencyPropertyChangedEventArgs e)
         {
-            var blurEffect = new BlurEffect() { Radius = blurParams.From };
+            var element = ((FrameworkElement)sender);
+            element.BeginInvoke(() => DoBlurTansition(GetBlur(element), element, null, null), DispatchPriority.DataBind);
+        }
+
+        private static void DoBlurTansition(
+            IBlurParams blurParams, 
+            FrameworkElement target, 
+            RoutedEventHandler onLoaded,
+            Visibility? visibility)
+        {
+            var reverse = Transitionz.IsVisibilityHidden(visibility);
+            var blurEffect = new BlurEffect() { Radius = reverse ? blurParams.To : blurParams.From };
             target.Effect = blurEffect;
 
             if (onLoaded != null && Transitionz.HasFlag(blurParams.TransitionOn, TransitionOn.Once))
             {
                 target.Loaded -= onLoaded;
-            }
-
-            var reverse = false;
+            }            
 
             var a = new DoubleAnimation
             {
@@ -92,6 +123,10 @@ namespace SciChart.Wpf.UI.Transitionz
             {
                 a.Completed += (_, __) => target.Effect = null;
             }
+
+            if (visibility.HasValue)
+                a.Completed += (_, __) => target.Visibility = visibility.Value;
+
             a.SetDesiredFrameRate(24);
 
             var storyboard = new Storyboard();
