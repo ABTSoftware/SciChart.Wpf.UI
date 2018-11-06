@@ -34,7 +34,7 @@ namespace SciChart.Wpf.UI.Controls.Preview
                         }).DisposeWith(this);
                 });
 
-            ShowTransitionzContent = true;
+            ShowTransitionzContent = false;
         }
 
         private void ThrowAnException()

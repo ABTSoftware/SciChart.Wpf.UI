@@ -69,13 +69,14 @@ namespace SciChart.Wpf.UI.Transitionz
             {
                 element.Visibility = Visibility.Visible;
             }
-            element.BeginInvoke(() => DoOpacityTransition(GetOpacity(element), element, null, visibility), DispatchPriority.DataBind);
+
+            DoOpacityTransition(GetOpacity(element), element, null, visibility);
         }
 
         private static void OnDataContextChangedForOpacity(object sender, DependencyPropertyChangedEventArgs e)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(() => DoOpacityTransition(GetOpacity(element), element, null, null), DispatchPriority.DataBind);
+            DoOpacityTransition(GetOpacity(element), element, null, null);
         }
 
         private static void OnLoadedForOpacity(object sender, RoutedEventArgs routedEventArgs)

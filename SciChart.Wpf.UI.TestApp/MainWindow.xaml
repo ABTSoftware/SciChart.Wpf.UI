@@ -21,7 +21,7 @@
     <Grid DataContext="{StaticResource vm}">
         <TabControl>
             <TabControl.Items>
-                <TabItem Header="Labels">
+                <TabItem Header="Labels" IsSelected="True">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -110,7 +110,7 @@
                         </abt:PopupHost>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Transitionz.Visibility" IsSelected="True">
+                <TabItem Header="Transitionz.Visibility" >
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -125,22 +125,21 @@
                         <abt:LabelControl Grid.Row="1" Header="These elements respond to the Checkbox Above">
                             <StackPanel Orientation="Vertical">
                                 <TextBlock FontSize="42" Text="Opacity on Visibility Changed"
-                                           Opacity="0"
-                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=100, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=250, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
 
                                 <TextBlock FontSize="42" Text="Blur on Visibility Changed"
-                                           tz:Transitionz.Blur="{tz:BlurParams From='20', To='0', BeginTime=100, Duration=350, TransitionOn=Visibility}"             
+                                           tz:Transitionz.Blur="{tz:BlurParams From='20', To='0', BeginTime=300, Duration=350, TransitionOn=Visibility}"             
                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
 
                                 <TextBlock FontSize="42" Text="Translate and Opacity on Visibility Changed"
-                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=100, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
-                                           tz:Transitionz.Translate="{tz:TranslateParams BeginTime=100, To='0,0', From='100,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=350, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.Translate="{tz:TranslateParams BeginTime=350, To='0,0', From='100,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
 
                                 <TextBlock FontSize="42" Text="Scale and Opacity on Visibility Changed"
-                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=100, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
-                                           tz:Transitionz.LayoutScale="{tz:ScaleParams BeginTime=100, To='1,1', From='0.1,0.1', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=400, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
+                                           tz:Transitionz.LayoutScale="{tz:ScaleParams BeginTime=400, To='1,1', From='0.1,0.1', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
                             </StackPanel>
                         </abt:LabelControl>
@@ -148,7 +147,7 @@
                     </Grid>
                 </TabItem>
 
-                <TabItem Header="Transitionz.Loaded" IsSelected="True">
+                <TabItem Header="Transitionz.Loaded">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -174,6 +173,7 @@
                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=250, From=0, To=1, Duration=1000, Ease={StaticResource ExpEase}, TransitionOn=Loaded}"/>
 
                                 <TextBlock FontSize="42" Text="Blur on Loaded"
+                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=300, From=0, To=1, Duration=100, Ease={StaticResource ExpEase}, TransitionOn=Loaded}"
                                            tz:Transitionz.Blur="{tz:BlurParams From='20', To='0', BeginTime=300, Duration=350, TransitionOn=Loaded}"/>
 
                                 <TextBlock FontSize="42" Text="Translate and Opacity on Loaded"
