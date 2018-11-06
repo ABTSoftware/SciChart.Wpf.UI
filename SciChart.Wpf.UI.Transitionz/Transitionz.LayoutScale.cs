@@ -67,19 +67,19 @@ namespace SciChart.Wpf.UI.Transitionz
             {
                 element.Visibility = Visibility.Visible;
             }
-            element.BeginInvoke(() => DoScaleTansition(GetLayoutScale(element), element, null, visibility), DispatchPriority.DataBind);
+            DoScaleTansition(GetLayoutScale(element), element, null, visibility);
         }
 
         private static void OnLoadedForScale(object sender, RoutedEventArgs e)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(() => DoScaleTansition(GetLayoutScale(element), element, OnLoadedForBlur, null), DispatchPriority.DataBind);
+            DoScaleTansition(GetLayoutScale(element), element, OnLoadedForBlur, null);
         }
 
         private static void OnDataContextChangedForScale(object sender, DependencyPropertyChangedEventArgs e)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(() => DoScaleTansition(GetLayoutScale(element), element, null, null), DispatchPriority.DataBind);
+            DoScaleTansition(GetLayoutScale(element), element, null, null);
         }
 
         private static void DoScaleTansition(

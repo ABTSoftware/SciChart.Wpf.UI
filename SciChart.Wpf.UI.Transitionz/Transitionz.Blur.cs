@@ -70,19 +70,19 @@ namespace SciChart.Wpf.UI.Transitionz
             {
                 element.Visibility = Visibility.Visible;
             }
-            element.BeginInvoke(() => DoBlurTansition(GetBlur(element), element, null, visibility), DispatchPriority.DataBind);
+            DoBlurTansition(GetBlur(element), element, null, visibility);
         }
 
         private static void OnLoadedForBlur(object sender, RoutedEventArgs e)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(() => DoBlurTansition(GetBlur(element), element, OnLoadedForBlur, null), DispatchPriority.DataBind);
+            DoBlurTansition(GetBlur(element), element, OnLoadedForBlur, null);
         }
 
         private static void OnDataContextChangedForBlur(object sender, DependencyPropertyChangedEventArgs e)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(() => DoBlurTansition(GetBlur(element), element, null, null), DispatchPriority.DataBind);
+            DoBlurTansition(GetBlur(element), element, null, null);
         }
 
         private static void DoBlurTansition(

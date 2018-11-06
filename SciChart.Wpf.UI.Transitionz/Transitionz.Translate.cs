@@ -47,8 +47,6 @@ namespace SciChart.Wpf.UI.Transitionz
 
             if (newTransitionParams != null)
             {
-                var translateTransform = new TranslateTransform() { X = newTransitionParams.From.X, Y = newTransitionParams.From.Y };
-                target.RenderTransform = translateTransform;
                 if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Loaded) || Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Once))
                 {
                     target.Loaded += OnLoadedForTranslate;
@@ -73,19 +71,19 @@ namespace SciChart.Wpf.UI.Transitionz
             {
                 element.Visibility = Visibility.Visible;
             }
-            element.BeginInvoke(new Action(() => DoTranslateTransition(GetTranslate(element), element, null, visibility)), DispatchPriority.DataBind);
+            DoTranslateTransition(GetTranslate(element), element, null, visibility);
         }
 
         private static void OnDataContextChangedForTranslate(object sender, DependencyPropertyChangedEventArgs e)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(new Action(() => DoTranslateTransition(GetTranslate(element), element, null, null)), DispatchPriority.DataBind);
+            DoTranslateTransition(GetTranslate(element), element, null, null);
         }
 
         private static void OnLoadedForTranslate(object sender, RoutedEventArgs e)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(new Action(() => DoTranslateTransition(GetTranslate(element), element, OnLoadedForTranslate, null)), DispatchPriority.DataBind);
+            DoTranslateTransition(GetTranslate(element), element, OnLoadedForTranslate, null);
         }
 
         private static void DoTranslateTransition(ITranslateParams transitionParams, FrameworkElement target, RoutedEventHandler onLoaded, Visibility? visibility)
@@ -95,6 +93,12 @@ namespace SciChart.Wpf.UI.Transitionz
                 target.Loaded -= onLoaded;
             }
             var reverse = Transitionz.IsVisibilityHidden(visibility);
+            var translateTransform = new TranslateTransform()
+            {
+                X = reverse ? transitionParams.To.X : transitionParams.From.X,
+                Y = reverse ? transitionParams.To.Y : transitionParams.From.Y,
+            };
+            target.RenderTransform = translateTransform;
 
             var x = new DoubleAnimation
             {
