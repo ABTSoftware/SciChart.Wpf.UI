@@ -47,7 +47,6 @@ namespace SciChart.Wpf.UI.Transitionz
             {
                 if (Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Loaded) || Transitionz.HasFlag(newTransitionParams.TransitionOn, TransitionOn.Once))
                 {
-                    target.Opacity = newTransitionParams.From;
                     target.Loaded += OnLoadedForOpacity;
                     if (target.IsLoaded()) OnLoadedForOpacity(target, null);
                 }
@@ -82,7 +81,7 @@ namespace SciChart.Wpf.UI.Transitionz
         private static void OnLoadedForOpacity(object sender, RoutedEventArgs routedEventArgs)
         {
             var element = ((FrameworkElement)sender);
-            element.BeginInvoke(() => DoOpacityTransition(GetOpacity(element), element, OnLoadedForOpacity, null), DispatchPriority.DataBind);
+            DoOpacityTransition(GetOpacity(element), element, OnLoadedForOpacity, null);
         }
 
         private static void DoOpacityTransition(
@@ -92,6 +91,7 @@ namespace SciChart.Wpf.UI.Transitionz
             Visibility? visibility)
         {
             var reverse = Transitionz.IsVisibilityHidden(visibility);
+            target.Opacity = reverse ? transitionParams.To : transitionParams.From;
 
             if (onLoaded != null && Transitionz.HasFlag(transitionParams.TransitionOn, TransitionOn.Once))
             {
@@ -115,10 +115,7 @@ namespace SciChart.Wpf.UI.Transitionz
                 || (transitionParams.RepeatBehavior.HasDuration && transitionParams.RepeatBehavior.Count > 0))
             {
                 a.RepeatBehavior = transitionParams.RepeatBehavior;
-            }
-
-            if (visibility.HasValue)
-                a.Completed += (_, __) => target.Visibility = visibility.Value;
+            }            
 
             a.SetDesiredFrameRate(24);
 
@@ -126,7 +123,14 @@ namespace SciChart.Wpf.UI.Transitionz
             storyboard.Children.Add(a);
             Storyboard.SetTarget(a, target);
             Storyboard.SetTargetProperty(a, new PropertyPath(UIElement.OpacityProperty));
-            FreezeHelper.SetFreeze(storyboard, true);
+            
+            a.Completed += (_, __) =>
+            {
+                if (visibility.HasValue)
+                    target.Visibility = visibility.Value;
+                target.Opacity = reverse ? transitionParams.From : transitionParams.To;
+                storyboard.Stop();
+            };
             storyboard.Begin();
         }
     }
