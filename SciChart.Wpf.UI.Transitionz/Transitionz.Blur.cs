@@ -45,10 +45,7 @@ namespace SciChart.Wpf.UI.Transitionz
             }
 
             if (newBlurParams != null)
-            {                
-                var blurEffect = new BlurEffect() { Radius = newBlurParams.From };
-                target.Effect = blurEffect;
-
+            {                               
                 target.Loaded += OnLoadedForBlur;
                 if (target.IsLoaded()) OnLoadedForBlur(target, null);
             }
@@ -62,6 +59,9 @@ namespace SciChart.Wpf.UI.Transitionz
 
         private static void DoBlurTansition(IBlurParams blurParams, FrameworkElement target, RoutedEventHandler onLoaded)
         {
+            var blurEffect = new BlurEffect() { Radius = blurParams.From };
+            target.Effect = blurEffect;
+
             if (onLoaded != null && Transitionz.HasFlag(blurParams.TransitionOn, TransitionOn.Once))
             {
                 target.Loaded -= onLoaded;
