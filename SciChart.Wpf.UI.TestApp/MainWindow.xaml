@@ -13,6 +13,10 @@
     <Window.Resources>
         <preview:MainViewModel x:Key="vm"/>
         <BooleanToVisibilityConverter x:Key="b2vConverter"/>
+
+        <abt:BoolToValueConverter x:Key="HiddenIfTrueConverter" TrueValue="Hidden" FalseValue="Visible"/>
+        <abt:BoolToValueConverter x:Key="VisibleIfTrueConverter" TrueValue="Visible" FalseValue="Hidden"/>
+
         <abt:NullToVisibilityConverter x:Key="ifNotNullVisibleConverter" ValueIfNotNull="Visible" ValueIfNull="Collapsed"/>
 
         <ExponentialEase x:Key="ExpEase" EasingMode="EaseOut" Exponent="5" />
@@ -122,28 +126,56 @@
 
                         <CheckBox Grid.Row="0" Content="Click me to Toggle Visibility" IsChecked="{Binding ShowTransitionzContent, Mode=TwoWay}" x:Name="CheckBox"/>
 
-                        <abt:LabelControl Grid.Row="1" Header="These elements respond to the Checkbox Above">
+                        <abt:LabelControl Grid.Row="1" Header="These elements use Transitionz.Visibility when checkbox unchecked">
                             <StackPanel Orientation="Vertical">
-                                <TextBlock FontSize="42" Text="Opacity on Visibility Changed"
-                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=250, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
-                                           tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
 
-                                <TextBlock FontSize="42" Text="Blur on Visibility Changed"
-                                           tz:Transitionz.Blur="{tz:BlurParams From='20', To='0', BeginTime=300, Duration=350, TransitionOn=Visibility}"             
-                                           tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
-
-                                <TextBlock FontSize="42" Text="Translate and Opacity on Visibility Changed"
-                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=350, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
-                                           tz:Transitionz.Translate="{tz:TranslateParams BeginTime=350, To='0,0', From='100,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
-                                           tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
-
-                                <TextBlock FontSize="42" Text="Scale and Opacity on Visibility Changed"
-                                           tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=400, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
-                                           tz:Transitionz.LayoutScale="{tz:ScaleParams BeginTime=400, To='1,1', From='0.1,0.1', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                    
-                                           tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource b2vConverter}}"/>
+                                <!-- For these elements, default to visible, they are hidden when the checkbox is checked --> 
+                                <TextBlock FontSize="36" Text="Opacity on Visibility Changed" 
+                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=0, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource HiddenIfTrueConverter}}"/> 
+                                 
+                                 <TextBlock FontSize="36" Text="Blur on Visibility Changed" 
+                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=0, To=1, Duration=450, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Blur="{tz:BlurParams From='20', To='0', BeginTime=300, Duration=350, TransitionOn=Visibility}"              
+                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource HiddenIfTrueConverter}}"/> 
+                                 
+                                 <TextBlock FontSize="36" Text="Translate and Opacity on Visibility Changed" 
+                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=350, To=1, Duration=550, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Translate="{tz:TranslateParams BeginTime=350, To='0,0', From='100,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource HiddenIfTrueConverter}}"/> 
+                                 
+                                 <TextBlock FontSize="36" Text="Scale and Opacity on Visibility Changed" 
+                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=400, To=1, Duration=650, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.LayoutScale="{tz:ScaleParams BeginTime=400, To='1,1', From='0.1,0.1', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource HiddenIfTrueConverter}}"/> 
                             </StackPanel>
                         </abt:LabelControl>
-                        
+
+                        <abt:LabelControl Grid.Row="2" Header="These elements use Transitionz.Visibility when checkbox checked">
+                            <StackPanel Orientation="Vertical">
+
+                                <!-- For these elements, default to Hidden, so we use FallbackValue='hidden' to ensure the start state is correct when first loaded --> 
+                                <TextBlock FontSize="36" Text="Opacity on Visibility Changed" 
+                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=0, To=1, Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource VisibleIfTrueConverter}, FallbackValue='Hidden'}"/>
+
+                                <TextBlock FontSize="36" Text="Blur on Visibility Changed" 
+                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=0, To=1, Duration=450, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Blur="{tz:BlurParams From='20', To='0', BeginTime=300, Duration=350, TransitionOn=Visibility}"              
+                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource VisibleIfTrueConverter}, FallbackValue='Hidden'}"/>
+
+                                <TextBlock FontSize="36" Text="Translate and Opacity on Visibility Changed" 
+                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=350, To=1, Duration=550, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Translate="{tz:TranslateParams BeginTime=350, To='0,0', From='100,0', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource VisibleIfTrueConverter}, FallbackValue='Hidden'}"/>
+
+                                <TextBlock FontSize="36" Text="Scale and Opacity on Visibility Changed" 
+                                            tz:Transitionz.Opacity="{tz:OpacityParams BeginTime=400, To=1, Duration=650, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.LayoutScale="{tz:ScaleParams BeginTime=400, To='1,1', From='0.1,0.1', Duration=350, Ease={StaticResource ExpEase}, TransitionOn=Visibility}"                                     
+                                            tz:Transitionz.Visibility="{Binding Path=ShowTransitionzContent, Mode=TwoWay, Converter={StaticResource VisibleIfTrueConverter}, FallbackValue='Hidden'}"/>
+                            </StackPanel>
+                        </abt:LabelControl>
+
                     </Grid>
                 </TabItem>
 
