@@ -7,8 +7,8 @@
         xmlns:abt="http://schemas.abtsoftware.co.uk/presentation"
         GlowBrush="{DynamicResource AccentColorBrush}"
         Title="Core Framework | Presentation Preview"
-        Width="1025"
-        Height="600">
+        Width="1200"
+        Height="800">
     
     <Window.Resources>
         <preview:MainViewModel x:Key="vm"/>
@@ -71,9 +71,38 @@
                             <Button Content="Throw an Exception" Command="{Binding ThrowExceptionCommand}" HorizontalAlignment="Stretch" Margin="10" ></Button>
                         </StackPanel>
                         
-                        <abt:ExceptionViewer Grid.Column="1" Exception="{Binding Exception}"/>
+                        <abt:ExceptionViewer Grid.Column="1" Exception="{Binding Exception}" VerticalAlignment="Top"/>
                     </Grid>
-                </TabItem>                
+                </TabItem>
+
+                <TabItem Header="Busy Panel">
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="32"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Content="Is Busy? Uncheck to show content..." IsChecked="{Binding IsBusy, Mode=TwoWay}"/>
+
+                        <abt:BusyPanel Grid.Row="1" BusyMessage="{Binding BusyMessage, FallbackValue='Busy'}">
+
+                            <!-- This content will be hidden when busy --> 
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Heading 1" Style="{DynamicResource Heading1}"></TextBlock>
+                                <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                                <TextBlock Text="Heading 2" Style="{DynamicResource Heading2}"></TextBlock>
+                                <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                                <TextBlock Text="Heading 3" Style="{DynamicResource Heading3}"></TextBlock>
+                                <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                                <TextBlock Text="Heading 4" Style="{DynamicResource Heading4}"></TextBlock>
+                                <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                                <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                                <TextBlock Text="{DynamicResource Ipsum}" Style="{DynamicResource NormalTextBlock}" ></TextBlock>
+                            </StackPanel>
+                        </abt:BusyPanel>
+                    </Grid>
+                </TabItem>
                 <TabItem Header="Popups">
                     <Grid>
 

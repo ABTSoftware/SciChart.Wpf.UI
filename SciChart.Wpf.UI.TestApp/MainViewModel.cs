@@ -35,6 +35,10 @@ namespace SciChart.Wpf.UI.Controls.Preview
                 });
 
             ShowTransitionzContent = false;
+
+            this.IsBusy = true;
+            this.WhenPropertyChanged(x => x.IsBusy)
+                .Subscribe(b => BusyMessage = b ? "Extremely busy, please wait" : null).DisposeWith(this);
         }
 
         private void ThrowAnException()
@@ -62,50 +66,62 @@ namespace SciChart.Wpf.UI.Controls.Preview
 
         public WarningsDialogViewModel WarningsDialogViewModel
         {
-            get { return GetDynamicValue<WarningsDialogViewModel>(); }
-            set { SetDynamicValue(value); }
+            get => GetDynamicValue<WarningsDialogViewModel>();
+            set => SetDynamicValue(value);
         }
 
         public bool ShowTransitionzContent
         {
-            get { return GetDynamicValue<bool>(); }
-            set { SetDynamicValue(value); }
+            get => GetDynamicValue<bool>();
+            set => SetDynamicValue(value);
         }
 
         public bool IsPopupShown
         {
-            get { return GetDynamicValue<bool>(); }
-            set { SetDynamicValue(value); }
+            get => GetDynamicValue<bool>();
+            set => SetDynamicValue(value);
+        }
+
+        public bool IsBusy
+        {
+            get => GetDynamicValue<bool>();
+            set => SetDynamicValue(value);
+        }
+
+        public string BusyMessage
+        {
+            get => GetDynamicValue<string>();
+            set => SetDynamicValue(value);
         }
 
         public ExceptionViewModel Exception
         {
-            get { return GetDynamicValue<ExceptionViewModel>(); }
-            set { SetDynamicValue(value); }
+            get => GetDynamicValue<ExceptionViewModel>();
+            set => SetDynamicValue(value);
         }
 
         public ICommand HidePopupCommand
         {
-            get { return GetDynamicValue<ICommand>(); }
-            set { SetDynamicValue(value); }
+            get => GetDynamicValue<ICommand>();
+            set => SetDynamicValue(value);
         }
 
         public ICommand ThrowExceptionCommand
         {
-            get { return GetDynamicValue<ICommand>(); }
-            set { SetDynamicValue(value); }
+            get => GetDynamicValue<ICommand>();
+            set => SetDynamicValue(value);
         }
 
         public ICommand ShowAPopupCommand
         {
-            get { return GetDynamicValue<ICommand>(); }
-            set { SetDynamicValue(value); }
+            get => GetDynamicValue<ICommand>();
+            set => SetDynamicValue(value);
         }
 
         public ICommand ShowWarningsCommand
         {
-            get { return GetDynamicValue<ICommand>("ShowWarningsCommand"); }
-            set { SetDynamicValue(value); }
+            get => GetDynamicValue<ICommand>("ShowWarningsCommand");
+            set => SetDynamicValue(value);
         }
     }
 }
