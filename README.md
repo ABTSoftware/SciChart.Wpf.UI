@@ -1,9 +1,9 @@
 # SciChart.Wpf.UI
 Core reactive libraries, custom controls and styles for WPF UI created by SciChart Ltd
 
-Release v2.1: See [scichart.com/open-source-scichart-ui-reactive-scichart-wpf-ui-transitionz-v2-1-released](https://www.scichart.com/open-source-scichart-ui-reactive-scichart-wpf-ui-transitionz-v2-1-released/) for details! 
+**Release v2.1 is here!** See [scichart.com/open-source-scichart-ui-reactive-scichart-wpf-ui-transitionz-v2-1-released](https://www.scichart.com/open-source-scichart-ui-reactive-scichart-wpf-ui-transitionz-v2-1-released/) for details! 
 
-Used in the SciChart WPF Examples Application, which demonstrates High Performance WPF Charts, available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (RxMain) to allow for easier testing and integration of Reactive into an MVVM Application. 
+Used in the [SciChart WPF Examples Application](https://www.scichart.com/wpf-chart-examples), which demonstrates [High Performance WPF Charts](https://www.scichart.com/wpf-chart-features), available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (System.Reactive) to allow for easier testing and integration of Reactive into an MVVM Application. 
 
 ## SciChart.UI.Bootstrap library 
 
