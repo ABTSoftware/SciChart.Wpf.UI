@@ -24,7 +24,7 @@ SciChart.UI.Reactive Usage / Wiki:
 
 Core helper classes and useful controls for WPF Applications. 
 
-!(SciChart.Wpf.UI BusyPanel, Warnings and Popups)[https://abtsoftware-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/scichart-wpf-ui-isbusy-and-popups.gif]
+![SciChart.Wpf.UI BusyPanel, Warnings and Popups](https://abtsoftware-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/scichart-wpf-ui-isbusy-and-popups.gif)
 
 WIKI / Documentation coming soon.
 
@@ -32,7 +32,7 @@ WIKI / Documentation coming soon.
 
 The library also includes Transitionz, an animation library which allows for easy animating of Opacity or X,Y Transforms on Visibility change with simple XAML markup extensions
 
-!(Transitionz Animations in WPF)[https://abtsoftware-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/transitionz.gif]
+![Transitionz Animations in WPF](https://abtsoftware-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/transitionz.gif)
 
 Transitionz Usage / Wiki: 
 
