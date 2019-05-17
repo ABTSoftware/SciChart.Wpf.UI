@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SciChart.Wpf.UI</name>
+    </assembly>
+    <members>
+        <member name="T:SciChart.Wpf.UI.AttachedBehaviours.DataGridMultiSelectBehaviour">
+            <summary>
+            DataGrid MultipleSelection behaviour from http://www.codeproject.com/Articles/412417/Managing-Multiple-selection-in-View-Model-NET-Metr
+            </summary>
+        </member>
+        <member name="T:SciChart.Wpf.UI.AttachedBehaviours.DesignMode">
+            <summary>
+            Allows setting of Design-Time properties
+            </summary>
+        </member>
+        <member name="T:SciChart.Wpf.UI.AttachedBehaviours.SelectedItemsBehavior">
+            <summary>
+            A simple behaviour which injects DataGrid.SelectedItems into a ViewModel via an ActionCommand{T}
+            </summary>
+        </member>
+        <member name="T:SciChart.Wpf.UI.AttachedBehaviours.ToggleButtonExtensions">
+            <summary>
+            Attached property to mimic radio grouping on toggle buttons
+            Taken from here: http://www.bradcunningham.net/2009/09/grouping-and-checkboxes-in-wpf.html
+            </summary>
+        </member>
+        <member name="F:SciChart.Wpf.UI.AttachedBehaviours.ToggleButtonExtensions.GroupNameProperty">
+            <summary>
+            Defines the GroupName DependenccyProperty
+            </summary>
+        </member>
+        <member name="M:SciChart.Wpf.UI.AttachedBehaviours.ToggleButtonExtensions.SetGroupName(System.Windows.Controls.Primitives.ToggleButton,System.String)">
+            <summary>
+            Sets the GroupName Attached Property
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SciChart.Wpf.UI.AttachedBehaviours.ToggleButtonExtensions.GetGroupName(System.Windows.Controls.Primitives.ToggleButton)">
+            <summary>
+            Gets the GroupName Attached Property
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SciChart.Wpf.UI.ClickableLink">
+            <summary>
+            A hyperlink that actually clicks
+            </summary>
+            <remarks>Taken from http://www.neovolve.com/post/2011/06/15/WPF-and-the-link-that-just-wont-click.aspx</remarks>
+        </member>
+        <member name="T:SciChart.Wpf.UI.Markup.TypeExtension">
+            <summary>
+            A MarkupExtension which introduces x:Type like syntax to both WPF and Silverlight (Cross-platform). This is used internally
+            for the themes, but is also useful e.g. when creating custom Control Templates for SciChart
+            </summary>
+            <remarks>
+            Licensed under the CodeProject Open License
+            http://www.codeproject.com/Articles/305932/Static-and-Type-markup-extensions-for-Silverlight
+            </remarks>
+            
+        </member>
+        <member name="M:SciChart.Wpf.UI.Markup.TypeExtension.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SciChart.Wpf.UI.Markup.TypeExtension" /> class.
+            </summary>
+        </member>
+        <member name="M:SciChart.Wpf.UI.Markup.TypeExtension.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SciChart.Wpf.UI.Markup.TypeExtension" /> class.
+            </summary>
+            <param name="type">The type to wrap</param>
+        </member>
+        <member name="P:SciChart.Wpf.UI.Markup.TypeExtension.Type">
+            <summary>
+            Gets or sets the type information for this extension.
+            </summary>
+        </member>
+        <member name="P:SciChart.Wpf.UI.Markup.TypeExtension.TypeName">
+            <summary>
+            Gets or sets the type name represented by this markup extension.
+            </summary>
+        </member>
+        <member name="T:SciChart.Wpf.UI.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SciChart.Wpf.UI.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SciChart.Wpf.UI.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:SciChart.Wpf.UI.WarningDialogView">
+            <summary>
+            Interaction logic for WarningDialogView.xaml
+            </summary>
+            <summary>
+            WarningDialogView
+            </summary>
+        </member>
+        <member name="M:SciChart.Wpf.UI.WarningDialogView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

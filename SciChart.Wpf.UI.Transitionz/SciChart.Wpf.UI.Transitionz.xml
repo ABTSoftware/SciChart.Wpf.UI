@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SciChart.Wpf.UI.Transitionz</name>
+    </assembly>
+    <members>
+        <member name="T:SciChart.Wpf.UI.Transitionz.AnimatedContentControl">
+            <summary>
+            A ContentControl that animates the transition between content
+            </summary>
+            <remarks>
+                Used under CPOL from http://www.codeproject.com/Articles/136786/Creating-an-Animated-ContentControl 
+                Original control by Isak Savo
+            </remarks>
+        </member>
+        <member name="M:SciChart.Wpf.UI.Transitionz.AnimatedContentControl.OnApplyTemplate">
+            <summary>
+            This gets called when the template has been applied and we have our visual tree
+            </summary>
+        </member>
+        <member name="M:SciChart.Wpf.UI.Transitionz.AnimatedContentControl.OnContentChanged(System.Object,System.Object)">
+            <summary>
+            This gets called when the content we're displaying has changed
+            </summary>
+            <param name="oldContent">The content that was previously displayed</param>
+            <param name="newContent">The new content that is displayed</param>
+        </member>
+        <member name="M:SciChart.Wpf.UI.Transitionz.AnimatedContentControl.BeginAnimateContentReplacement">
+            <summary>
+            Starts the animation for the new content
+            </summary>
+        </member>
+        <member name="M:SciChart.Wpf.UI.Transitionz.AnimatedContentControl.CreateAnimation(System.Double,System.Double,System.EventHandler)">
+            <summary>
+            Creates the animation that moves content in or out of view.
+            </summary>
+            <param name="from">The starting value of the animation.</param>
+            <param name="to">The end value of the animation.</param>
+            <param name="whenDone">(optional) A callback that will be called when the animation has completed.</param>
+        </member>
+        <member name="M:SciChart.Wpf.UI.Transitionz.AnimatedContentControl.CreateBrushFromVisual(System.Windows.Media.Visual)">
+            <summary>
+            Creates a brush based on the current appearnace of a visual element. The brush is an ImageBrush and once created, won't update its look
+            </summary>
+            <param name="v">The visual element to take a snapshot of</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:System.Windows.FrameworkElementExtensions.IsLoaded(System.Windows.FrameworkElement)" -->
+    </members>
+</doc>

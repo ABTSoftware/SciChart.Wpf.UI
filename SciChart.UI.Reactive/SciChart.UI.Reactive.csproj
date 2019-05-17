@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <AssemblyName>SciChart.UI.Reactive</AssemblyName>
     <RootNamespace>SciChart.UI.Reactive</RootNamespace>
   </PropertyGroup>
@@ -14,12 +14,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\Build\Release</OutputPath>
-    <DocumentationFile>..\Build\Release\netstandard2.0\SciChart.UI.Reactive.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Release\SciChart.UI.Reactive.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\Build\Release</OutputPath>
-    <DocumentationFile>..\Build\Release\netstandard2.0\SciChart.UI.Reactive.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Release\SciChart.UI.Reactive.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
