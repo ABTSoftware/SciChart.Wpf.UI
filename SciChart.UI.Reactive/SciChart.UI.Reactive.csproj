@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
     <AssemblyName>SciChart.UI.Reactive</AssemblyName>
     <RootNamespace>SciChart.UI.Reactive</RootNamespace>
   </PropertyGroup>
@@ -38,7 +38,7 @@
 
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.8" />
-    <PackageReference Include="System.Reactive" Version="4.1.2" />
+    <PackageReference Include="System.Reactive" Version="3.1.1" />
     <PackageReference Include="Unity" Version="5.8.11" />
   </ItemGroup>
 

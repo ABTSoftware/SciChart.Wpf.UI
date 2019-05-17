@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net452;netcoreapp3.0</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>sgKey.snk</AssemblyOriginatorKeyFile>
     <UseWPF>true</UseWPF>
@@ -18,6 +18,11 @@
 
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs" Link="Properties\AssemblyInfoCommon.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="1.6.5" />
+    <PackageReference Include="System.Reactive.Interfaces" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -45,6 +45,6 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Markup")]
 [assembly: XmlnsDefinition("http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.AttachedBehaviours")]
 [assembly: XmlnsDefinition("http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Converters")]
-[assembly: XmlnsDefinition(@"http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Markup")]
+[assembly: XmlnsDefinition("http://schemas.abtsoftware.co.uk/presentation", "SciChart.Wpf.UI.Markup")]
 
 [assembly: XmlnsPrefix("http://schemas.abtsoftware.co.uk/presentation", "abt")]
