@@ -1,12 +1,15 @@
 # SciChart.Wpf.UI
 
 Core reactive libraries, custom controls and styles for WPF UI created by SciChart Ltd
+
 Used in the [SciChart WPF Examples Application](https://www.scichart.com/wpf-chart-examples), which demonstrates [High Performance WPF Charts](https://www.scichart.com/wpf-chart-features), available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (System.Reactive) to allow for easier testing and integration of Reactive into an MVVM Application. 
 
 **May 2019: Release v3.0 is here!** 
 
 In this release we update SciChart.Wpf.UI and SciChart.Wpf.UI.Transitionz to target .NET Core 3 (netcoreapp3.0), as well as .NET Framework 4.5.2
+
 SciChart.UI.Bootstrap and SciChart.UI.Reactive have been downgraded to target both .NET Standard 2.0 as well as .NET Framework v4.5.2 (previous minimum framework was net461). This enables the libraries to be used in a wider range of projects. 
+
 As a side effect to this downgrade, we have had to also downgrade to System.Reactive 3.1.1, since v4.x is no longer compatible with net452. 
 
 Feedback is welcome on the issues tab
