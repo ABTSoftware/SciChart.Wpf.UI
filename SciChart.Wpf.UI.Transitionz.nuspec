@@ -10,16 +10,13 @@
 	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
 	<description>Transitionz is an animation library made by SciChart Ltd which allows for easy animating of Opacity or X,Y Transforms on Visibility change with simple XAML markup extensions</description>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright © SciChart Ltd 2013-2016</copyright>
+    <copyright>Copyright © SciChart Ltd 2013-2019</copyright>
   </metadata>
-  <files>
-    <file src="Build\Release\SciChart.Wpf.UI.Transitionz.dll" target="lib\net40" />
-	<file src="Build\Release\SciChart.Wpf.UI.Transitionz.XML" target="lib\net40" />
+  <files>	
+	<file src="Build\Release\net452\SciChart.Wpf.UI.Transitionz.dll" target="lib\net452" />
+	<file src="Build\Release\net452\SciChart.Wpf.UI.Transitionz.XML" target="lib\net452" />
 	
-	<file src="Build\Release\net45\SciChart.Wpf.UI.Transitionz.dll" target="lib\net45" />
-	<file src="Build\Release\net45\SciChart.Wpf.UI.Transitionz.XML" target="lib\net45" />
-	
-	<file src="Build\Release\net46\SciChart.Wpf.UI.Transitionz.dll" target="lib\net46" />
-	<file src="Build\Release\net46\SciChart.Wpf.UI.Transitionz.XML" target="lib\net46" />
+	<file src="Build\Release\netcoreapp3.0\SciChart.Wpf.UI.Transitionz.dll" target="lib\netcoreapp3.0" />
+	<file src="Build\Release\netcoreapp3.0\SciChart.Wpf.UI.Transitionz.XML" target="lib\netcoreapp3.0" />
   </files>
 </package>
