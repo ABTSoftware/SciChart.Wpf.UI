@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
-    <DocumentationFile>C:\dev\SciChart.Wpf.UI\SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Release\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
+    <OutputPath>..\Build\Release</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
-    <DocumentationFile>C:\dev\SciChart.Wpf.UI\SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Debug\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
+    <OutputPath>..\Build\Debug</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

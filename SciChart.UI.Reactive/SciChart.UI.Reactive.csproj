@@ -18,8 +18,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\Build\Release</OutputPath>
-    <DocumentationFile>..\Build\Release\SciChart.UI.Reactive.xml</DocumentationFile>
+    <OutputPath>..\Build\Debug</OutputPath>
+    <DocumentationFile>..\Build\Debug\SciChart.UI.Reactive.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -16,6 +16,16 @@
     <DocumentationFile>C:\dev\SciChart.Wpf.UI\SciChart.Wpf.UI\SciChart.Wpf.UI.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
+    <OutputPath>..\Build\Release</OutputPath>
+    <DocumentationFile>..\Build\Release\SciChart.Wpf.UI.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
+    <OutputPath>..\Build\Debug</OutputPath>
+    <DocumentationFile>..\Build\Debug\SciChart.Wpf.UI.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs" Link="Properties\AssemblyInfoCommon.cs" />
   </ItemGroup>
