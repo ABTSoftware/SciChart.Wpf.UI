@@ -1,11 +1,11 @@
 @echo off
 
-SET version=2.0.0
+SET version=3.0.0
 ECHO Parameters = %1
 
 if [%1] NEQ [] SET version=%1
 
-ECHO Deploying SciChart DLLs v%version%
+ECHO Deploying SciChart.WPF.UI DLLs v%version%
 
 REM Setup directory structure
 rmdir Build /S /Q
@@ -16,29 +16,17 @@ call powershell.exe ".\DeploymentFiles\UpdateAssemblyInfoCommon.ps1" "AssemblyIn
 if ERRORLEVEL 1 goto :powershellError
 
 REM Restore nuget packages 
-call "%MSBUILDPATH%\msbuild.exe" /ToolsVersion:15.0 /t:restore /p:Configuration="Release" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
+REM Set MSBUILDPATH2019=C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin
+call "%MSBUILDPATH2019%\msbuild.exe" -target:Restore -restore SciChart.Wpf.UI.sln -p:Configuration=Release;Platform="Any CPU";WarningLevel=0
+if ERRORLEVEL 1 goto :restoreError
 
 REM -------------------------------------------
-REM Build .NET 4.0 AnyCPU
+REM Build all target frameworks 
 REM -------------------------------------------
 
-call "%MSBUILDPATH%\msbuild.exe" /ToolsVersion:15.0 /p:Configuration="Release" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
-if ERRORLEVEL 1 goto :msBuildErrorNet40
+call "%MSBUILDPATH2019%\msbuild.exe" -target:Build SciChart.Wpf.UI.sln -p:Configuration=Release;Platform="Any CPU";WarningLevel=0
+if ERRORLEVEL 1 goto :msBuildError
 
-REM -------------------------------------------
-REM Build .NET 4.5 AnyCPU
-REM -------------------------------------------
-
-call "%MSBUILDPATH%\msbuild.exe" /ToolsVersion:15.0 /p:Configuration="Release45" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
-if ERRORLEVEL 1 goto :msBuildErrorNet45
-
-
-REM -------------------------------------------
-REM Build .NET 4.6 AnyCPU
-REM -------------------------------------------
-
-call "%MSBUILDPATH%\msbuild.exe" /ToolsVersion:15.0 /p:Configuration="Release46" SciChart.Wpf.UI.sln /p:Platform="Any CPU" /p:WarningLevel=0
-if ERRORLEVEL 1 goto :msBuildErrorNet46
 
 Echo SUCCESS KID!
 exit 0
@@ -47,14 +35,10 @@ exit 0
 echo One or more Powershell Scripts Failed
 exit %ERRORLEVEL%
 
-:msBuildErrorNet40
-echo Failed to Build .NET4.0
+:restoreError
+echo Failed to restore packages 
 exit %ERRORLEVEL%
 
-:msBuildErrorNet45
-echo Failed to Build .NET4.5
-exit %ERRORLEVEL%
-
-:msBuildErrorNet46
-echo Failed to Build .NET4.6
+:msBuildError
+echo Failed to Build .NET
 exit %ERRORLEVEL%
