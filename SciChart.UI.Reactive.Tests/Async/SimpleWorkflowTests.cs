@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Abt.Framework.Core.Tests.QualityTools;
+using SciChart.UI.Reactive.Tests.QualityTools;
 using Abt.Framework.Core.Workflow;
 using NUnit.Framework;
 

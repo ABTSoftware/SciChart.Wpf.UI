@@ -9,12 +9,22 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
-    <DocumentationFile>..\Build\Release\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Release\net452\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
     <OutputPath>..\Build\Release</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
-    <DocumentationFile>..\Build\Debug\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Debug\net452\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
+    <OutputPath>..\Build\Debug</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
+    <DocumentationFile>..\Build\Release\netcoreapp3.0\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
+    <OutputPath>..\Build\Release</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
+    <DocumentationFile>..\Build\Debug\netcoreapp3.0\SciChart.Wpf.UI.Transitionz.xml</DocumentationFile>
     <OutputPath>..\Build\Debug</OutputPath>
   </PropertyGroup>
 

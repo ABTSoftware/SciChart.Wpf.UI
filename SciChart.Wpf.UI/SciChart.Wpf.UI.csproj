@@ -1,29 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFrameworks>net452;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net452</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>sgKey.snk</AssemblyOriginatorKeyFile>
     <UseWPF>true</UseWPF>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
-    <DocumentationFile>C:\dev\SciChart.Wpf.UI\SciChart.Wpf.UI\SciChart.Wpf.UI.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
-    <DocumentationFile>C:\dev\SciChart.Wpf.UI\SciChart.Wpf.UI\SciChart.Wpf.UI.xml</DocumentationFile>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
+    <OutputPath>..\Build\Release</OutputPath>
+    <DocumentationFile>..\Build\Release\net452\SciChart.Wpf.UI.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
     <OutputPath>..\Build\Release</OutputPath>
-    <DocumentationFile>..\Build\Release\SciChart.Wpf.UI.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
-    <OutputPath>..\Build\Debug</OutputPath>
-    <DocumentationFile>..\Build\Debug\SciChart.Wpf.UI.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Release\net452\SciChart.Wpf.UI.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

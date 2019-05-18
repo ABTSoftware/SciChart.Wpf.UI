@@ -11,13 +11,23 @@
     <AssemblyOriginatorKeyFile>sgKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
     <OutputPath>..\Build\Release\</OutputPath>
-    <DocumentationFile>..\Build\Release\SciChart.UI.Bootstrap.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Release\net452\SciChart.UI.Bootstrap.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
-    <DocumentationFile>..\Build\Debug\SciChart.UI.Bootstrap.xml</DocumentationFile>
+    <DocumentationFile>..\Build\Debug\net452\SciChart.UI.Bootstrap.xml</DocumentationFile>
+    <OutputPath>..\Build\Debug</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <OutputPath>..\Build\Release\</OutputPath>
+    <DocumentationFile>..\Build\Release\netstandard2.0\SciChart.UI.Bootstrap.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DocumentationFile>..\Build\Debug\netstandard2.0\SciChart.UI.Bootstrap.xml</DocumentationFile>
     <OutputPath>..\Build\Debug</OutputPath>
   </PropertyGroup>
 
