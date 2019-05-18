@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency id="SciChart.UI.Bootstrap" version="$version$" />  		
 		<dependency id="Log4Net" version="2.0.8" />  		
-		<dependency id="System.Reactive" version="4.1.2" />        		
+		<dependency id="System.Reactive" version="3.1.1" />        		
 		<dependency id="Unity" version="5.8.11" />  		
     </dependencies>
   </metadata>
