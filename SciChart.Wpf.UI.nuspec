@@ -22,8 +22,6 @@
   <files>
     <file src="Build\Release\net452\SciChart.Wpf.UI.dll" target="lib\net452" />
 	<file src="Build\Release\net452\SciChart.Wpf.UI.XML" target="lib\net452" />
-	
-	<file src="Build\Release\netcoreapp3.0\SciChart.Wpf.UI.dll" target="lib\netcoreapp3.0" />
-	<file src="Build\Release\netcoreapp3.0\SciChart.Wpf.UI.XML" target="lib\netcoreapp3.0" />	
+
   </files>
 </package>
