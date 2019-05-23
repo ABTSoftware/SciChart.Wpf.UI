@@ -5,10 +5,10 @@
                     xmlns:ui="clr-namespace:SciChart.Wpf.UI">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Green.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/themes/light.green.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <DropShadowEffect x:Key="BorderGlowEffect" ShadowDepth="0" BlurRadius="4" Color="{DynamicResource AccentColor}" />
     
     <SolidColorBrush x:Key="AccentBrush" Color="{DynamicResource AccentColor}"></SolidColorBrush>

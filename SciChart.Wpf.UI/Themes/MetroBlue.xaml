@@ -4,14 +4,13 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/themes/light.blue.xaml" />
 
-        <ResourceDictionary Source="pack://application:,,,/Abt.Framework.Presentation;component/Themes/Controls.BusyPanel.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Abt.Framework.Presentation;component/Themes/Controls.LabelControl.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Abt.Framework.Presentation;component/Themes/Controls.TextBox.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Abt.Framework.Presentation;component/Themes/Controls.TextStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI;component/Themes/Controls.BusyPanel.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI;component/Themes/Controls.LabelControl.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI;component/Themes/Controls.TextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SciChart.Wpf.UI;component/Themes/Controls.TextStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>
