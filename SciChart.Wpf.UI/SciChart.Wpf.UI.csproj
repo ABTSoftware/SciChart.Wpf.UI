@@ -20,6 +20,11 @@
     <WarningsAsErrors />
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs" Link="Properties\AssemblyInfoCommon.cs" />
   </ItemGroup>
