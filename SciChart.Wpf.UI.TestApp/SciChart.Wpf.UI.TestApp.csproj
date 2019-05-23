@@ -9,6 +9,10 @@
     <StartupObject />
   </PropertyGroup>
 
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
     <OutputPath>..\Build\Release</OutputPath>
   </PropertyGroup>
