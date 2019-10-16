@@ -1,6 +1,6 @@
 @echo off
 
-SET version=3.0.0
+SET version=3.1.0
 ECHO Parameters = %1
 
 if [%1] NEQ [] SET version=%1
