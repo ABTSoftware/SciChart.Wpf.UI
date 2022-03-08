@@ -134,9 +134,6 @@ namespace SciChart.Wpf.UI.Transitionz
             if (visibility.HasValue)
                 x.Completed += (_, __) => target.Visibility = visibility.Value;
 
-            x.SetDesiredFrameRate(24);
-            y.SetDesiredFrameRate(24);
-
             (target.RenderTransform).BeginAnimation(TranslateTransform.XProperty, x);
             (target.RenderTransform).BeginAnimation(TranslateTransform.YProperty, y);
         }

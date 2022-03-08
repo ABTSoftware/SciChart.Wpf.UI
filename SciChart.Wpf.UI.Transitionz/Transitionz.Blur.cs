@@ -127,8 +127,6 @@ namespace SciChart.Wpf.UI.Transitionz
             if (visibility.HasValue)
                 a.Completed += (_, __) => target.Visibility = visibility.Value;
 
-            a.SetDesiredFrameRate(24);
-
             var storyboard = new Storyboard();
             storyboard.Children.Add(a);
             Storyboard.SetTarget(a, ((BlurEffect)target.Effect));

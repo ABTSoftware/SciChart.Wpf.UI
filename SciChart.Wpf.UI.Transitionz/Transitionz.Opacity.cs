@@ -118,8 +118,6 @@ namespace SciChart.Wpf.UI.Transitionz
                 a.RepeatBehavior = transitionParams.RepeatBehavior;
             }            
 
-            a.SetDesiredFrameRate(24);
-
             var storyboard = new Storyboard();
             storyboard.Children.Add(a);
             Storyboard.SetTarget(a, target);

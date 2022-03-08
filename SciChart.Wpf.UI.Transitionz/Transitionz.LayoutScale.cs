@@ -114,7 +114,6 @@ namespace SciChart.Wpf.UI.Transitionz
                     AutoReverse = scaleParams.AutoReverse,
 				};
 
-			    x.SetDesiredFrameRate(24);
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, x);
 			}
             
@@ -131,7 +130,6 @@ namespace SciChart.Wpf.UI.Transitionz
 				    AutoReverse = scaleParams.AutoReverse,
                 };
 
-			    y.SetDesiredFrameRate(24);
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, y);
 			}
         }
