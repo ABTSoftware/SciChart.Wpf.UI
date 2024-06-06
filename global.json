@@ -1,11 +1,12 @@
 {
   "tools": {
-    "dotnet": "3.0.100-preview5-011568",
+    "dotnet": "6.0.422",
     "vs": {
-      "version": "16.0"
+      "version": "17.9"
     }
   },
   "sdk": {
-    "version": "3.0.100-preview5-011568"
+    "version": "6.0.422",
+    "rollForward": "latestMajor"
   }
 }
