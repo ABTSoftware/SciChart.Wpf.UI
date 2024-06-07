@@ -16,15 +16,15 @@ call powershell.exe ".\DeploymentFiles\UpdateAssemblyInfoCommon.ps1" "AssemblyIn
 if ERRORLEVEL 1 goto :powershellError
 
 REM Restore nuget packages 
-REM Set MSBUILDPATH2019=C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin
-call "%MSBUILDPATH2019%\msbuild.exe" -target:Restore -restore SciChart.Wpf.UI.sln -p:Configuration=Release;Platform="Any CPU";WarningLevel=0
+REM Set MSBUILDPATH2022=C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin
+call "%MSBUILDPATH2022%\msbuild.exe" -target:Restore -restore SciChart.Wpf.UI.sln -p:Configuration=Release;Platform="Any CPU";WarningLevel=0
 if ERRORLEVEL 1 goto :restoreError
 
 REM -------------------------------------------
 REM Build all target frameworks 
 REM -------------------------------------------
 
-call "%MSBUILDPATH2019%\msbuild.exe" -target:Build SciChart.Wpf.UI.sln -p:Configuration=Release;Platform="Any CPU";WarningLevel=0
+call "%MSBUILDPATH2022%\msbuild.exe" -target:Build SciChart.Wpf.UI.sln -p:Configuration=Release;Platform="Any CPU";WarningLevel=0
 if ERRORLEVEL 1 goto :msBuildError
 
 
