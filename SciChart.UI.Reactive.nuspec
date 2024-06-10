@@ -10,10 +10,10 @@
 	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Reactive MVVM, allows for observable ViewModels which fire both PropertyChanged and IObservable. Used in conjuction with Rx.Main to allow you to observe off Viewmodel properties. Used in the SciChart WPF Examples Application, which demonstrates High Performance WPF Charts, available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (RxMain) to allow for easier testing and integration of Reactive into an MVVM Application.</description>
-    <copyright>Copyright © SciChart Ltd 2013-2019</copyright>
+    <copyright>Copyright © SciChart Ltd 2013-2024</copyright>
 	<dependencies>
 		<dependency id="SciChart.UI.Bootstrap" version="$version$" />  		
-		<dependency id="Log4Net" version="2.0.8" />  		
+		<dependency id="Log4Net" version="2.0.17" />  		
 		<dependency id="System.Reactive" version="3.1.1" />        		
 		<dependency id="Unity" version="5.8.11" />  		
     </dependencies>
