@@ -10,7 +10,7 @@
 	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
 	<description>Core reactive libraries, custom controls and styles for WPF UI created by SciChart Ltd. Used in the SciChart WPF Examples Application, which demonstrates High Performance WPF Charts, available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (RxMain) to allow for easier testing and integration of Reactive into an MVVM Application.</description>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright © SciChart Ltd 2013-2019</copyright>
+    <copyright>Copyright © SciChart Ltd 2013-2024</copyright>
 	<dependencies>
 		<dependency id="SciChart.WPF.UI.Transitionz" version="$version$" />    
 		<dependency id="SciChart.UI.Reactive" version="$version$" />    

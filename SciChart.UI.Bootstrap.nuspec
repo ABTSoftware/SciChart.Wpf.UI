@@ -10,9 +10,9 @@
 	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
 	<description>Bootstrap is a library which includes automatic wire-up of dependencies with the ExportType attribute, a little bit like MEF! Yes we know its like MEF, but we've been using this since before MEF so it kinda got stuck that way ... </description>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright © SciChart Ltd 2013-2019</copyright>
+    <copyright>Copyright © SciChart Ltd 2013-2024</copyright>
 	<dependencies>	
-		<dependency id="log4net" version="2.0.8" />        
+		<dependency id="log4net" version="2.0.17" />        
 		<dependency id="Unity" version="5.8.11" />  		
     </dependencies>
   </metadata>
