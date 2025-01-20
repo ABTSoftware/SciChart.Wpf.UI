@@ -1,25 +1,37 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-  <metadata>
-    <version>$version$</version>
-    <authors>SciChart Ltd</authors>
-    <owners>SciChart Ltd</owners>
-    <id>SciChart.UI.Bootstrap</id>
-    <title>SciChart.UI.Bootstrap</title>
-	<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>	
-	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
-	<description>Bootstrap is a library which includes automatic wire-up of dependencies with the ExportType attribute, a little bit like MEF! Yes we know its like MEF, but we've been using this since before MEF so it kinda got stuck that way ... </description>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright © SciChart Ltd 2013-2024</copyright>
-	<dependencies>	
-		<dependency id="log4net" version="2.0.17" />        
-		<dependency id="Unity" version="5.8.11" />  		
-    </dependencies>
-  </metadata>
-  <files>	
-	<file src="Build\Release\net452\SciChart.UI.Bootstrap.dll" target="lib\net452" />
-	<file src="Build\Release\net452\SciChart.UI.Bootstrap.XML" target="lib\net452" />
-	<file src="Build\Release\netstandard2.0\SciChart.UI.Bootstrap.dll" target="lib\netstandard2.0" />
-	<file src="Build\Release\netstandard2.0\SciChart.UI.Bootstrap.XML" target="lib\netstandard2.0" />
-  </files>
+	<metadata>
+		<version>$version$</version>
+		<authors>SciChart Ltd</authors>
+		<owners>SciChart Ltd</owners>
+		<id>SciChart.UI.Bootstrap</id>
+		<title>SciChart.UI.Bootstrap</title>
+		<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>
+		<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Bootstrap is a library which includes automatic wire-up of dependencies with the ExportType attribute, a little bit like MEF! Yes we know its like MEF, but we've been using this since before MEF so it kinda got stuck that way ... </description>
+		<copyright>Copyright © SciChart Ltd 2013-2025</copyright>
+		<dependencies>
+			<group targetFramework=".NETFramework4.6.2">
+				<dependency id="log4net" version="3.0.3"/>
+				<dependency id="Unity" version="5.11.10"/>
+			</group>
+			<group targetFramework="netcoreapp3.1">
+				<dependency id="log4net" version="3.0.3"/>
+				<dependency id="Unity" version="5.11.10"/>
+			</group>
+			<group targetFramework="net6.0-windows7.0">
+				<dependency id="log4net" version="3.0.3"/>
+				<dependency id="Unity" version="5.11.10"/>
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="Build\Release\net462\SciChart.UI.Bootstrap.dll" target="lib\net462"/>
+		<file src="Build\Release\net462\SciChart.UI.Bootstrap.xml" target="lib\net462"/>
+		<file src="Build\Release\netcoreapp3.1\SciChart.UI.Bootstrap.dll" target="lib\netcoreapp3.1"/>
+		<file src="Build\Release\netcoreapp3.1\SciChart.UI.Bootstrap.xml" target="lib\netcoreapp3.1"/>
+		<file src="Build\Release\net6.0-windows\SciChart.UI.Bootstrap.dll" target="lib\net6.0-windows7.0"/>
+		<file src="Build\Release\net6.0-windows\SciChart.UI.Bootstrap.xml" target="lib\net6.0-windows7.0"/>
+	</files>
 </package>

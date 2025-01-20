@@ -1,76 +1,48 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <TargetFrameworks>net452;netcoreapp3.0</TargetFrameworks>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>sgKey.snk</AssemblyOriginatorKeyFile>
-    <UseWPF>true</UseWPF>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net462;netcoreapp3.1;net6.0-windows</TargetFrameworks>
+		<UseWPF>True</UseWPF>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>sgKey.snk</AssemblyOriginatorKeyFile>
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+		<OutputPath>..\Build\$(Configuration)</OutputPath>
+		<DocumentationFile>..\Build\$(Configuration)\$(TargetFramework)\SciChart.Wpf.UI.xml</DocumentationFile>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
-    <OutputPath>..\Build\Release</OutputPath>
-    <DocumentationFile>..\Build\Release\net452\SciChart.Wpf.UI.xml</DocumentationFile>
-  </PropertyGroup>
+	<ItemGroup>
+		<Compile Include="..\AssemblyInfoCommon.cs" Link="Properties\AssemblyInfoCommon.cs" />
+	</ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
-    <OutputPath>..\Build\Release</OutputPath>
-    <DocumentationFile>..\Build\Release\net452\SciChart.Wpf.UI.xml</DocumentationFile>
-  </PropertyGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net462'"> 
+		<Reference Include="System" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Printing" />
+		<Reference Include="System.Runtime.Serialization" /> 
+		<Reference Include="System.ServiceModel" />
+		<Reference Include="System.Windows" />
+		<Reference Include="System.Xml" />
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Xml.Linq" />
+		<Reference Include="System.Data.DataSetExtensions" />
+		<Reference Include="System.Xaml">
+			<RequiredTargetFramework>4.0</RequiredTargetFramework>
+		</Reference>
+		<Reference Include="WindowsBase" />
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+	</ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
-    <DocumentationFile>..\Build\Release\netcoreapp3.0\SciChart.Wpf.UI.xml</DocumentationFile>
-    <OutputPath>..\Build\Release</OutputPath>
-  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="MahApps.Metro" Version="2.4.10" />
+	</ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
-    <DocumentationFile>..\Build\Debug\netcoreapp3.0\SciChart.Wpf.UI.xml</DocumentationFile>
-    <OutputPath>..\Build\Debug</OutputPath>
-  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SciChart.UI.Bootstrap\SciChart.UI.Bootstrap.csproj" />
+		<ProjectReference Include="..\SciChart.UI.Reactive\SciChart.UI.Reactive.csproj" />
+		<ProjectReference Include="..\SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="..\AssemblyInfoCommon.cs" Link="Properties\AssemblyInfoCommon.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0316" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SciChart.UI.Bootstrap\SciChart.UI.Bootstrap.csproj">
-      <Project>{bc358a29-722e-4028-a8f8-3895ddc645fc}</Project>
-      <Name>SciChart.UI.Bootstrap</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SciChart.UI.Reactive\SciChart.UI.Reactive.csproj">
-      <Project>{3c6af1f9-066b-46cc-b58d-f938b659bba1}</Project>
-      <Name>SciChart.UI.Reactive</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SciChart.Wpf.UI.Transitionz\SciChart.Wpf.UI.Transitionz.csproj" />
-  </ItemGroup>
 </Project>

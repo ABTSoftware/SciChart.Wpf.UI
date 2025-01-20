@@ -22,7 +22,7 @@ namespace SciChart.UI.Reactive.Traits
 
         public T ResolveWithParent<T>(ObservableObjectBase parent)
         {
-            var parameterOverride = new ParameterOverrides { { "target", parent } };
+            var parameterOverride = new ParameterOverride("target", parent);
             return _container.Resolve<T>(parameterOverride);
         }
     }

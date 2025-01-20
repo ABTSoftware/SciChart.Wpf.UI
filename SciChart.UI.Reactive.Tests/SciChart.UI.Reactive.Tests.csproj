@@ -1,89 +1,46 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
-    <UseWPF>true</UseWPF>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <ApplicationIcon />
-    <StartupObject />
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net462</TargetFramework>
+		<UseWPF>True</UseWPF>
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+		<AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>bin/Release</OutputPath>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>bin/Release</OutputPath>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>bin/Debug</OutputPath>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>bin/Debug</OutputPath>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Async\SimpleWorkflowTests.cs" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.OracleClient" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.ServiceProcess" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SciChart.UI.Bootstrap\SciChart.UI.Bootstrap.csproj">
-      <Project>{bc358a29-722e-4028-a8f8-3895ddc645fc}</Project>
-      <Name>SciChart.UI.Bootstrap</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SciChart.UI.Reactive\SciChart.UI.Reactive.csproj">
-      <Project>{3c6af1f9-066b-46cc-b58d-f938b659bba1}</Project>
-      <Name>SciChart.UI.Reactive</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="CommonServiceLocator">
-      <Version>2.0.4</Version>
-    </PackageReference>
-    <PackageReference Include="log4net">
-      <Version>2.0.17</Version>
-    </PackageReference>
-    <PackageReference Include="MahApps.Metro">
-      <Version>2.0.0-alpha0316</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Reactive.Testing" Version="3.1.1" />
-    <PackageReference Include="NUnit">
-      <Version>2.7.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Configuration.ConfigurationManager">
-      <Version>4.5.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Reactive" Version="3.1.1" />
-    <PackageReference Include="System.Reactive.Linq" Version="3.1.1" />
-    <PackageReference Include="System.Security.Principal.Windows">
-      <Version>4.5.1</Version>
-    </PackageReference>
-    <PackageReference Include="System.Threading.Tasks.Extensions">
-      <Version>4.5.2</Version>
-    </PackageReference>
-    <PackageReference Include="System.ValueTuple">
-      <Version>4.5.0</Version>
-    </PackageReference>
-    <PackageReference Include="Unity">
-      <Version>5.8.11</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="app.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Async\SimpleWorkflowTests.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="System" />
+		<Reference Include="System.Configuration" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Windows" />
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NUnit" Version="3.14.0" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+		<PackageReference Include="Microsoft.Reactive.Testing" Version="4.4.1" />
+		<PackageReference Include="Unity" Version="5.11.10" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SciChart.UI.Bootstrap\SciChart.UI.Bootstrap.csproj" />
+		<ProjectReference Include="..\SciChart.UI.Reactive\SciChart.UI.Reactive.csproj" />
+	</ItemGroup>
+
 </Project>
