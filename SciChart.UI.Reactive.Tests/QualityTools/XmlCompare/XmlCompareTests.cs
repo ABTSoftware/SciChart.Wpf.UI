@@ -73,12 +73,11 @@ namespace SciChart.UI.Reactive.Tests.QualityTools.XmlCompare
         }
 
         [Test]
-        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: DifferentNode, expected: element1, actual: element2
-Position in expected document: /test[1]/element1[2]
-Position in actual document: /test[1]/element2[1]")]
         public void OneElement1MissingThrows()
         {
-            comparer.Compare(oneElement1Missing);
+            Assert.Throws<XmlDifferentException>(() => comparer.Compare(oneElement1Missing), @"Xml documents were different: Difference type: DifferentNode, expected: element1, actual: element2
+Position in expected document: /test[1]/element1[2]
+Position in actual document: /test[1]/element2[1]");
         }
 
         [Test]
@@ -102,12 +101,11 @@ Position in actual document: ");
         }
 
         [Test]
-        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: DifferentNode, expected: element2, actual: element1
-Position in expected document: /test[1]/element2[1]
-Position in actual document: /test[1]/element1[3]")]
         public void ExtraElement1Throws()
         {
-            comparer.Compare(extraElement1);
+            Assert.Throws<XmlDifferentException>(() => comparer.Compare(extraElement1), @"Xml documents were different: Difference type: DifferentNode, expected: element2, actual: element1
+Position in expected document: /test[1]/element2[1]
+Position in actual document: /test[1]/element1[3]");
         }
 
         [Test]
@@ -131,12 +129,11 @@ Position in actual document: /test[1]/element2[1]");
         }
 
         [Test]
-        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: ExtraAttribute, expected: , actual: 
-Position in expected document: 
-Position in actual document: /test[1]/@attribute2")]
         public void ExtraTopLevelAttributeThrows()
         {
-            comparer.Compare(extraTopLevelAttribute);
+            Assert.Throws<XmlDifferentException>(() => comparer.Compare(extraTopLevelAttribute), @"Xml documents were different: Difference type: ExtraAttribute, expected: , actual: 
+Position in expected document: 
+Position in actual document: /test[1]/@attribute2");
         }
 
         [Test]
@@ -151,12 +148,11 @@ Position in actual document: /test[1]/@attribute2");
         }
 
         [Test]
-        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: MissingNode, expected: , actual: 
-Position in expected document: /test[1]/element1[1]/text()
-Position in actual document: ")]
         public void TextMissingThrows()
         {
-            comparer.Compare(textMissing);
+            Assert.Throws<XmlDifferentException>(() => comparer.Compare(textMissing), @"Xml documents were different: Difference type: MissingNode, expected: , actual: 
+Position in expected document: /test[1]/element1[1]/text()
+Position in actual document: ");
         }
 
         [Test]
@@ -171,12 +167,11 @@ Position in actual document: ");
         }
 
         [Test]
-        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: NodeValue, expected: test text, actual: other
-Position in expected document: /test[1]/element1[1]/text()
-Position in actual document: /test[1]/element1[1]/text()")]
         public void DifferentTextThrows()
         {
-            comparer.Compare(differentText);
+            Assert.Throws<XmlDifferentException>(() => comparer.Compare(differentText), @"Xml documents were different: Difference type: NodeValue, expected: test text, actual: other
+Position in expected document: /test[1]/element1[1]/text()
+Position in actual document: /test[1]/element1[1]/text()");
         }
 
         [Test]
@@ -191,12 +186,11 @@ Position in actual document: /test[1]/element1[1]/text()");
         }
 
         [Test]
-        [ExpectedException(ExpectedException = typeof(XmlDifferentException), ExpectedMessage = @"Xml documents were different: Difference type: MissingAttribute, expected: , actual: 
-Position in expected document: /test[1]/element2[1]/@otherAttribute
-Position in actual document: ")]
         public void AttributeMissingThrows()
         {
-            comparer.Compare(attributeMissing);
+            Assert.Throws<XmlDifferentException>(() => comparer.Compare(attributeMissing), @"Xml documents were different: Difference type: MissingAttribute, expected: , actual: 
+Position in expected document: /test[1]/element2[1]/@otherAttribute
+Position in actual document: ");
         }
 
         [Test]

@@ -2,40 +2,43 @@
 using System.Collections.Generic;
 using Unity;
 using Unity.Extension;
+using Unity.Injection;
 using Unity.Lifetime;
-using Unity.Registration;
 using Unity.Resolution;
 
 namespace SciChart.UI.Reactive.Tests.QualityTools.Stubs
 {
     public class StubContainer : IUnityContainer
     {
-        public void Dispose()
-        {
-        }
-        
         public IDictionary<Type, Type> TypeRegistrations = new Dictionary<Type, Type>();
         public IDictionary<Type, Type> SingletonRegistrations = new Dictionary<Type, Type>();
-        public IDictionary<Type, object> InstanceRegistrations = new Dictionary<Type, object>(); 
+        public IDictionary<Type, object> InstanceRegistrations = new Dictionary<Type, object>();
 
-        public IUnityContainer RegisterType(Type @from, Type to, string name, LifetimeManager lifetimeManager,
-                                            params InjectionMember[] injectionMembers)
+        public IUnityContainer Parent { get; }
+        public IEnumerable<IContainerRegistration> Registrations { get; }
+
+        public IUnityContainer RegisterType(Type registeredType, Type mappedToType, string name, ITypeLifetimeManager lifetimeManager, params InjectionMember[] injectionMembers)
         {
-            if (from == null)
-                from = to;
-            if (lifetimeManager is ContainerControlledLifetimeManager)
-                SingletonRegistrations[from] = to;
-            else if (SingletonRegistrations.ContainsKey(to))
-                SingletonRegistrations[from] = to;
+            if (registeredType == null)
+            {
+                registeredType = mappedToType;
+            }
+
+            if (lifetimeManager is ContainerControlledLifetimeManager || SingletonRegistrations.ContainsKey(mappedToType))
+            {
+                SingletonRegistrations[registeredType] = mappedToType;
+            }
             else
-                TypeRegistrations[from] = to;
+            {
+                TypeRegistrations[registeredType] = mappedToType;
+            }
 
             return this;
         }
 
-        public IUnityContainer RegisterInstance(Type t, string name, object instance, LifetimeManager lifetime)
+        public IUnityContainer RegisterInstance(Type type, string name, object instance, IInstanceLifetimeManager lifetimeManager)
         {
-            InstanceRegistrations[t] = instance;
+            InstanceRegistrations[type] = instance;
             return this;
         }
 
@@ -84,8 +87,13 @@ namespace SciChart.UI.Reactive.Tests.QualityTools.Stubs
             throw new NotImplementedException();
         }
 
-        public IUnityContainer Parent { get; private set; }
-        public IEnumerable<IContainerRegistration> Registrations { get; private set; }
+        public IUnityContainer RegisterFactory(Type type, string name, Func<IUnityContainer, Type, string, object> factory, IFactoryLifetimeManager lifetimeManager)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+        }
     }
 }
-

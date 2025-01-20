@@ -1,27 +1,43 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-  <metadata>
-    <version>$version$</version>
-    <authors>SciChart Ltd</authors>
-    <owners>SciChart Ltd</owners>
-    <id>SciChart.Wpf.UI</id>
-    <title>SciChart.Wpf.UI</title>
-	<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>	
-	<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
-	<description>Core reactive libraries, custom controls and styles for WPF UI created by SciChart Ltd. Used in the SciChart WPF Examples Application, which demonstrates High Performance WPF Charts, available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (RxMain) to allow for easier testing and integration of Reactive into an MVVM Application.</description>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright © SciChart Ltd 2013-2024</copyright>
-	<dependencies>
-		<dependency id="SciChart.WPF.UI.Transitionz" version="$version$" />    
-		<dependency id="SciChart.UI.Reactive" version="$version$" />    
-		<dependency id="SciChart.UI.Bootstrap" version="$version$" />    		
-		<dependency id="MahApps.Metro" version="2.0.0-alpha0316" />        
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="Build\Release\net452\SciChart.Wpf.UI.dll" target="lib\net452" />
-	<file src="Build\Release\net452\SciChart.Wpf.UI.XML" target="lib\net452" />
-    <file src="Build\Release\netcoreapp3.0\SciChart.Wpf.UI.dll" target="lib\netcoreapp3.0" />
-	<file src="Build\Release\netcoreapp3.0\SciChart.Wpf.UI.XML" target="lib\netcoreapp3.0" />
-  </files>
+	<metadata>
+		<version>$version$</version>
+		<authors>SciChart Ltd</authors>
+		<owners>SciChart Ltd</owners>
+		<id>SciChart.Wpf.UI</id>
+		<title>SciChart.Wpf.UI</title>
+		<projectUrl>https://github.com/ABTSoftware/SciChart.Wpf.UI</projectUrl>
+		<licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Core reactive libraries, custom controls and styles for WPF UI created by SciChart Ltd. Used in the SciChart WPF Examples Application, which demonstrates High Performance WPF Charts, available for download at http://www.scichart.com, this library provides bootstrapping with automatic dependency discovery, and some extensions to Reactive (RxMain) to allow for easier testing and integration of Reactive into an MVVM Application.</description>
+		<copyright>Copyright © SciChart Ltd 2013-2025</copyright>
+		<dependencies>
+			<group targetFramework=".NETFramework4.6.2">
+				<dependency id="SciChart.WPF.UI.Transitionz" version="$version$"/>
+				<dependency id="SciChart.UI.Reactive" version="$version$"/>
+				<dependency id="SciChart.UI.Bootstrap" version="$version$"/>
+				<dependency id="MahApps.Metro" version="2.4.10"/>
+			</group>
+			<group targetFramework="netcoreapp3.1">
+				<dependency id="SciChart.WPF.UI.Transitionz" version="$version$"/>
+				<dependency id="SciChart.UI.Reactive" version="$version$"/>
+				<dependency id="SciChart.UI.Bootstrap" version="$version$"/>
+				<dependency id="MahApps.Metro" version="2.4.10"/>
+			</group>
+			<group targetFramework="net6.0-windows7.0">
+				<dependency id="SciChart.WPF.UI.Transitionz" version="$version$"/>
+				<dependency id="SciChart.UI.Reactive" version="$version$"/>
+				<dependency id="SciChart.UI.Bootstrap" version="$version$"/>
+				<dependency id="MahApps.Metro" version="2.4.10"/>
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="Build\Release\net462\SciChart.Wpf.UI.dll" target="lib\net462"/>
+		<file src="Build\Release\net462\SciChart.Wpf.UI.xml" target="lib\net462"/>
+		<file src="Build\Release\netcoreapp3.1\SciChart.Wpf.UI.dll" target="lib\netcoreapp3.1"/>
+		<file src="Build\Release\netcoreapp3.1\SciChart.Wpf.UI.xml" target="lib\netcoreapp3.1"/>
+		<file src="Build\Release\net6.0-windows\SciChart.Wpf.UI.dll" target="lib\net6.0-windows7.0"/>
+		<file src="Build\Release\net6.0-windows\SciChart.Wpf.UI.xml" target="lib\net6.0-windows7.0"/>
+	</files>
 </package>

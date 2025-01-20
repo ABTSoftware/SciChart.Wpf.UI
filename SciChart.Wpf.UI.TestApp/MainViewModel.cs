@@ -94,7 +94,7 @@ namespace SciChart.Wpf.UI.Controls.Preview
             set => SetDynamicValue(value);
         }
 
-        public ExceptionViewModel Exception
+        public new ExceptionViewModel Exception
         {
             get => GetDynamicValue<ExceptionViewModel>();
             set => SetDynamicValue(value);
